@@ -34,6 +34,13 @@ const defaultOptions = _.merge(_.cloneDeep(defaultModuleOptions), {
   customCurrency: _.cloneDeep(defaultCurrencyObject),
 });
 
+const optionsValuesTypeNumber = [
+  'roundNumber',
+  'currency.currencyNounGender.integer',
+  'currency.currencyNounGender.fractionalPart',
+  'currency.fractionalPartMinLength',
+];
+
 const optionsNamesMap = {
   'currency': 'currency',
   'custom-currency-integer1': 'customCurrency.currencyNameCases[0]',
@@ -68,7 +75,7 @@ export const useModuleOptions = () => {
     const name = event.target.name;
     const value = getValue(event.target);
     const path = getOptionPath(name);
-    (path !== null) && updateOptionPath(path, value);
+    (path !== null) && updateOptionValueByPath(path, value);
   };
 
   const getValue = (target) => {
@@ -84,13 +91,15 @@ export const useModuleOptions = () => {
 
   const checkValueRange = (target) => {
     let value = target.value;
-    if (target.min !== '') {
-      value = Number(value) >= Number(target.min) ? value : target.min;
+    if (value !== '') {
+      if (target.min !== '') {
+        value = Number(value) >= Number(target.min) ? value : target.min;
+      }
+      if (target.max !== '') {
+        value = Number(value) <= Number(target.min) ? value : target.min;
+      }
     }
-    if (target.max !== '') {
-      value = Number(value) <= Number(target.min) ? value : target.min;
-    }
-    return Number(value);
+    return value
   };
 
   const getOptionPath = (name) => {
@@ -100,7 +109,18 @@ export const useModuleOptions = () => {
     return null;
   };
 
-  const updateOptionPath = (path, newValue) => {
+  const convertValuesToTypeNumber = (object, valuesPaths) => {
+    let resultObject = _.cloneDeep(object);
+    valuesPaths.some((path) => {
+      const valueByPath = _.get(resultObject, path);
+      if (valueByPath !== undefined) {
+        resultObject = _.set(resultObject, path, Number(valueByPath));
+      }
+    })
+    return resultObject
+  }
+
+  const updateOptionValueByPath = (path, newValue) => {
     let updatedOptions = _.cloneDeep(options);
     updatedOptions = _.set(updatedOptions, path, newValue);
     setOptions(updatedOptions);
@@ -112,6 +132,7 @@ export const useModuleOptions = () => {
     if (options.currency === 'custom') {
       optionsResult.currency = options.customCurrency;
     }
+    optionsResult = convertValuesToTypeNumber(optionsResult, optionsValuesTypeNumber);
     setOptionsForModule(optionsResult);
   };
 

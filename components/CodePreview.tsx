@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Prism from 'prismjs';
 
-import styles from "./CodePreview.module.sass";
+// import styles from "./CodePreview.module.sass";
 
 const CodePreview = ( props ) => {
   React.useEffect(() => {
