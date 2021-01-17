@@ -1,6 +1,6 @@
 {
   "name": "number-to-words-ru-app",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Anton Moskovskiy",
   "private": true,
   "scripts": {
@@ -16,20 +16,20 @@
     "i18next": "^19.8.4",
     "i18next-browser-languagedetector": "^6.0.1",
     "lodash": "^4.17.20",
-    "next": "^10.0.0",
+    "next": "^10.0.5",
     "notistack": "^1.0.3",
-    "number-to-words-ru": "^2.2.6",
+    "number-to-words-ru": "^2.2.7",
     "prismjs": "^1.23.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-i18next": "^11.8.5",
-    "sass": "^1.32.2"
+    "sass": "^1.32.4"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
-    "@types/node": "^14.14.20",
+    "@types/node": "^14.14.21",
     "@types/react": "^17.0.0",
-    "eslint": "^7.17.0",
+    "eslint": "^7.18.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
