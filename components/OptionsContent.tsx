@@ -41,10 +41,26 @@ const OptionsContent = ( props ) => {
           </Grid>
         </Hidden>
         <Grid item xs={12} md={6}>
+          <InputSelect
+            name='declension'
+            label={t('options_declension_label')}
+            fullWidth
+            value={options.declension}
+            onChange={updateOptions}
+            items={[
+              {value: 'nominative', name: t('options_declension_select_value_nominative')},
+              {value: 'genitive', name: t('options_declension_select_value_genitive')},
+              {value: 'dative', name: t('options_declension_select_value_dative')},
+              {value: 'accusative', name: t('options_declension_select_value_accusative')},
+              {value: 'instrumental', name: t('options_declension_select_value_instrumental')},
+              {value: 'prepositional', name: t('options_declension_select_value_prepositional')},
+            ]}
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
           <TextField
             name='round-number'
             label={t('options_round_number')}
-            margin='normal'
             fullWidth
             placeholder='2'
             type='number'

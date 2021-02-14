@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Prism from 'prismjs';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { stackoverflowLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 // import styles from "./CodePreview.module.sass";
 
 const CodePreview = ( props ) => {
-  React.useEffect(() => {
-    Prism.highlightAll();
-  });
-
   return (
     <>
-      <pre>
-        <code id='prism-js-code' className={props.language}>
-          {props.code}
-        </code>
-      </pre>
+      <SyntaxHighlighter
+        language="javascript"
+        style={stackoverflowLight}
+        customStyle={{
+          padding: '1rem',
+        }}
+      >
+        {props.code}
+      </SyntaxHighlighter>
     </>
   )
 }

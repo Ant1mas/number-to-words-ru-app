@@ -25,13 +25,13 @@ const InstallationBlock = () => {
           <Typography variant="body1">
             {t('installation_npm_title')}
           </Typography>
-          <CodePreview code={codeNpm} language='language-bash' />
+          <CodePreview code={codeNpm} language='bash' />
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography variant="body1">
             {t('installation_yarn_title')}
           </Typography>
-          <CodePreview code={codeYarn} language='language-bash' />
+          <CodePreview code={codeYarn} language='bash' />
         </Grid>
       </Grid>
     </>

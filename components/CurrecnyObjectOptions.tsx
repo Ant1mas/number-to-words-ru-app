@@ -2,12 +2,14 @@ import React from "react";
 import {
   Grid,
   TextField,
+  Typography,
 } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 
 // import styles from "./CurrecnyObjectOptions.module.sass"
 import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 import InputSelect from 'components/InputSelect';
+import DeclensionsFields from 'components/DeclensionsFields';
 
 const CurrecnyObjectOptions = () => {
   const { options, updateOptions } = React.useContext(ModuleParamsContext);
@@ -21,11 +23,15 @@ const CurrecnyObjectOptions = () => {
         padding: '0 .5rem',
       }}>
         <Grid container spacing={1}>
+          <Grid item xs={12}>
+            <Typography variant="h5" display="block">
+              {t('options_currency_custom_integer_block_title')}
+            </Typography>
+          </Grid>
           <Grid item xs={12} sm={4}>
             <TextField
               name='custom-currency-integer1'
-              label={t('options_currency_custom_value_integer1')}
-              margin="normal"
+              label={t('options_currency_custom_value_form1')}
               fullWidth
               placeholder="Рубль"
               value={options.customCurrency.currencyNameCases[0]}
@@ -35,8 +41,7 @@ const CurrecnyObjectOptions = () => {
           <Grid item xs={12} sm={4}>
             <TextField
               name='custom-currency-integer2'
-              label={t('options_currency_custom_value_integer2')}
-              margin="normal"
+              label={t('options_currency_custom_value_form2')}
               fullWidth
               placeholder="Рубля"
               value={options.customCurrency.currencyNameCases[1]}
@@ -46,19 +51,19 @@ const CurrecnyObjectOptions = () => {
           <Grid item xs={12} sm={4}>
             <TextField
               name='custom-currency-integer3'
-              label={t('options_currency_custom_value_integer3')}
-              margin="normal"
+              label={t('options_currency_custom_value_form3')}
               fullWidth
               placeholder="Рублей"
               value={options.customCurrency.currencyNameCases[2]}
               onChange={updateOptions}
             />
           </Grid>
+          <DeclensionsFields numberPart='integer' declensionsObjectName='currencyNameDeclensions' />
           <Grid item xs={12}>
             <InputSelect
               name='custom-currency-form-integer'
               fullWidth
-              label={t('options_currency_custom_value_integer_name_form')}
+              label={t('options_currency_custom_value_currency_name_form')}
               value={options.customCurrency.currencyNounGender.integer}
               items={[
                 {value: 0, name: t('options_currency_custom_value_word_form1')},
@@ -68,11 +73,15 @@ const CurrecnyObjectOptions = () => {
               onChange={updateOptions}
             />
           </Grid>
+          <Grid item xs={12} style={{marginTop: '1.5rem'}}>
+            <Typography variant="h5" display="block">
+              {t('options_currency_custom_fractional_block_title')}
+            </Typography>
+          </Grid>
           <Grid item xs={12} sm={4}>
             <TextField
               name='custom-currency-fractional1'
-              label={t('options_currency_custom_value_fractional1')}
-              margin="normal"
+              label={t('options_currency_custom_value_form1')}
               fullWidth
               placeholder="Копейка"
               value={options.customCurrency.fractionalPartNameCases[0]}
@@ -82,8 +91,7 @@ const CurrecnyObjectOptions = () => {
           <Grid item xs={12} sm={4}>
             <TextField
               name='custom-currency-fractional2'
-              label={t('options_currency_custom_value_fractional2')}
-              margin="normal"
+              label={t('options_currency_custom_value_form2')}
               fullWidth
               placeholder="Копейки"
               value={options.customCurrency.fractionalPartNameCases[1]}
@@ -93,19 +101,19 @@ const CurrecnyObjectOptions = () => {
           <Grid item xs={12} sm={4}>
             <TextField
               name='custom-currency-fractional3'
-              label={t('options_currency_custom_value_fractional3')}
-              margin="normal"
+              label={t('options_currency_custom_value_form3')}
               fullWidth
               placeholder="Копеек"
               value={options.customCurrency.fractionalPartNameCases[2]}
               onChange={updateOptions}
             />
           </Grid>
+          <DeclensionsFields numberPart='fractional' declensionsObjectName='fractionalPartNameDeclensions' />
           <Grid item xs={12}>
             <InputSelect
               name='custom-currency-form-fractional'
               fullWidth
-              label={t('options_currency_custom_value_fractional_name_form')}
+              label={t('options_currency_custom_value_currency_name_form')}
               value={options.customCurrency.currencyNounGender.fractionalPart}
               items={[
                 {value: 0, name: t('options_currency_custom_value_word_form1')},
@@ -115,11 +123,15 @@ const CurrecnyObjectOptions = () => {
               onChange={updateOptions}
             />
           </Grid>
+          <Grid item xs={12} style={{marginTop: '1.5rem'}}>
+            <Typography variant="h5" display="block">
+              {t('options_currency_custom_common_block_title')}
+            </Typography>
+          </Grid>
           <Grid item xs={12}>
             <TextField
               name='custom-currency-fractional-min-length'
               label={t('options_currency_fractionalPartMinLength')}
-              margin="normal"
               fullWidth
               type="number"
               inputProps={{

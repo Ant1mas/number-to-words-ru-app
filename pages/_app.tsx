@@ -1,6 +1,5 @@
 import React from 'react';
 import 'styles/global.sass'
-import 'prismjs/themes/prism.css';
 import 'locales/i18n/i18n';
 import { CssBaseline } from '@material-ui/core';
 import { SnackbarProvider } from 'notistack';

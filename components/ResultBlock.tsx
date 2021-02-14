@@ -40,7 +40,7 @@ const ResultBlock = () => {
           id="result-text"
           style={{
             padding: '1rem',
-            backgroundColor: '#e8eaf6',
+            backgroundColor: '#efecf4',
             overflowX: 'hidden',
           }}
         >

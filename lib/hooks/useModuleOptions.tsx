@@ -1,71 +1,20 @@
 import React from 'react';
 import _ from 'lodash';
 import objectsDiff from 'lib/functions/objectsDiff'
+import DEFAULT_MODULE_OPTIONS from 'lib/constants/defaultModuleOptions';
+import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject';
+import OPTIONS_NAMES_MAP from 'lib/constants/optionsNamesMap';
+import OPTIONS_VALUES_TYPE_NUMBER from 'lib/constants/optionsValuesTypeNumber';
+import OPTIONS_SYNCED_VALUES_MAP from 'lib/constants/optionsSyncedValuesMap';
 
-const defaultCurrencyObject = {
-  currencyNameCases: ['рубль', 'рубля', 'рублей'],
-  fractionalPartNameCases: ['копейка', 'копейки', 'копеек'],
-  currencyNounGender: {
-    integer: 0,
-    fractionalPart: 1,
-  },
-  fractionalPartMinLength: 2,
-};
-
-const defaultModuleOptions = {
-  currency: 'rub',
-  roundNumber: -1,
-  convertMinusSignToWord: true,
-  showNumberParts: {
-    integer: true,
-    fractional: true,
-  },
-  convertNumbertToWords: {
-    integer: true,
-    fractional: false,
-  },
-  showCurrency: {
-    integer: true,
-    fractional: true,
-  },
-};
-
-const defaultOptions = _.merge(_.cloneDeep(defaultModuleOptions), {
-  customCurrency: _.cloneDeep(defaultCurrencyObject),
+const defaultOptions = _.merge(_.cloneDeep(DEFAULT_MODULE_OPTIONS), {
+  customCurrency: _.cloneDeep(DEFAULT_CURRENCY_OBJECT),
 });
-
-const optionsValuesTypeNumber = [
-  'roundNumber',
-  'currency.currencyNounGender.integer',
-  'currency.currencyNounGender.fractionalPart',
-  'currency.fractionalPartMinLength',
-];
-
-const optionsNamesMap = {
-  'currency': 'currency',
-  'custom-currency-integer1': 'customCurrency.currencyNameCases[0]',
-  'custom-currency-integer2': 'customCurrency.currencyNameCases[1]',
-  'custom-currency-integer3': 'customCurrency.currencyNameCases[2]',
-  'custom-currency-fractional1': 'customCurrency.fractionalPartNameCases[0]',
-  'custom-currency-fractional2': 'customCurrency.fractionalPartNameCases[1]',
-  'custom-currency-fractional3': 'customCurrency.fractionalPartNameCases[2]',
-  'custom-currency-form-integer': 'customCurrency.currencyNounGender.integer',
-  'custom-currency-form-fractional': 'customCurrency.currencyNounGender.fractionalPart',
-  'custom-currency-fractional-min-length': 'customCurrency.fractionalPartMinLength',
-  'round-number': 'roundNumber',
-  'convert-minus-sign': 'convertMinusSignToWord',
-  'show-number-part-integer': 'showNumberParts.integer',
-  'show-number-part-fractional': 'showNumberParts.fractional',
-  'convert-number-part-integer': 'convertNumbertToWords.integer',
-  'convert-number-part-fractional': 'convertNumbertToWords.fractional',
-  'show-currency-part-integer': 'showCurrency.integer',
-  'show-currency-part-fractional': 'showCurrency.fractional',
-}
 
 export const useModuleOptions = () => {
   const [options, setOptions] = React.useState(defaultOptions);
-  const [optionsForModule, setOptionsForModule] = React.useState(defaultModuleOptions);
-  const optionsDifferences = objectsDiff(defaultModuleOptions, optionsForModule);
+  const [optionsForModule, setOptionsForModule] = React.useState(DEFAULT_MODULE_OPTIONS);
+  const optionsDifferences = objectsDiff(DEFAULT_MODULE_OPTIONS, optionsForModule);
 
   React.useEffect(() => {
     saveOptionsForModule(options);
@@ -74,8 +23,7 @@ export const useModuleOptions = () => {
   const updateOptions = (event) => {
     const name = event.target.name;
     const value = getValue(event.target);
-    const path = getOptionPath(name);
-    (path !== null) && updateOptionValueByPath(path, value);
+    updateOptionValueByPath(name, value);
   };
 
   const getValue = (target) => {
@@ -102,13 +50,6 @@ export const useModuleOptions = () => {
     return value
   };
 
-  const getOptionPath = (name) => {
-    if (optionsNamesMap[name] !== undefined) {
-      return optionsNamesMap[name];
-    }
-    return null;
-  };
-
   const convertValuesToTypeNumber = (object, valuesPaths) => {
     let resultObject = _.cloneDeep(object);
     valuesPaths.some((path) => {
@@ -120,10 +61,24 @@ export const useModuleOptions = () => {
     return resultObject
   }
 
-  const updateOptionValueByPath = (path, newValue) => {
-    let updatedOptions = _.cloneDeep(options);
-    updatedOptions = _.set(updatedOptions, path, newValue);
-    setOptions(updatedOptions);
+  const updateSyncedValues = (optionsObject, name, newValue) => {
+    const path = _.get(OPTIONS_SYNCED_VALUES_MAP, [name]);
+    if (path !== undefined) {
+      let updatedOptions = _.cloneDeep(optionsObject);
+      updatedOptions = _.set(updatedOptions, path, newValue);
+      return updatedOptions;
+    }
+    return optionsObject;
+  }
+
+  const updateOptionValueByPath = (name, newValue) => {
+    const path = _.get(OPTIONS_NAMES_MAP, [name]);
+    if (path !== undefined) {
+      let updatedOptions = _.cloneDeep(options);
+      updatedOptions = _.set(updatedOptions, path, newValue);
+      updatedOptions = updateSyncedValues(updatedOptions, name, newValue);
+      setOptions(updatedOptions);
+    }
   };
 
   const saveOptionsForModule = (options) => {
@@ -132,7 +87,7 @@ export const useModuleOptions = () => {
     if (options.currency === 'custom') {
       optionsResult.currency = options.customCurrency;
     }
-    optionsResult = convertValuesToTypeNumber(optionsResult, optionsValuesTypeNumber);
+    optionsResult = convertValuesToTypeNumber(optionsResult, OPTIONS_VALUES_TYPE_NUMBER);
     setOptionsForModule(optionsResult);
   };
 
