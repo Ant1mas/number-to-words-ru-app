@@ -30,7 +30,7 @@ const Home = () => {
             <ModuleTitle />
           </Grid>
           <Grid item xs={12}>
-            <Grid container justify="center">
+            <Grid container justifyContent="center">
               <Grid item xs={12} sm={6}>
                 <InputNumberField />
               </Grid>

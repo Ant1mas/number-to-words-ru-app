@@ -19,7 +19,7 @@ const Header = () => {
     <Grid
       container
       component="header"
-      justify="flex-end"
+      justifyContent="flex-end"
       style={{paddingTop: '1rem',}}
     >
       <Grid item>

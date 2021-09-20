@@ -2,7 +2,7 @@
   "en": {
     "translation": {
       "main_module_name": "number-to-words-ru",
-      "main_module_discription": "Node.js module to convert number to words in russian.",
+      "main_module_description": "Node.js module to convert number to words in russian.",
       "module_number_input_label": "Your number",
       "module_number_input_helper_text": "Number delimiter can be ' . ' or ' , ' or ' / '",
       "result_block_title": "Result",
@@ -62,7 +62,7 @@
       "installation_block_title": "Installation",
       "installation_npm_title": "Install with npm:",
       "installation_yarn_title": "Install with yarn:",
-      "info_mudule_version_text": "Here is used",
+      "info_module_version_text": "Here is used",
       "author_name_anton_moskovskiy": "Anton Moskovskiy",
       "made_by_project": "Made by"
     }

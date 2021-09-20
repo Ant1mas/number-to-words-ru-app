@@ -2,7 +2,7 @@
   "ru": {
     "translation": {
       "main_module_name": "number-to-words-ru",
-      "main_module_discription": "Модуль Node.js для конвертации числа в слова на русском языке.",
+      "main_module_description": "Модуль Node.js для конвертации числа в слова на русском языке.",
       "module_number_input_label": "Ваше число",
       "module_number_input_helper_text": "Делителем числа может быть ' . ' или ' , ' или ' / '",
       "result_block_title": "Результат",
@@ -62,7 +62,7 @@
       "installation_block_title": "Установка",
       "installation_npm_title": "Установить с помощью npm:",
       "installation_yarn_title": "Установить с помощью yarn:",
-      "info_mudule_version_text": "Здесь используется",
+      "info_module_version_text": "Здесь используется",
       "author_name_anton_moskovskiy": "Антон Московский",
       "made_by_project": "Создал"
     }
