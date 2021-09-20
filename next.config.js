@@ -9,4 +9,6 @@ module.exports = {
     return config;
   },
   assetPrefix: isProduction ? 'https://cdn.statically.io/gh/ant1mas/ant1mas.github.io/master/number-to-words-ru/' : '',
+  // Для проверки production версии на локальном сервере раскомментировать строку одну ниже.
+  // assetPrefix: '',
 };

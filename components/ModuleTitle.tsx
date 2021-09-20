@@ -12,7 +12,7 @@ const ModuleTitle = () => {
 
   return (
     <>
-      <Grid container justify="center">
+      <Grid container justifyContent="center">
         <Grid item>
           <LogoSvg style={{width: 100}} />
         </Grid>
@@ -24,7 +24,7 @@ const ModuleTitle = () => {
       </Grid>
       <Grid item xs={12}>
         <Typography variant="h5" align='center'>
-          {t('main_module_discription')}
+          {t('main_module_description')}
         </Typography>
       </Grid>
     </>

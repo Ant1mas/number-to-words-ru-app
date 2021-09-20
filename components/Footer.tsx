@@ -14,7 +14,7 @@ const Footer = () => {
     <Grid container component="footer" style={{paddingBottom: '2rem', textAlign: 'center',}}>
       <Grid item xs={12}>
         <Typography variant="caption" display="block">
-          {t('info_mudule_version_text')} <strong>number-to-words-ru</strong> (2.3.0)
+          {t('info_module_version_text')} <strong>number-to-words-ru</strong> (2.3.2)
         </Typography>
         <Typography variant="caption" display="block">
           © {new Date().getFullYear()} {t('author_name_anton_moskovskiy')}
