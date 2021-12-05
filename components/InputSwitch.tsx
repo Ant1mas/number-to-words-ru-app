@@ -1,12 +1,8 @@
-import PropTypes from 'prop-types';
-import {
-  FormControlLabel,
-  Switch,
-} from '@material-ui/core';
+import PropTypes from 'prop-types'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Switch from '@mui/material/Switch'
 
-// import styles from "./InputSwitch.module.sass"
-
-const InputSwitch = ( props ) => {
+export default function InputSwitch(props) {
   return (
     <>
       <FormControlLabel
@@ -29,10 +25,6 @@ InputSwitch.propTypes = {
   label: PropTypes.string,
   checked: PropTypes.bool,
   onChange: PropTypes.func,
-};
+}
 
-InputSwitch.defaultProps = {
-  
-};
-
-export default InputSwitch;
+InputSwitch.defaultProps = {}

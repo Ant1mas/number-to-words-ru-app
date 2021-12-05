@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-export const useModuleNumber = () => {
-  const [number, setNumber] = React.useState('-18451302.01');
+export function useModuleNumber() {
+  const [number, setNumber] = React.useState('-18451302.01')
 
   const saveNumber = (event) => {
-    setNumber(event.target.value.replace(/[^\d.,/-]/g, ''));
+    setNumber(event.target.value.replace(/[^\d.,/-]/g, ''))
   }
 
   return {
@@ -13,4 +13,4 @@ export const useModuleNumber = () => {
   }
 }
 
-export default useModuleNumber;
+export default useModuleNumber

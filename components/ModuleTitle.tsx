@@ -1,34 +1,28 @@
-import {
-  Grid,
-  Typography,
-} from '@material-ui/core'
-import { useTranslation } from 'react-i18next';
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import { useTranslation } from 'react-i18next'
+import LogoSvg from 'public/images/svg/logo.svg'
 
-// import styles from "./ModuleTitle.module.sass"
-import LogoSvg from "public/images/svg/logo.svg"
-
-const ModuleTitle = () => {
-  const { t, i18n } = useTranslation();
+export default function ModuleTitle() {
+  const { t } = useTranslation()
 
   return (
     <>
       <Grid container justifyContent="center">
         <Grid item>
-          <LogoSvg style={{width: 100}} />
+          <LogoSvg style={{ width: 100 }} />
         </Grid>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="h2" align='center'>
+        <Typography variant="h2" align="center">
           number-to-words-ru
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="h5" align='center'>
+        <Typography variant="h5" align="center">
           {t('main_module_description')}
         </Typography>
       </Grid>
     </>
   )
 }
-
-export default ModuleTitle;

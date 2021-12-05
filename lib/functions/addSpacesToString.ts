@@ -1,5 +1,5 @@
 export const addSpacesToString = (string, spaces) => {
-  return string.replace(/\n/g, `\n${' '.repeat(spaces)}`);
+  return string.replace(/\n/g, `\n${' '.repeat(spaces)}`)
 }
 
-export default addSpacesToString;
+export default addSpacesToString

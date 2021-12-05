@@ -1,25 +1,23 @@
 import Head from 'next/head'
-import {
-  Container,
-  Grid,
-} from '@material-ui/core';
+import Grid from '@mui/material/Grid'
+import ModuleParamsProvider from 'lib/context/moduleParamsContext'
+import ApiInfoBlock from 'components/ApiInfoBlock'
+import CodeBlock from 'components/CodeBlock'
+import InputNumberField from 'components/InputNumberField'
+import InstallationBlock from 'components/InstallationBlock'
+import Layout from 'components/Layout'
+import ModuleTitle from 'components/ModuleTitle'
+import OptionsBlock from 'components/OptionsBlock'
+import ResultBlock from 'components/ResultBlock'
 
-import ModuleParamsProvider from 'lib/context/moduleParamsContext';
-import Layout from 'components/Layout';
-import ModuleTitle from 'components/ModuleTitle';
-import InputNumberField from 'components/InputNumberField';
-import ResultBlock from 'components/ResultBlock';
-import OptionsBlock from 'components/OptionsBlock';
-import CodeBlock from 'components/CodeBlock';
-import ApiInfoBlock from 'components/ApiInfoBlock';
-import InstallationBlock from 'components/InstallationBlock';
-
-const Home = () => {
+export default function Home() {
   return (
     <>
       <ModuleParamsProvider>
         <Head>
-          <title>number-to-words-ru node module - convert number to russian words</title>
+          <title>
+            number-to-words-ru node module - convert number to russian words
+          </title>
           <meta
             name="description"
             content="Node.js module to convert number to words in russian"
@@ -43,7 +41,7 @@ const Home = () => {
             <OptionsBlock />
           </Grid>
           <Grid item xs={12} md={6}>
-            <Grid container direction='column' spacing={6}>
+            <Grid container direction="column" spacing={6}>
               <Grid item xs={12}>
                 <CodeBlock />
               </Grid>
@@ -60,5 +58,3 @@ const Home = () => {
     </>
   )
 }
-
-export default Home;

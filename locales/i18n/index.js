@@ -1,14 +1,14 @@
 // get all json files form "./languages"
-const context = require.context('./languages', true, /\.json$/);
-let arr = [];
+const context = require.context('./languages', true, /\.json$/)
+let arr = []
 context.keys().forEach((key) => {
-    arr = [...arr, context(key)];
-});
+  arr = [...arr, context(key)]
+})
 
 // merge all json files from "./languages"
-let languages = {};
+let languages = {}
 arr.forEach((value) => {
-  languages = {...languages, ...value};
-});
+  languages = { ...languages, ...value }
+})
 
-export default languages;
+export default languages

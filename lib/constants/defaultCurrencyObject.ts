@@ -22,6 +22,6 @@ export const DEFAULT_CURRENCY_OBJECT = {
     fractionalPart: 1,
   },
   fractionalPartMinLength: 2,
-};
+}
 
-export default DEFAULT_CURRENCY_OBJECT;
+export default DEFAULT_CURRENCY_OBJECT

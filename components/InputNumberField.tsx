@@ -1,15 +1,11 @@
-import React from "react";
-import {
-  TextField,
-} from '@material-ui/core';
-import { useTranslation } from 'react-i18next';
-
-// import styles from "./InputNumberField.module.sass"
+import React from 'react'
+import TextField from '@mui/material/TextField'
+import { useTranslation } from 'react-i18next'
 import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 
-const InputNumberField = () => {
-  const { number, saveNumber } = React.useContext(ModuleParamsContext);
-  const { t, i18n } = useTranslation();
+export default function InputNumberField() {
+  const { number, saveNumber } = React.useContext(ModuleParamsContext)
+  const { t } = useTranslation()
 
   return (
     <>
@@ -27,5 +23,3 @@ const InputNumberField = () => {
     </>
   )
 }
-
-export default InputNumberField;

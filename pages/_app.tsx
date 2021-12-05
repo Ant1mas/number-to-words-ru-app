@@ -1,27 +1,33 @@
-import React from 'react';
-import 'styles/global.sass'
-import 'locales/i18n/i18n';
-import { CssBaseline } from '@material-ui/core';
-import { SnackbarProvider } from 'notistack';
+import React from 'react'
+import Head from 'next/head'
+import { AppProps } from 'next/app'
+import { ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import { CacheProvider, EmotionCache } from '@emotion/react'
+import { SnackbarProvider } from 'notistack'
+import theme from 'lib/config/mui/theme'
+import createEmotionCache from 'lib/config/mui/createEmotionCache'
+import 'locales/i18n/i18n'
 
-const App = ({ Component, pageProps }) => {
-  // Material-ui module.
-  React.useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
+const clientSideEmotionCache = createEmotionCache()
 
-  return (
-    <>
-      <SnackbarProvider transitionDuration={{enter: 150, exit: 150}}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </SnackbarProvider>
-    </>
-  )
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache
 }
 
-export default App;
+export default function App(props: MyAppProps) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+  return (
+    <CacheProvider value={emotionCache}>
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
+      <ThemeProvider theme={theme}>
+        <SnackbarProvider transitionDuration={{ enter: 150, exit: 150 }}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </SnackbarProvider>
+      </ThemeProvider>
+    </CacheProvider>
+  )
+}

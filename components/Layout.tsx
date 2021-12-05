@@ -1,13 +1,9 @@
-import {
-  Container,
-  Grid,
-} from '@material-ui/core';
-
-// import styles from './Layout.module.sass'
+import Container from '@mui/material/Container'
+import Grid from '@mui/material/Grid'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
-const Layout = ({ children }) => {
+export default function Layout({ children }) {
   return (
     <>
       <Container
@@ -20,7 +16,7 @@ const Layout = ({ children }) => {
         <Grid item>
           <Header />
         </Grid>
-        <Grid item component='main' style={{flexGrow: 1,}}>
+        <Grid item component="main" style={{ flexGrow: 1 }}>
           <Grid container spacing={3}>
             {children}
           </Grid>
@@ -32,5 +28,3 @@ const Layout = ({ children }) => {
     </>
   )
 }
-
-export default Layout;

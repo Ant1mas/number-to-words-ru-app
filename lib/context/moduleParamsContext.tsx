@@ -1,17 +1,17 @@
-import React from "react";
-
+import React from 'react'
 import { useModuleNumber } from 'lib/hooks/useModuleNumber'
 import { useModuleOptions } from 'lib/hooks/useModuleOptions'
 
-export const ModuleParamsContext = React.createContext(undefined);
+export const ModuleParamsContext = React.createContext(undefined)
 
-const ModuleParamsProvider = ( props ) => {
-  const {number, saveNumber} = useModuleNumber();
-  const {options, optionsForModule, optionsDifferences, updateOptions} = useModuleOptions();
+export default function ModuleParamsProvider(props) {
+  const { number, saveNumber } = useModuleNumber()
+  const { options, optionsForModule, optionsDifferences, updateOptions } =
+    useModuleOptions()
 
   return (
     <ModuleParamsContext.Provider
-      value={{ 
+      value={{
         number,
         saveNumber,
         options,
@@ -24,5 +24,3 @@ const ModuleParamsProvider = ( props ) => {
     </ModuleParamsContext.Provider>
   )
 }
-
-export default ModuleParamsProvider;

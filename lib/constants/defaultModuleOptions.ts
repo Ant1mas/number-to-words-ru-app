@@ -15,6 +15,6 @@ export const DEFAULT_MODULE_OPTIONS = {
     integer: true,
     fractional: true,
   },
-};
+}
 
-export default DEFAULT_MODULE_OPTIONS;
+export default DEFAULT_MODULE_OPTIONS
