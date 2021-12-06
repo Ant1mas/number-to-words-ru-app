@@ -1,0 +1,21 @@
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import { useTranslation } from 'next-i18next'
+import CodeContent from 'components/CodeContent'
+
+export default function CodeBlock() {
+  const { t } = useTranslation('common')
+
+  return (
+    <>
+      <Grid container direction="column" alignItems="center" spacing={1}>
+        <Grid item xs={12}>
+          <Typography variant="h4">{t('code_block_title')}</Typography>
+        </Grid>
+        <Grid style={{ width: '100%' }}>
+          <CodeContent />
+        </Grid>
+      </Grid>
+    </>
+  )
+}
