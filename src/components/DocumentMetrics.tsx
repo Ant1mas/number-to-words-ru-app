@@ -1,4 +1,4 @@
-function DocumentMetrics() {
+export function DocumentMetrics() {
   return (
     <>
       {/* google analytics */}

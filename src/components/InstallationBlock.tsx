@@ -7,7 +7,7 @@ const codeNpm = `npm install number-to-words-ru`
 const codeYarn = `yarn add number-to-words-ru`
 const codePnpm = `pnpm add number-to-words-ru`
 
-export default function InstallationBlock() {
+export function InstallationBlock() {
   const { t } = useTranslation('common')
 
   return (
@@ -38,3 +38,5 @@ export default function InstallationBlock() {
     </>
   )
 }
+
+export default InstallationBlock

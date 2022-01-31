@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography'
 import { useTranslation } from 'next-i18next'
 import OptionsContent from 'components/OptionsContent'
 
-export default function OptionsBlock() {
+export function OptionsBlock() {
   const { t } = useTranslation('common')
 
   return (
@@ -19,3 +19,5 @@ export default function OptionsBlock() {
     </>
   )
 }
+
+export default OptionsBlock

@@ -6,7 +6,7 @@ import TranslateIcon from '@mui/icons-material/Translate'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import IconMenu from 'components/IconMenu'
 
-export default function Header() {
+export function Header() {
   const router = useRouter()
 
   return (
@@ -45,3 +45,5 @@ export default function Header() {
     </Grid>
   )
 }
+
+export default Header

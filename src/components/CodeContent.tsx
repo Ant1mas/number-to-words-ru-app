@@ -8,7 +8,7 @@ import codeData from 'lib/functions/codeDataTemplateString'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 import CodePreview from 'components/CodePreview'
 
-export default function CodeContent() {
+export function CodeContent() {
   const { code } = useCodePreview()
   const { enqueueSnackbar } = useSnackbar()
   const { t } = useTranslation('common')
@@ -37,3 +37,5 @@ export default function CodeContent() {
     </>
   )
 }
+
+export default CodeContent

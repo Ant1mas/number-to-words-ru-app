@@ -8,7 +8,7 @@ import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 import InputSelect from 'components/InputSelect'
 import DeclensionsFields from 'components/DeclensionsFields'
 
-export default function CurrencyObjectOptions() {
+export function CurrencyObjectOptions() {
   const { options, updateOptions } = React.useContext(ModuleParamsContext)
   const { t } = useTranslation('common')
 
@@ -178,3 +178,5 @@ export default function CurrencyObjectOptions() {
     </>
   )
 }
+
+export default CurrencyObjectOptions

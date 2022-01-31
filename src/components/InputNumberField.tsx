@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField'
 import { useTranslation } from 'next-i18next'
 import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 
-export default function InputNumberField() {
+export function InputNumberField() {
   const { number, saveNumber } = React.useContext(ModuleParamsContext)
   const { t } = useTranslation('common')
 
@@ -23,3 +23,5 @@ export default function InputNumberField() {
     </>
   )
 }
+
+export default InputNumberField

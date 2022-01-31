@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import { useTranslation } from 'next-i18next'
 
-export default function Footer() {
+export function Footer() {
   const { t } = useTranslation('common')
 
   return (
@@ -36,3 +36,5 @@ export default function Footer() {
     </Grid>
   )
 }
+
+export default Footer

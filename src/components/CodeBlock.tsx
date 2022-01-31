@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography'
 import { useTranslation } from 'next-i18next'
 import CodeContent from 'components/CodeContent'
 
-export default function CodeBlock() {
+export function CodeBlock() {
   const { t } = useTranslation('common')
 
   return (
@@ -19,3 +19,5 @@ export default function CodeBlock() {
     </>
   )
 }
+
+export default CodeBlock

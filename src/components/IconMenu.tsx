@@ -12,7 +12,7 @@ interface props {
   onChange: object,
 }
 
-export default function IconMenu(props: props) {
+export function IconMenu(props: props) {
   const { anchorEl, onClick, onClose, onSelect, selected, setSelected } =
     useIconMenu()
   const open = Boolean(anchorEl)
@@ -59,3 +59,5 @@ export default function IconMenu(props: props) {
 }
 
 IconMenu.defaultProps = {}
+
+export default IconMenu

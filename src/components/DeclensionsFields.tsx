@@ -17,7 +17,7 @@ interface props {
   declensionsObjectName: declensionsObjectName
 }
 
-export default function DeclensionsFields(props: props) {
+export function DeclensionsFields(props: props) {
   const { numberPart, declensionsObjectName } = props
   const { options, updateOptions } = React.useContext(ModuleParamsContext)
   const { t } = useTranslation('common')
@@ -207,3 +207,5 @@ DeclensionsFields.defaultProps = {
   numberPart: 'integer',
   declensionsObjectName: 'currencyNameDeclensions',
 }
+
+export default DeclensionsFields

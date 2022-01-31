@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography'
 import { useTranslation } from 'next-i18next'
 import LogoSvg from 'public/images/svg/logo.svg'
 
-export default function ModuleTitle() {
+export function ModuleTitle() {
   const { t } = useTranslation('common')
 
   return (
@@ -26,3 +26,5 @@ export default function ModuleTitle() {
     </>
   )
 }
+
+export default ModuleTitle

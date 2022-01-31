@@ -18,7 +18,7 @@ interface props {
   fullWidth: boolean,
 }
 
-export default function InputSelect(props: props) {
+export function InputSelect(props: props) {
   return (
     <>
       <FormControl
@@ -52,3 +52,5 @@ InputSelect.defaultProps = {
   minWidth: 100,
   fullWidth: false,
 }
+
+export default InputSelect

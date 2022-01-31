@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import { useTranslation } from 'next-i18next'
 
-export default function ApiInfoBlock() {
+export function ApiInfoBlock() {
   const { t } = useTranslation('common')
 
   return (
@@ -32,3 +32,5 @@ export default function ApiInfoBlock() {
     </>
   )
 }
+
+export default ApiInfoBlock

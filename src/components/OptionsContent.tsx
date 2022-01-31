@@ -8,7 +8,7 @@ import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
 import InputSelect from 'components/InputSelect'
 import InputSwitch from 'components/InputSwitch'
 
-export default function OptionsContent() {
+export function OptionsContent() {
   const { options, updateOptions } = React.useContext(ModuleParamsContext)
   const { t } = useTranslation('common')
 
@@ -156,3 +156,5 @@ export default function OptionsContent() {
     </>
   )
 }
+
+export default OptionsContent

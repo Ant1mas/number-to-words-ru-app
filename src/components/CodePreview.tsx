@@ -7,7 +7,7 @@ interface props {
   language: string
 }
 
-export default function CodePreview(props: props) {
+export function CodePreview(props: props) {
   return (
     <>
       <SyntaxHighlighter
@@ -24,3 +24,5 @@ export default function CodePreview(props: props) {
 }
 
 CodePreview.defaultProps = {}
+
+export default CodePreview

@@ -8,7 +8,7 @@ interface props {
   onChange: any,
 }
 
-export default function InputSwitch(props: props) {
+export function InputSwitch(props: props) {
   return (
     <>
       <FormControlLabel
@@ -27,3 +27,5 @@ export default function InputSwitch(props: props) {
 }
 
 InputSwitch.defaultProps = {}
+
+export default InputSwitch

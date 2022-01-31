@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next'
 import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 
-export default function ResultBlock() {
+export function ResultBlock() {
   const { number, optionsForModule } = React.useContext(ModuleParamsContext)
   const { enqueueSnackbar } = useSnackbar()
   const { t } = useTranslation('common')
@@ -59,3 +59,5 @@ export default function ResultBlock() {
     </Grid>
   )
 }
+
+export default ResultBlock
