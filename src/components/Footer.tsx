@@ -15,7 +15,7 @@ export function Footer() {
       <Grid item xs={12}>
         <Typography variant="caption" display="block">
           {t('info_module_version_text')} <strong>number-to-words-ru</strong>{' '}
-          (2.3.2)
+          (2.3.3)
         </Typography>
         <Typography variant="caption" display="block">
           © {new Date().getFullYear()} {t('author_name_anton_moskovskiy')}
