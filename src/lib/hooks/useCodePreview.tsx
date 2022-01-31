@@ -19,7 +19,7 @@ export function useCodePreview() {
 
   React.useEffect(() => {
     updateCodeText()
-  }, [number, optionsDifferences])
+  }, [number, optionsDifferences]) // eslint-disable-line
 
   const getCodeFnConvert = () => {
     if (optionsDifferencesString.length > 0) {

@@ -23,7 +23,7 @@ export function useModuleOptions() {
 
   React.useEffect(() => {
     saveOptionsForModule(options)
-  }, [options])
+  }, [options]) // eslint-disable-line
 
   const updateOptions = (event) => {
     const name = event.target.name
