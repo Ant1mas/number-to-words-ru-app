@@ -1,6 +1,7 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import createEmotionServer from '@emotion/server/create-instance'
+
 import theme from 'lib/config/mui/theme'
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
 import DocumentFavicon from 'components/DocumentFavicon'

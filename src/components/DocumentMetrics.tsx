@@ -1,5 +1,6 @@
 import Script from 'next/script'
 import Img from 'next/image'
+
 import css from './DocumentMetrics.module.css'
 
 export function DocumentMetrics() {

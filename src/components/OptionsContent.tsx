@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid'
 import Hidden from '@mui/material/Hidden'
 import TextField from '@mui/material/TextField'
 import { useTranslation } from 'next-i18next'
+
 import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
 import InputSelect from 'components/InputSelect'

@@ -1,6 +1,7 @@
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import { useTranslation } from 'next-i18next'
+
 import LogoSvg from 'public/images/svg/logo.svg'
 
 export function ModuleTitle() {

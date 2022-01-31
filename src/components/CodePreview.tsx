@@ -1,6 +1,6 @@
 import React from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { stackoverflowLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
+import stackoverflowLight from 'react-syntax-highlighter/dist/cjs/styles/hljs/stackoverflow-light'
 
 interface props {
   code: string,

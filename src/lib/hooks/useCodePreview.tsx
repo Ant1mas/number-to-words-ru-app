@@ -1,7 +1,8 @@
 import React from 'react'
+
+import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 import objectToString from 'lib/functions/objectToString'
 import codeData from 'lib/functions/codeDataTemplateString'
-import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 import addSpacesToString from 'lib/functions/addSpacesToString'
 
 export function useCodePreview() {

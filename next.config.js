@@ -16,4 +16,7 @@ module.exports = {
   // Для проверки production версии на локальном сервере раскомментировать строку одну ниже.
   // assetPrefix: '',
   i18n
+  images: {
+    domains: ['mc.yandex.ru'],
+  },
 }

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Grid from '@mui/material/Grid'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
 import ModuleParamsProvider from 'lib/context/moduleParamsContext'
 import Layout from 'components/Layout'
 import ModuleTitle from 'components/ModuleTitle'

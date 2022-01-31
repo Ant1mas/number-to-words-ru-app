@@ -5,9 +5,10 @@ import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import { SnackbarProvider } from 'notistack'
+import { appWithTranslation } from 'next-i18next';
+
 import theme from 'lib/config/mui/theme'
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
-import { appWithTranslation } from 'next-i18next';
 
 const clientSideEmotionCache = createEmotionCache()
 

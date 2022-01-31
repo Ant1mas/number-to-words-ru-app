@@ -5,6 +5,7 @@ import Button from '@mui/material/Button'
 import numberToWordsRu from 'number-to-words-ru'
 import { useSnackbar } from 'notistack'
 import { useTranslation } from 'next-i18next'
+
 import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 

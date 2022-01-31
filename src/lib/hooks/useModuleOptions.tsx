@@ -1,14 +1,18 @@
 import React from 'react'
-import _ from 'lodash'
-import objectsDiff from 'lib/functions/objectsDiff'
+import merge from 'lodash/merge'
+import cloneDeep from 'lodash/cloneDeep'
+import get from 'lodash/get'
+import set from 'lodash/set'
+
 import DEFAULT_MODULE_OPTIONS from 'lib/constants/defaultModuleOptions'
 import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject'
 import OPTIONS_NAMES_MAP from 'lib/constants/optionsNamesMap'
 import OPTIONS_VALUES_TYPE_NUMBER from 'lib/constants/optionsValuesTypeNumber'
 import OPTIONS_SYNCED_VALUES_MAP from 'lib/constants/optionsSyncedValuesMap'
+import objectsDiff from 'lib/functions/objectsDiff'
 
-const defaultOptions = _.merge(_.cloneDeep(DEFAULT_MODULE_OPTIONS), {
-  customCurrency: _.cloneDeep(DEFAULT_CURRENCY_OBJECT),
+const defaultOptions = merge(cloneDeep(DEFAULT_MODULE_OPTIONS), {
+  customCurrency: cloneDeep(DEFAULT_CURRENCY_OBJECT),
 })
 
 export function useModuleOptions() {
@@ -56,38 +60,38 @@ export function useModuleOptions() {
   }
 
   const convertValuesToTypeNumber = (object, valuesPaths) => {
-    let resultObject = _.cloneDeep(object)
+    let resultObject = cloneDeep(object)
     valuesPaths.some((path) => {
-      const valueByPath = _.get(resultObject, path)
+      const valueByPath = get(resultObject, path)
       if (valueByPath !== undefined) {
-        resultObject = _.set(resultObject, path, Number(valueByPath))
+        resultObject = set(resultObject, path, Number(valueByPath))
       }
     })
     return resultObject
   }
 
   const updateSyncedValues = (optionsObject, name, newValue) => {
-    const path = _.get(OPTIONS_SYNCED_VALUES_MAP, [name])
+    const path = get(OPTIONS_SYNCED_VALUES_MAP, [name])
     if (path !== undefined) {
-      let updatedOptions = _.cloneDeep(optionsObject)
-      updatedOptions = _.set(updatedOptions, path, newValue)
+      let updatedOptions = cloneDeep(optionsObject)
+      updatedOptions = set(updatedOptions, path, newValue)
       return updatedOptions
     }
     return optionsObject
   }
 
   const updateOptionValueByPath = (name, newValue) => {
-    const path = _.get(OPTIONS_NAMES_MAP, [name])
+    const path = get(OPTIONS_NAMES_MAP, [name])
     if (path !== undefined) {
-      let updatedOptions = _.cloneDeep(options)
-      updatedOptions = _.set(updatedOptions, path, newValue)
+      let updatedOptions = cloneDeep(options)
+      updatedOptions = set(updatedOptions, path, newValue)
       updatedOptions = updateSyncedValues(updatedOptions, name, newValue)
       setOptions(updatedOptions)
     }
   }
 
   const saveOptionsForModule = (options) => {
-    let optionsResult = _.cloneDeep(options)
+    let optionsResult = cloneDeep(options)
     delete optionsResult.customCurrency
     if (options.currency === 'custom') {
       optionsResult.currency = options.customCurrency

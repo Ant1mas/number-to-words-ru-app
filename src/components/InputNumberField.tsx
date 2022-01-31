@@ -1,6 +1,7 @@
 import React from 'react'
 import TextField from '@mui/material/TextField'
 import { useTranslation } from 'next-i18next'
+
 import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 
 export function InputNumberField() {

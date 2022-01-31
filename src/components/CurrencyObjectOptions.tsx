@@ -4,6 +4,7 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import { useTranslation } from 'next-i18next'
+
 import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
 import InputSelect from 'components/InputSelect'
 import DeclensionsFields from 'components/DeclensionsFields'

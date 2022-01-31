@@ -1,7 +1,7 @@
-import { staticCdn } from 'lib/constants/cdn'
+import { STATIC_CDN } from 'lib/constants/cdn'
 
 const isProduction = process.env.NODE_ENV === 'production'
-const urlPrefix = isProduction ? staticCdn : ''
+const urlPrefix = isProduction ? STATIC_CDN : ''
 
 export function DocumentFavicon() {
   return (

@@ -1,6 +1,7 @@
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import { useTranslation } from 'next-i18next'
+
 import CodePreview from 'components/CodePreview'
 
 const codeNpm = `npm install number-to-words-ru`
