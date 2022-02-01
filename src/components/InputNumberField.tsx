@@ -2,10 +2,12 @@ import React from 'react'
 import TextField from '@mui/material/TextField'
 import { useTranslation } from 'next-i18next'
 
-import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
+import { useAppSelector, useAppDispatch } from 'app/store'
+import { moduleNumberUpdated, selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
 
 export function InputNumberField() {
-  const { number, saveNumber } = React.useContext(ModuleParamsContext)
+  const dispatch = useAppDispatch()
+  const moduleNumber = useAppSelector(selectModuleNumber)
   const { t } = useTranslation('common')
 
   return (
@@ -16,10 +18,10 @@ export function InputNumberField() {
         margin="normal"
         variant="outlined"
         fullWidth
-        value={number}
+        value={moduleNumber}
         placeholder="12345.6789"
         helperText={t('module_number_input_helper_text')}
-        onChange={saveNumber}
+        onChange={(event) => {dispatch(moduleNumberUpdated(event.target.value))}}
       />
     </>
   )

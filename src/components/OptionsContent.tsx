@@ -4,13 +4,13 @@ import Hidden from '@mui/material/Hidden'
 import TextField from '@mui/material/TextField'
 import { useTranslation } from 'next-i18next'
 
-import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
+import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
 import InputSelect from 'components/InputSelect'
 import InputSwitch from 'components/InputSwitch'
 
 export function OptionsContent() {
-  const { options, updateOptions } = React.useContext(ModuleParamsContext)
+  const { options, updateOptions } = useModuleOptions()
   const { t } = useTranslation('common')
 
   return (
@@ -21,7 +21,7 @@ export function OptionsContent() {
             name="currency"
             label={t('options_currency_select_label')}
             fullWidth
-            value={options.currency}
+            value={options.currency as string}
             onChange={updateOptions}
             items={[
               { value: 'rub', name: t('options_currency_select_value_rub') },
@@ -90,7 +90,7 @@ export function OptionsContent() {
               min: -1,
             }}
             helperText={
-              options.roundNumber == '-1' &&
+              options.roundNumber == -1 &&
               t('options_round_number_helper_disabled')
             }
             value={options.roundNumber}

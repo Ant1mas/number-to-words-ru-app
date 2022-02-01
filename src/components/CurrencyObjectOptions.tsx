@@ -5,12 +5,12 @@ import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import { useTranslation } from 'next-i18next'
 
-import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
+import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import InputSelect from 'components/InputSelect'
 import DeclensionsFields from 'components/DeclensionsFields'
 
 export function CurrencyObjectOptions() {
-  const { options, updateOptions } = React.useContext(ModuleParamsContext)
+  const { options, updateOptions } = useModuleOptions()
   const { t } = useTranslation('common')
 
   return (

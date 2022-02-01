@@ -6,16 +6,19 @@ import numberToWordsRu from 'number-to-words-ru'
 import { useSnackbar } from 'notistack'
 import { useTranslation } from 'next-i18next'
 
-import { ModuleParamsContext } from 'lib/context/moduleParamsContext'
+import { useAppSelector } from 'app/store'
+import useModuleOptions from 'features/moduleOptions/useModuleOptions'
+import { selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 
 export function ResultBlock() {
-  const { number, optionsForModule } = React.useContext(ModuleParamsContext)
+  const moduleNumber = useAppSelector(selectModuleNumber)
+  const { formattedOptions } = useModuleOptions()
   const { enqueueSnackbar } = useSnackbar()
   const { t } = useTranslation('common')
   const resultText = numberToWordsRu.convert(
-    number !== '' && number !== '-' ? number : '0',
-    optionsForModule
+    moduleNumber !== '' && moduleNumber !== '-' ? moduleNumber : '0',
+    formattedOptions
   )
 
   return (
