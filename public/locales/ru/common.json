@@ -45,6 +45,7 @@
   "options_declension_select_value_prepositional": "Предложный",
   "options_round_number": "Округление числа",
   "options_round_number_helper_disabled": "Округление отключено",
+  "options_round_number_helper_currency_max": "Округление выбранной валюты не может быть больше 2",
   "options_convert_minus_sign": "Конвертировать знак минус в слово",
   "options_show_integer_part": "Показывать целую часть числа",
   "options_show_fractional_part": "Показывать дробную часть числа",

@@ -45,6 +45,7 @@
   "options_declension_select_value_prepositional": "Prepositional",
   "options_round_number": "Round number",
   "options_round_number_helper_disabled": "Rounding disabled",
+  "options_round_number_helper_currency_max": "Rounding of selected currency can't be more than 2",
   "options_convert_minus_sign": "Convert minus sign to word",
   "options_show_integer_part": "Show integer part of number",
   "options_show_fractional_part": "Show fractional part of number",
