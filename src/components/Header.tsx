@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next'
 import IconMenu from 'components/IconMenu'
 
 export function Header() {
-  const { i18n } = useTranslation('common', { useSuspense: false })
+  const { i18n } = useTranslation('translation', { useSuspense: false })
 
   return (
     <Grid

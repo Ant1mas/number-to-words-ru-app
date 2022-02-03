@@ -15,7 +15,7 @@ export function ResultBlock() {
   const moduleNumber = useAppSelector(selectModuleNumber)
   const { formattedOptions } = useModuleOptions()
   const { enqueueSnackbar } = useSnackbar()
-  const { t } = useTranslation('common', { useSuspense: false })
+  const { t } = useTranslation('translation', { useSuspense: false })
   const resultText = numberToWordsRu.convert(
     moduleNumber !== '' && moduleNumber !== '-' ? moduleNumber : '0',
     formattedOptions

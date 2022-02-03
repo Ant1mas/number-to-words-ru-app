@@ -12,7 +12,7 @@ import CodePreview from 'components/CodePreview'
 export function CodeContent() {
   const { code } = useCodePreview()
   const { enqueueSnackbar } = useSnackbar()
-  const { t } = useTranslation('common', { useSuspense: false })
+  const { t } = useTranslation('translation', { useSuspense: false })
 
   return (
     <>

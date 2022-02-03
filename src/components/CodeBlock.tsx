@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import CodeContent from 'components/CodeContent'
 
 export function CodeBlock() {
-  const { t } = useTranslation('common', { useSuspense: false })
+  const { t } = useTranslation('translation', { useSuspense: false })
 
   return (
     <>

@@ -9,7 +9,7 @@ const codeYarn = `yarn add number-to-words-ru`
 const codePnpm = `pnpm add number-to-words-ru`
 
 export function InstallationBlock() {
-  const { t } = useTranslation('common', { useSuspense: false })
+  const { t } = useTranslation('translation', { useSuspense: false })
 
   return (
     <>

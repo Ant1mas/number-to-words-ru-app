@@ -4,7 +4,7 @@ import Link from '@mui/material/Link'
 import { useTranslation } from 'react-i18next'
 
 export function ApiInfoBlock() {
-  const { t } = useTranslation('common', { useSuspense: false })
+  const { t } = useTranslation('translation', { useSuspense: false })
 
   return (
     <>

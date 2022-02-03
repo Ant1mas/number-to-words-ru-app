@@ -11,7 +11,7 @@ import {
 export function InputNumberField() {
   const dispatch = useAppDispatch()
   const moduleNumber = useAppSelector(selectModuleNumber)
-  const { t } = useTranslation('common', { useSuspense: false })
+  const { t } = useTranslation('translation', { useSuspense: false })
 
   return (
     <>

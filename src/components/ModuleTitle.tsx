@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import LogoSvg from 'public/images/svg/logo.svg'
 
 export function ModuleTitle() {
-  const { t } = useTranslation('common', { useSuspense: false })
+  const { t } = useTranslation('translation', { useSuspense: false })
 
   return (
     <>
