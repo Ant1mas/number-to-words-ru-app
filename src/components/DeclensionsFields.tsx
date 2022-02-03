@@ -21,7 +21,7 @@ interface props {
 export function DeclensionsFields(props: props) {
   const { numberPart, declensionsObjectName } = props
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useTranslation('common', { useSuspense: false })
+  const { t } = useTranslation('translation', { useSuspense: false })
 
   return (
     <>

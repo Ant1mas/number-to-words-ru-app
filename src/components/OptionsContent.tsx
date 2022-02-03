@@ -12,7 +12,7 @@ import inputRoundNumberHelperText from 'lib/functions/inputRoundNumberHelperText
 
 export function OptionsContent() {
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useTranslation('common', { useSuspense: false })
+  const { t } = useTranslation('translation', { useSuspense: false })
 
   return (
     <>

@@ -11,7 +11,7 @@ import DeclensionsFields from 'components/DeclensionsFields'
 
 export function CurrencyObjectOptions() {
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useTranslation('common', { useSuspense: false })
+  const { t } = useTranslation('translation', { useSuspense: false })
 
   return (
     <>
