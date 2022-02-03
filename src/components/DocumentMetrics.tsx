@@ -1,7 +1,4 @@
 import Script from 'next/script'
-import Img from 'next/image'
-
-import css from './DocumentMetrics.module.css'
 
 export function DocumentMetrics() {
   return (
@@ -36,11 +33,9 @@ export function DocumentMetrics() {
         `}
       </Script>
       <div>
-        <Img
+        <img // eslint-disable-line @next/next/no-img-element
           src="https://mc.yandex.ru/watch/57320188"
-          className={css.yandexMetrikaImg}
-          width={0}
-          height={0}
+          style={{ position: 'absolute', left: '-9999px' }}
           alt=""
         />
       </div>

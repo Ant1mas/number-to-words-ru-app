@@ -11,9 +11,6 @@ module.exports = {
     return config
   },
   i18n,
-  images: {
-    domains: ['mc.yandex.ru'],
-  },
   assetPrefix: isProduction
     ? 'https://cdn.jsdelivr.net/gh/ant1mas/ant1mas.github.io/number-to-words-ru/'
     : '',
