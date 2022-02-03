@@ -6,11 +6,11 @@ import MenuItem from '@mui/material/MenuItem'
 import { useIconMenu } from 'lib/hooks/useIconMenu'
 
 interface props {
-  iconEl: JSX.Element,
-  items: string[],
-  selected: string,
-  itemsNames: { [key: string]: string },
-  onChange: object,
+  iconEl: JSX.Element
+  items: string[]
+  selected: string
+  itemsNames: { [key: string]: string }
+  onChange: object
 }
 
 export function IconMenu(props: props) {

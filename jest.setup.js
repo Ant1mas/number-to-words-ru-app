@@ -12,6 +12,6 @@ jest.mock('next-i18next', () => ({
       i18n: {
         changeLanguage: () => new Promise(() => {}),
       },
-    };
+    }
   },
-}));
+}))

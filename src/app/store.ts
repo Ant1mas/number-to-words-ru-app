@@ -7,7 +7,7 @@ import moduleOptionsReducer from 'features/moduleOptions/moduleOptionsSlice'
 const store = configureStore({
   reducer: {
     moduleNumber: moduleNumberReducer,
-    moduleOptions: moduleOptionsReducer
+    moduleOptions: moduleOptionsReducer,
   },
 })
 

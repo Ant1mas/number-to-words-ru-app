@@ -2,10 +2,10 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
 
 interface props {
-  name: string,
-  label: string,
-  checked: boolean,
-  onChange: any,
+  name: string
+  label: string
+  checked: boolean
+  onChange: any
 }
 
 export function InputSwitch(props: props) {

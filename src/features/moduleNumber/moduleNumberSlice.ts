@@ -1,7 +1,4 @@
-import {
-  createSlice,
-  createEntityAdapter,
-} from '@reduxjs/toolkit'
+import { createSlice, createEntityAdapter } from '@reduxjs/toolkit'
 
 import type { AppState } from 'app/store'
 
@@ -22,9 +19,7 @@ const moduleNumberSlice = createSlice({
   },
 })
 
-export const {
-  moduleNumberUpdated,
-} = moduleNumberSlice.actions
+export const { moduleNumberUpdated } = moduleNumberSlice.actions
 
 export default moduleNumberSlice.reducer
 

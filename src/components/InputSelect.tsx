@@ -4,18 +4,18 @@ import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 
 interface item {
-  value: string | number,
+  value: string | number
   name: string
 }
 
 interface props {
-  name: string,
-  label: string,
-  value: string | number,
-  items: item[],
-  onChange: any,
-  minWidth: number,
-  fullWidth: boolean,
+  name: string
+  label: string
+  value: string | number
+  items: item[]
+  onChange: any
+  minWidth: number
+  fullWidth: boolean
 }
 
 export function InputSelect(props: props) {

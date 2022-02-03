@@ -90,9 +90,7 @@ export function OptionsContent() {
             inputProps={{
               min: -1,
             }}
-            helperText={
-              inputRoundNumberHelperText(options, t)
-            }
+            helperText={inputRoundNumberHelperText(options, t)}
             value={options.roundNumber}
             onChange={updateOptions}
           />

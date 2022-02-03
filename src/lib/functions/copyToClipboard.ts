@@ -1,4 +1,4 @@
-export const copyToClipboard = (string: string): void=> {
+export const copyToClipboard = (string: string): void => {
   const el = document.createElement('textarea')
   el.value = string
   el.setAttribute('readonly', '')

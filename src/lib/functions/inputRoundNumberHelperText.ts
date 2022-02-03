@@ -11,9 +11,9 @@ const inputRoundNumberHelperText = (options, translation): string => {
   }
   if (
     (options.currency === 'rub' ||
-    options.currency === 'usd' ||
-    options.currency === 'eur')
-    && Number(options.roundNumber) > 2
+      options.currency === 'usd' ||
+      options.currency === 'eur') &&
+    Number(options.roundNumber) > 2
   ) {
     return translation('options_round_number_helper_currency_max')
   }

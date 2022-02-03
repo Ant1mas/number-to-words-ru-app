@@ -4,7 +4,10 @@ import get from 'lodash/get'
 import set from 'lodash/set'
 
 import { useAppSelector, useAppDispatch } from 'app/store'
-import { moduleOptionsSet, selectModuleOptions } from 'features/moduleOptions/moduleOptionsSlice'
+import {
+  moduleOptionsSet,
+  selectModuleOptions,
+} from 'features/moduleOptions/moduleOptionsSlice'
 import DEFAULT_MODULE_OPTIONS from 'lib/constants/defaultModuleOptions'
 import OPTIONS_NAMES_MAP from 'lib/constants/optionsNamesMap'
 import OPTIONS_VALUES_TYPE_NUMBER from 'lib/constants/optionsValuesTypeNumber'
@@ -16,7 +19,7 @@ export function useModuleOptions() {
   const moduleOptions = useAppSelector(selectModuleOptions)
   const [formattedOptions, setFormattedOptions] = React.useState(
     DEFAULT_MODULE_OPTIONS
-    )
+  )
   const [optionsDifferences, setOptionsDifferences] = React.useState({})
 
   React.useEffect(() => {
@@ -24,10 +27,7 @@ export function useModuleOptions() {
   }, [moduleOptions]) // eslint-disable-line
 
   React.useEffect(() => {
-    setOptionsDifferences(objectsDiff(
-      DEFAULT_MODULE_OPTIONS,
-      formattedOptions
-    ))
+    setOptionsDifferences(objectsDiff(DEFAULT_MODULE_OPTIONS, formattedOptions))
   }, [formattedOptions]) // eslint-disable-line
 
   const updateOptions = (event) => {
@@ -66,7 +66,7 @@ export function useModuleOptions() {
       let updatedOptions = cloneDeep(moduleOptions)
       updatedOptions = set(updatedOptions, path, newValue)
       updatedOptions = updateSyncedValues(updatedOptions, name, newValue)
-      dispatch(moduleOptionsSet({value: updatedOptions}))
+      dispatch(moduleOptionsSet({ value: updatedOptions }))
     }
   }
 

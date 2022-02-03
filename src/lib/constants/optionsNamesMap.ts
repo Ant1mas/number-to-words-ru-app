@@ -60,7 +60,7 @@ export const OPTIONS_NAMES_MAP = {
   'custom-currency-fractional-min-length':
     'customCurrency.fractionalPartMinLength',
   'round-number': 'roundNumber',
-  'declension': 'declension',
+  declension: 'declension',
   'convert-minus-sign': 'convertMinusSignToWord',
   'show-number-part-integer': 'showNumberParts.integer',
   'show-number-part-fractional': 'showNumberParts.fractional',

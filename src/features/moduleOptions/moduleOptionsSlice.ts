@@ -1,7 +1,4 @@
-import {
-  createSlice,
-  createEntityAdapter,
-} from '@reduxjs/toolkit'
+import { createSlice, createEntityAdapter } from '@reduxjs/toolkit'
 import set from 'lodash/set'
 
 import DEFAULT_MODULE_OPTIONS from 'lib/constants/defaultModuleOptions'
@@ -14,7 +11,7 @@ const initialState = moduleOptionsAdapter.getInitialState({
   object: {
     ...DEFAULT_MODULE_OPTIONS,
     customCurrency: DEFAULT_CURRENCY_OBJECT,
-  }
+  },
 })
 
 const moduleOptionsSlice = createSlice({
@@ -30,11 +27,10 @@ const moduleOptionsSlice = createSlice({
   },
 })
 
-export const {
-  moduleOptionsUpdated,
-  moduleOptionsSet,
-} = moduleOptionsSlice.actions
+export const { moduleOptionsUpdated, moduleOptionsSet } =
+  moduleOptionsSlice.actions
 
 export default moduleOptionsSlice.reducer
 
-export const selectModuleOptions = (state: AppState) => state.moduleOptions.object
+export const selectModuleOptions = (state: AppState) =>
+  state.moduleOptions.object

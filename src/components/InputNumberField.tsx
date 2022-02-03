@@ -3,7 +3,10 @@ import TextField from '@mui/material/TextField'
 import { useTranslation } from 'react-i18next'
 
 import { useAppSelector, useAppDispatch } from 'app/store'
-import { moduleNumberUpdated, selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
+import {
+  moduleNumberUpdated,
+  selectModuleNumber,
+} from 'features/moduleNumber/moduleNumberSlice'
 
 export function InputNumberField() {
   const dispatch = useAppDispatch()
@@ -21,7 +24,9 @@ export function InputNumberField() {
         value={moduleNumber}
         placeholder="12345.6789"
         helperText={t('module_number_input_helper_text')}
-        onChange={(event) => {dispatch(moduleNumberUpdated(event.target.value))}}
+        onChange={(event) => {
+          dispatch(moduleNumberUpdated(event.target.value))
+        }}
       />
     </>
   )
