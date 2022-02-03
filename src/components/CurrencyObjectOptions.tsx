@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'react-i18next'
 
 import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import InputSelect from 'components/InputSelect'
@@ -11,7 +11,7 @@ import DeclensionsFields from 'components/DeclensionsFields'
 
 export function CurrencyObjectOptions() {
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('common', { useSuspense: false })
 
   return (
     <>

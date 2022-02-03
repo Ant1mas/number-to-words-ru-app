@@ -1,14 +1,14 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import Grid from '@mui/material/Grid'
 import IconButton from '@mui/material/IconButton'
 import TranslateIcon from '@mui/icons-material/Translate'
 import GitHubIcon from '@mui/icons-material/GitHub'
+import { useTranslation } from 'react-i18next'
 
 import IconMenu from 'components/IconMenu'
 
 export function Header() {
-  const router = useRouter()
+  const { i18n } = useTranslation('common', { useSuspense: false })
 
   return (
     <Grid
@@ -20,14 +20,14 @@ export function Header() {
       <Grid item>
         <IconMenu
           iconEl={<TranslateIcon />}
-          items={router.locales}
-          selected={router.locale}
+          items={i18n.languages as string[]}
+          selected={i18n.language}
           itemsNames={{
             ru: 'Русский',
             en: 'English',
           }}
           onChange={(selected) => {
-            router.push(router.pathname, router.pathname, { locale: selected })
+            i18n.changeLanguage(selected)
           }}
         />
       </Grid>

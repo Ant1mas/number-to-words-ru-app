@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from '@mui/material/Grid'
 import Hidden from '@mui/material/Hidden'
 import TextField from '@mui/material/TextField'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'react-i18next'
 
 import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
@@ -12,7 +12,7 @@ import inputRoundNumberHelperText from 'lib/functions/inputRoundNumberHelperText
 
 export function OptionsContent() {
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('common', { useSuspense: false })
 
   return (
     <>

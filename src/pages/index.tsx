@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Grid from '@mui/material/Grid'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Layout from 'components/Layout'
 import ModuleTitle from 'components/ModuleTitle'
@@ -57,11 +56,5 @@ export function Home() {
     </>
   )
 }
-
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...await serverSideTranslations(locale, ['common']),
-  },
-})
 
 export default Home

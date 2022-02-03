@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import { useSnackbar } from 'notistack'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'react-i18next'
 
 import { useCodePreview } from 'lib/hooks/useCodePreview'
 import codeData from 'lib/functions/codeDataTemplateString'
@@ -12,7 +12,7 @@ import CodePreview from 'components/CodePreview'
 export function CodeContent() {
   const { code } = useCodePreview()
   const { enqueueSnackbar } = useSnackbar()
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('common', { useSuspense: false })
 
   return (
     <>

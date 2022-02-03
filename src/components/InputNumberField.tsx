@@ -1,6 +1,6 @@
 import React from 'react'
 import TextField from '@mui/material/TextField'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'react-i18next'
 
 import { useAppSelector, useAppDispatch } from 'app/store'
 import { moduleNumberUpdated, selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
@@ -8,7 +8,7 @@ import { moduleNumberUpdated, selectModuleNumber } from 'features/moduleNumber/m
 export function InputNumberField() {
   const dispatch = useAppDispatch()
   const moduleNumber = useAppSelector(selectModuleNumber)
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('common', { useSuspense: false })
 
   return (
     <>

@@ -1,10 +1,10 @@
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'react-i18next'
 
 export function ApiInfoBlock() {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('common', { useSuspense: false })
 
   return (
     <>

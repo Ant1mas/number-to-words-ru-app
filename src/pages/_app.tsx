@@ -6,8 +6,8 @@ import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import { SnackbarProvider } from 'notistack'
-import { appWithTranslation } from 'next-i18next';
 
+import '../../i18n'
 import store from 'app/store'
 import theme from 'lib/config/mui/theme'
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
@@ -37,4 +37,4 @@ export function App(props: MyAppProps) {
   )
 }
 
-export default appWithTranslation(App)
+export default App

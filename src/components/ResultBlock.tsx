@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import numberToWordsRu from 'number-to-words-ru'
 import { useSnackbar } from 'notistack'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'react-i18next'
 
 import { useAppSelector } from 'app/store'
 import useModuleOptions from 'features/moduleOptions/useModuleOptions'
@@ -15,7 +15,7 @@ export function ResultBlock() {
   const moduleNumber = useAppSelector(selectModuleNumber)
   const { formattedOptions } = useModuleOptions()
   const { enqueueSnackbar } = useSnackbar()
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('common', { useSuspense: false })
   const resultText = numberToWordsRu.convert(
     moduleNumber !== '' && moduleNumber !== '-' ? moduleNumber : '0',
     formattedOptions

@@ -39,7 +39,7 @@ export function IconMenu(props: props) {
         open={open}
         onClose={onClose}
       >
-        {props.items.map((item) => {
+        {props.items?.map((item) => {
           const itemStr = item.toString()
           const itemName = props.itemsNames[itemStr]
           return (
