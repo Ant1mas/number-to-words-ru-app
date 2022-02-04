@@ -7,7 +7,7 @@ import InputNumberField from 'components/InputNumberField'
 import ResultBlock from 'components/ResultBlock'
 import OptionsBlock from 'components/OptionsBlock'
 import CodeBlock from 'components/CodeBlock'
-import ApiInfoBlock from 'components/ApiInfoBlock'
+import LinksBlock from 'components/LinksBlock'
 import InstallationBlock from 'components/InstallationBlock'
 
 export function Home() {
@@ -45,7 +45,7 @@ export function Home() {
               <CodeBlock />
             </Grid>
             <Grid item>
-              <ApiInfoBlock />
+              <LinksBlock />
             </Grid>
           </Grid>
         </Grid>
