@@ -13,7 +13,7 @@ export function CodeBlock() {
         <Grid item xs={12}>
           <Typography variant="h4">{t('code_block_title')}</Typography>
         </Grid>
-        <Grid style={{ width: '100%' }}>
+        <Grid sx={{ width: '100%' }}>
           <CodeContent />
         </Grid>
       </Grid>
