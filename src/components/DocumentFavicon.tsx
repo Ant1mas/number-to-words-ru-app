@@ -6,6 +6,7 @@ const urlPrefix = isProduction ? STATIC_CDN : ''
 export function DocumentFavicon() {
   return (
     <>
+      <link rel="manifest" href={urlPrefix + '/manifest.json'} />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -23,7 +24,6 @@ export function DocumentFavicon() {
         sizes="16x16"
         href={urlPrefix + '/favicon/favicon-16x16.png'}
       />
-      <link rel="manifest" href={urlPrefix + '/favicon/site.webmanifest'} />
       <link
         rel="mask-icon"
         href={urlPrefix + '/favicon/safari-pinned-tab.svg'}

@@ -1,6 +1,14 @@
+const withPWA = require("next-pwa")
+
 const isProduction = process.env.NODE_ENV === 'production'
 
-module.exports = {
+module.exports = withPWA({
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === "development",
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
