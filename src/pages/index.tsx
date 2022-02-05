@@ -41,7 +41,7 @@ export function Home() {
         </Grid>
         <Grid item xs={12} lg={6}>
           <Grid container direction="column" spacing={6}>
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{width: '100%'}}>
               <CodeBlock />
             </Grid>
             <Grid item>

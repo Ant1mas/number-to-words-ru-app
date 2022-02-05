@@ -10,10 +10,10 @@ export function LinksBlock() {
   return (
     <>
       <Grid container direction="column" alignItems="center" spacing={1}>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{textAlign: 'center'}}>
           <Typography variant="h4">{`${t('links_block_title')} `}</Typography>
         </Grid>
-        <Grid style={{ width: '100%' }}>
+        <Grid item xs={12}>
           <Typography align="center">
             <Link
               href="https://github.com/Ant1mas/number-to-words-ru/blob/master/README.md#api"
@@ -21,16 +21,14 @@ export function LinksBlock() {
               rel="noreferrer"
               sx={{
                 color: '#000000de',
-                display: 'inline-flex',
-                alignItems: 'center'
               }}
             >
-              <LaunchIcon fontSize="small" />
+              <LaunchIcon fontSize="small" sx={{verticalAlign: 'text-top'}} />
               {`${t('links_block_link_api')} `}
             </Link>
           </Typography>
         </Grid>
-        <Grid style={{ width: '100%' }}>
+        <Grid item xs={12}>
           <Typography align="center">
             <Link
               href="https://codesandbox.io/s/t0dbl?file=/index.js:51-63"
@@ -38,11 +36,9 @@ export function LinksBlock() {
               rel="noreferrer"
               sx={{
                 color: '#000000de',
-                display: 'inline-flex',
-                alignItems: 'center'
               }}
             >
-              <LaunchIcon fontSize="small" />
+              <LaunchIcon fontSize="small" sx={{verticalAlign: 'text-top'}} />
               {`${t('links_block_link_example_codesandbox')} `}
             </Link>
           </Typography>
