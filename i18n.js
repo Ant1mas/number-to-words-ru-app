@@ -16,9 +16,12 @@ i18n
       caches: ['localStorage', 'cookie'],
       cookieMinutes: 43200,
     },
-    fallbackLng: ['en', 'ru'],
+    fallbackLng: ['ru', 'en'],
     interpolation: {
       escapeValue: false, // react already safes from xss
+    },
+    react: {
+      useSuspense: false
     },
   })
 

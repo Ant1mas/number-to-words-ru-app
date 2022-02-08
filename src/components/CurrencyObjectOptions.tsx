@@ -3,15 +3,15 @@ import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
-import { useTranslation } from 'react-i18next'
 
 import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
+import useI18n from 'lib/hooks/useI18n'
 import InputSelect from 'components/InputSelect'
 import DeclensionsFields from 'components/DeclensionsFields'
 
 export function CurrencyObjectOptions() {
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useTranslation('translation', { useSuspense: false })
+  const { t } = useI18n()
 
   return (
     <>

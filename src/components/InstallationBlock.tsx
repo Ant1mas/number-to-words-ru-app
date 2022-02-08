@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-import { useTranslation } from 'react-i18next'
 
+import useI18n from 'lib/hooks/useI18n'
 import CodePreview from 'components/CodePreview'
 
 const codeNpm = `npm install number-to-words-ru`
@@ -9,7 +9,7 @@ const codeYarn = `yarn add number-to-words-ru`
 const codePnpm = `pnpm add number-to-words-ru`
 
 export function InstallationBlock() {
-  const { t } = useTranslation('translation', { useSuspense: false })
+  const { t } = useI18n()
 
   return (
     <>
