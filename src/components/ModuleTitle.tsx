@@ -1,11 +1,11 @@
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-import { useTranslation } from 'react-i18next'
 
 import LogoSvg from 'public/images/svg/logo.svg'
+import useI18n from 'lib/hooks/useI18n'
 
 export function ModuleTitle() {
-  const { t } = useTranslation('translation', { useSuspense: false })
+  const { t } = useI18n()
 
   return (
     <>

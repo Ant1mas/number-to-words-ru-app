@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
-import { useTranslation } from 'react-i18next'
 
 import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject'
+import useI18n from 'lib/hooks/useI18n'
 
 type numberParts = 'integer' | 'fractional'
 
@@ -21,7 +21,7 @@ interface props {
 export function DeclensionsFields(props: props) {
   const { numberPart, declensionsObjectName } = props
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useTranslation('translation', { useSuspense: false })
+  const { t } = useI18n()
 
   return (
     <>

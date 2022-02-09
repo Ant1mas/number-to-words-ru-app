@@ -1,17 +1,17 @@
 import React from 'react'
 import TextField from '@mui/material/TextField'
-import { useTranslation } from 'react-i18next'
 
 import { useAppSelector, useAppDispatch } from 'app/store'
 import {
   moduleNumberUpdated,
   selectModuleNumber,
 } from 'features/moduleNumber/moduleNumberSlice'
+import useI18n from 'lib/hooks/useI18n'
 
 export function InputNumberField() {
   const dispatch = useAppDispatch()
   const moduleNumber = useAppSelector(selectModuleNumber)
-  const { t } = useTranslation('translation', { useSuspense: false })
+  const { t } = useI18n()
 
   return (
     <>

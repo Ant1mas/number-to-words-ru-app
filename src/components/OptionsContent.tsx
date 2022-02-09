@@ -2,9 +2,9 @@ import React from 'react'
 import Grid from '@mui/material/Grid'
 import Hidden from '@mui/material/Hidden'
 import TextField from '@mui/material/TextField'
-import { useTranslation } from 'react-i18next'
 
 import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
+import useI18n from 'lib/hooks/useI18n'
 import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
 import InputSelect from 'components/InputSelect'
 import InputSwitch from 'components/InputSwitch'
@@ -12,7 +12,7 @@ import inputRoundNumberHelperText from 'lib/functions/inputRoundNumberHelperText
 
 export function OptionsContent() {
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useTranslation('translation', { useSuspense: false })
+  const { t } = useI18n()
 
   return (
     <>

@@ -20,7 +20,7 @@ export function IconMenu(props: props) {
 
   React.useEffect(() => {
     setSelected(props.selected)
-  }, []) // eslint-disable-line
+  }, [props.selected]) // eslint-disable-line
 
   return (
     <>

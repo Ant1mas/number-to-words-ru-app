@@ -3,12 +3,12 @@ import Grid from '@mui/material/Grid'
 import IconButton from '@mui/material/IconButton'
 import TranslateIcon from '@mui/icons-material/Translate'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import { useTranslation } from 'react-i18next'
 
 import IconMenu from 'components/IconMenu'
+import useI18n from 'lib/hooks/useI18n'
 
 export function Header() {
-  const { i18n } = useTranslation('translation', { useSuspense: false })
+  const { i18n } = useI18n()
 
   return (
     <Grid
