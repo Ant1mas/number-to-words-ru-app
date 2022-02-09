@@ -4,18 +4,18 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import numberToWordsRu from 'number-to-words-ru'
 import { useSnackbar } from 'notistack'
-import { useTranslation } from 'react-i18next'
 
 import { useAppSelector } from 'app/store'
 import useModuleOptions from 'features/moduleOptions/useModuleOptions'
 import { selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
+import useI18n from 'lib/hooks/useI18n'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 
 export function ResultBlock() {
   const moduleNumber = useAppSelector(selectModuleNumber)
   const { formattedOptions } = useModuleOptions()
   const { enqueueSnackbar } = useSnackbar()
-  const { t } = useTranslation('translation', { useSuspense: false })
+  const { t } = useI18n()
   const resultText = numberToWordsRu.convert(
     moduleNumber !== '' && moduleNumber !== '-' ? moduleNumber : '0',
     formattedOptions

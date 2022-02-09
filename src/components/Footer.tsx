@@ -1,10 +1,11 @@
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
-import { useTranslation } from 'react-i18next'
+
+import useI18n from 'lib/hooks/useI18n'
 
 export function Footer() {
-  const { t } = useTranslation('translation', { useSuspense: false })
+  const { t } = useI18n()
 
   return (
     <Grid

@@ -1,12 +1,11 @@
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-import { useTranslation } from 'react-i18next'
 
+import useI18n from 'lib/hooks/useI18n'
 import OptionsContent from 'components/OptionsContent'
 
 export function OptionsBlock() {
-  const { t } = useTranslation('translation', { useSuspense: false })
-
+  const { t } = useI18n()
   return (
     <>
       <Grid container direction="column" alignItems="center" spacing={1}>

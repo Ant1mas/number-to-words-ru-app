@@ -2,16 +2,16 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import LaunchIcon from '@mui/icons-material/Launch'
-import { useTranslation } from 'react-i18next'
+
+import useI18n from 'lib/hooks/useI18n'
 
 export function LinksBlock() {
-  const { t } = useTranslation('translation', { useSuspense: false })
-
+  const { t } = useI18n()
   return (
     <>
       <Grid container direction="column" alignItems="center" spacing={1}>
         <Grid item xs={12} sx={{textAlign: 'center'}}>
-          <Typography variant="h4">{`${t('links_block_title')} `}</Typography>
+          <Typography variant="h4">{t('links_block_title')}</Typography>
         </Grid>
         <Grid item xs={12}>
           <Typography align="center">
@@ -24,7 +24,7 @@ export function LinksBlock() {
               }}
             >
               <LaunchIcon fontSize="small" sx={{verticalAlign: 'text-top'}} />
-              {`${t('links_block_link_api')} `}
+              {t('links_block_link_api')}
             </Link>
           </Typography>
         </Grid>
@@ -39,7 +39,7 @@ export function LinksBlock() {
               }}
             >
               <LaunchIcon fontSize="small" sx={{verticalAlign: 'text-top'}} />
-              {`${t('links_block_link_example_codesandbox')} `}
+              {t('links_block_link_example_codesandbox')}
             </Link>
           </Typography>
         </Grid>
