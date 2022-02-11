@@ -2,7 +2,6 @@ import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import createEmotionServer from '@emotion/server/create-instance'
 
-import theme from 'lib/config/mui/theme'
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
 import DocumentFavicon from 'components/DocumentFavicon'
 import DocumentMetrics from 'components/DocumentMetrics'
@@ -13,7 +12,7 @@ export default class MyDocument extends Document {
       <Html lang="ru">
         <Head>
           <DocumentFavicon />
-          <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name="theme-color" content="#efecf4" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
