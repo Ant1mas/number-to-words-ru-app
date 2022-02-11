@@ -1,7 +1,7 @@
 const withPWA = require("next-pwa")
 
 module.exports = withPWA({
-  basePath: '/number-to-words-ru',
+  basePath: '/number-to-words-ru', // Для "export". Закомментировать для проверки dev и prod версии.
   pwa: {
     dest: "public",
     register: true,
