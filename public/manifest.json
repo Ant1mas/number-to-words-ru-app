@@ -1,9 +1,9 @@
 {
     "name": "Number-to-words-ru app",
     "short_name": "Number-to-words-ru",
-    "start_url": "/",
-    "scope": "/",
-    "theme_color": "#efecf4",
+    "start_url": "/number-to-words-ru",
+    "id": "/number-to-words-ru",
+    "theme_color": "#556cd6",
     "background_color": "#ffffff",
     "display": "minimal-ui",
     "icons": [
