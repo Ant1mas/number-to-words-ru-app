@@ -6,6 +6,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import { SnackbarProvider } from 'notistack'
+import TagManager from 'react-gtm-module'
 
 import '../../i18n'
 import store from 'app/store'
@@ -20,6 +21,10 @@ interface MyAppProps extends AppProps {
 
 export function App(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+  React.useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-5D952ZP' });
+  }, []);
+
   return (
     <CacheProvider value={emotionCache}>
       <Head>
