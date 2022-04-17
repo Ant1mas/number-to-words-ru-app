@@ -1,6 +1,6 @@
 {
   "name": "number-to-words-ru-app",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": "Anton Moskovskiy (https://github.com/Ant1mas)",
   "private": true,
   "scripts": {
@@ -32,6 +32,7 @@
     "number-to-words-ru": "^2.3.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-gtm-module": "^2.0.11",
     "react-i18next": "^11.15.4",
     "react-redux": "^7.2.6",
     "react-syntax-highlighter": "^15.4.5"

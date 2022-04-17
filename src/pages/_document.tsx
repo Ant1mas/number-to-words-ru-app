@@ -4,7 +4,6 @@ import createEmotionServer from '@emotion/server/create-instance'
 
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
 import DocumentFavicon from 'components/DocumentFavicon'
-import DocumentMetrics from 'components/DocumentMetrics'
 
 export default class MyDocument extends Document {
   render() {
@@ -19,7 +18,6 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
-          <DocumentMetrics />
           <Main />
           <NextScript />
         </body>
