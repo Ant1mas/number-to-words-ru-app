@@ -48,10 +48,13 @@ export function DeclensionsFields(props: props) {
           )}
           variant="standard"
           fullWidth
+          disabled
           placeholder={
             DEFAULT_CURRENCY_OBJECT[declensionsObjectName].nominative[1]
           }
-          value={options.customCurrency[declensionsObjectName].nominative[1]}
+          value={t(
+            'options_currency_custom_value_declension_nominative_plural_disabled'
+          )}
           onChange={updateOptions}
         />
       </Grid>
