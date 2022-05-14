@@ -15,7 +15,14 @@ export function Footer() {
     >
       <Grid item xs={12}>
         <Typography variant="caption" display="block">
-          {t('info_module_version_text')} <strong>number-to-words-ru</strong>{' '}
+          {t('info_module_version_text')}{' '}
+          <a
+            href="https://www.npmjs.com/package/number-to-words-ru"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <strong>number-to-words-ru</strong>
+          </a>{' '}
           (2.3.3)
         </Typography>
         <Typography variant="caption" display="block">
