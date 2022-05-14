@@ -1,7 +1,7 @@
 import React from 'react'
 import TextField from '@mui/material/TextField'
 
-import { useAppSelector, useAppDispatch } from 'app/store'
+import { useAppSelector, useAppDispatch } from 'src/app/store'
 import {
   moduleNumberUpdated,
   selectModuleNumber,
