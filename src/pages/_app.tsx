@@ -22,8 +22,8 @@ interface MyAppProps extends AppProps {
 export function App(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
   React.useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-5D952ZP' });
-  }, []);
+    TagManager.initialize({ gtmId: 'GTM-5D952ZP' })
+  }, [])
 
   return (
     <CacheProvider value={emotionCache}>

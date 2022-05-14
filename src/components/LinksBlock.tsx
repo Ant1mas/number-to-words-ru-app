@@ -10,7 +10,7 @@ export function LinksBlock() {
   return (
     <>
       <Grid container direction="column" alignItems="center" spacing={1}>
-        <Grid item xs={12} sx={{textAlign: 'center'}}>
+        <Grid item xs={12} sx={{ textAlign: 'center' }}>
           <Typography variant="h4">{t('links_block_title')}</Typography>
         </Grid>
         <Grid item xs={12}>
@@ -23,7 +23,7 @@ export function LinksBlock() {
                 color: '#000000de',
               }}
             >
-              <LaunchIcon fontSize="small" sx={{verticalAlign: 'text-top'}} />
+              <LaunchIcon fontSize="small" sx={{ verticalAlign: 'text-top' }} />
               {t('links_block_link_api')}
             </Link>
           </Typography>
@@ -38,7 +38,7 @@ export function LinksBlock() {
                 color: '#000000de',
               }}
             >
-              <LaunchIcon fontSize="small" sx={{verticalAlign: 'text-top'}} />
+              <LaunchIcon fontSize="small" sx={{ verticalAlign: 'text-top' }} />
               {t('links_block_link_example_codesandbox')}
             </Link>
           </Typography>

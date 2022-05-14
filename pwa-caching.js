@@ -34,8 +34,8 @@ module.exports = [
       expiration: {
         maxEntries: 4,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
-      }
-    }
+      },
+    },
   },
   {
     urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
@@ -45,14 +45,14 @@ module.exports = [
       expiration: {
         maxEntries: 64,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
-      }
-    }
+      },
+    },
   },
   {
     urlPattern: /\/_next\/image\?url=.+$/i,
-    handler: "StaleWhileRevalidate",
+    handler: 'StaleWhileRevalidate',
     options: {
-      cacheName: "next-image",
+      cacheName: 'next-image',
       expiration: {
         maxEntries: 64,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
@@ -68,8 +68,8 @@ module.exports = [
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
-      }
-    }
+      },
+    },
   },
   {
     urlPattern: /\.(?:mp4)$/i,
@@ -80,8 +80,8 @@ module.exports = [
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
-      }
-    }
+      },
+    },
   },
   {
     urlPattern: /\.(?:js)$/i,
@@ -91,8 +91,8 @@ module.exports = [
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
-      }
-    }
+      },
+    },
   },
   {
     urlPattern: /\.(?:css|less)$/i,
@@ -102,18 +102,18 @@ module.exports = [
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
-      }
-    }
+      },
+    },
   },
   {
     urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
-    handler: "StaleWhileRevalidate",
+    handler: 'StaleWhileRevalidate',
     options: {
-      cacheName: "next-data",
+      cacheName: 'next-data',
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
-      }
+      },
     },
   },
   {
@@ -124,8 +124,8 @@ module.exports = [
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
-      }
-    }
+      },
+    },
   },
   {
     urlPattern: ({ url }) => {
@@ -147,8 +147,8 @@ module.exports = [
         maxEntries: 16,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
       },
-      networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds
-    }
+      networkTimeoutSeconds: 10, // fall back to cache if api does not response within 10 seconds
+    },
   },
   {
     urlPattern: ({ url }) => {
@@ -165,8 +165,8 @@ module.exports = [
         maxEntries: 32,
         maxAgeSeconds: 1 * 30 * 24 * 60 * 60, // 1 month
       },
-      networkTimeoutSeconds: 10
-    }
+      networkTimeoutSeconds: 10,
+    },
   },
   {
     urlPattern: ({ url }) => {
@@ -178,9 +178,9 @@ module.exports = [
       cacheName: 'cross-origin',
       expiration: {
         maxEntries: 32,
-        maxAgeSeconds: 60 * 60 // 1 hour
+        maxAgeSeconds: 60 * 60, // 1 hour
       },
-      networkTimeoutSeconds: 10
-    }
-  }
+      networkTimeoutSeconds: 10,
+    },
+  },
 ]

@@ -6,7 +6,7 @@ export function useI18n(
   ns = '',
   options = {},
   hookOptions = {
-    loadingComponent: (<Skeleton sx={{minWidth: 50}} variant="text" />),
+    loadingComponent: <Skeleton sx={{ minWidth: 50 }} variant="text" />,
   }
 ) {
   const [translationReady, setTranslationReady] = React.useState(false)
