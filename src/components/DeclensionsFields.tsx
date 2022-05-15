@@ -38,6 +38,16 @@ export function DeclensionsFields(props: props) {
           }
           value={options.customCurrency[declensionsObjectName].nominative[0]}
           onChange={updateOptions}
+          sx={{
+            input: {
+              color: options.declension === 'nominative' ? 'primary.main' : '',
+            },
+          }}
+          helperText={
+            options.declension === 'nominative'
+              ? t('options_currency_custom_value_declension_used')
+              : ''
+          }
         />
       </Grid>
       <Grid item xs={12} sm={6}>
@@ -52,9 +62,7 @@ export function DeclensionsFields(props: props) {
           placeholder={
             DEFAULT_CURRENCY_OBJECT[declensionsObjectName].nominative[1]
           }
-          value={t(
-            'options_currency_custom_value_declension_nominative_plural_disabled'
-          )}
+          value={t('options_currency_custom_value_declension_disabled')}
           onChange={updateOptions}
         />
       </Grid>
@@ -71,6 +79,23 @@ export function DeclensionsFields(props: props) {
           }
           value={options.customCurrency[declensionsObjectName].genitive[0]}
           onChange={updateOptions}
+          sx={{
+            input: {
+              color:
+                options.declension === 'nominative' ||
+                options.declension === 'genitive' ||
+                options.declension === 'accusative'
+                  ? 'primary.main'
+                  : '',
+            },
+          }}
+          helperText={
+            options.declension === 'nominative' ||
+            options.declension === 'genitive' ||
+            options.declension === 'accusative'
+              ? t('options_currency_custom_value_declension_used')
+              : ''
+          }
         />
       </Grid>
       <Grid item xs={12} sm={6}>
@@ -84,6 +109,12 @@ export function DeclensionsFields(props: props) {
           }
           value={options.customCurrency[declensionsObjectName].genitive[1]}
           onChange={updateOptions}
+          sx={{
+            input: {
+              color: 'primary.main',
+            },
+          }}
+          helperText={t('options_currency_custom_value_declension_used')}
         />
       </Grid>
       <Grid item xs={12} sm={6}>
@@ -95,6 +126,16 @@ export function DeclensionsFields(props: props) {
           placeholder={DEFAULT_CURRENCY_OBJECT[declensionsObjectName].dative[0]}
           value={options.customCurrency[declensionsObjectName].dative[0]}
           onChange={updateOptions}
+          sx={{
+            input: {
+              color: options.declension === 'dative' ? 'primary.main' : '',
+            },
+          }}
+          helperText={
+            options.declension === 'dative'
+              ? t('options_currency_custom_value_declension_used')
+              : ''
+          }
         />
       </Grid>
       <Grid item xs={12} sm={6}>
@@ -106,6 +147,16 @@ export function DeclensionsFields(props: props) {
           placeholder={DEFAULT_CURRENCY_OBJECT[declensionsObjectName].dative[1]}
           value={options.customCurrency[declensionsObjectName].dative[1]}
           onChange={updateOptions}
+          sx={{
+            input: {
+              color: options.declension === 'dative' ? 'primary.main' : '',
+            },
+          }}
+          helperText={
+            options.declension === 'dative'
+              ? t('options_currency_custom_value_declension_used')
+              : ''
+          }
         />
       </Grid>
       <Grid item xs={12} sm={6}>
@@ -121,6 +172,16 @@ export function DeclensionsFields(props: props) {
           }
           value={options.customCurrency[declensionsObjectName].accusative[0]}
           onChange={updateOptions}
+          sx={{
+            input: {
+              color: options.declension === 'accusative' ? 'primary.main' : '',
+            },
+          }}
+          helperText={
+            options.declension === 'accusative'
+              ? t('options_currency_custom_value_declension_used')
+              : ''
+          }
         />
       </Grid>
       <Grid item xs={12} sm={6}>
@@ -131,10 +192,11 @@ export function DeclensionsFields(props: props) {
           )}
           variant="standard"
           fullWidth
+          disabled
           placeholder={
             DEFAULT_CURRENCY_OBJECT[declensionsObjectName].accusative[1]
           }
-          value={options.customCurrency[declensionsObjectName].accusative[1]}
+          value={t('options_currency_custom_value_declension_disabled')}
           onChange={updateOptions}
         />
       </Grid>
@@ -151,6 +213,17 @@ export function DeclensionsFields(props: props) {
           }
           value={options.customCurrency[declensionsObjectName].instrumental[0]}
           onChange={updateOptions}
+          sx={{
+            input: {
+              color:
+                options.declension === 'instrumental' ? 'primary.main' : '',
+            },
+          }}
+          helperText={
+            options.declension === 'instrumental'
+              ? t('options_currency_custom_value_declension_used')
+              : ''
+          }
         />
       </Grid>
       <Grid item xs={12} sm={6}>
@@ -166,6 +239,17 @@ export function DeclensionsFields(props: props) {
           }
           value={options.customCurrency[declensionsObjectName].instrumental[1]}
           onChange={updateOptions}
+          sx={{
+            input: {
+              color:
+                options.declension === 'instrumental' ? 'primary.main' : '',
+            },
+          }}
+          helperText={
+            options.declension === 'instrumental'
+              ? t('options_currency_custom_value_declension_used')
+              : ''
+          }
         />
       </Grid>
       <Grid item xs={12} sm={6}>
@@ -181,6 +265,17 @@ export function DeclensionsFields(props: props) {
           }
           value={options.customCurrency[declensionsObjectName].prepositional[0]}
           onChange={updateOptions}
+          sx={{
+            input: {
+              color:
+                options.declension === 'prepositional' ? 'primary.main' : '',
+            },
+          }}
+          helperText={
+            options.declension === 'prepositional'
+              ? t('options_currency_custom_value_declension_used')
+              : ''
+          }
         />
       </Grid>
       <Grid item xs={12} sm={6}>
@@ -196,6 +291,17 @@ export function DeclensionsFields(props: props) {
           }
           value={options.customCurrency[declensionsObjectName].prepositional[1]}
           onChange={updateOptions}
+          sx={{
+            input: {
+              color:
+                options.declension === 'prepositional' ? 'primary.main' : '',
+            },
+          }}
+          helperText={
+            options.declension === 'prepositional'
+              ? t('options_currency_custom_value_declension_used')
+              : ''
+          }
         />
       </Grid>
     </>
