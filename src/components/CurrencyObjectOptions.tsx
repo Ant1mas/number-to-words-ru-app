@@ -8,6 +8,7 @@ import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 import DeclensionsFields from 'components/DeclensionsFields'
 import CurrencyForm from 'components/CurrencyForm'
+import CurrencyDeclensionForms from 'components/CurrencyDeclensionForms'
 
 export function CurrencyObjectOptions() {
   const { options, updateOptions } = useModuleOptions()
@@ -29,39 +30,7 @@ export function CurrencyObjectOptions() {
               {t('options_currency_custom_integer_block_title')}
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <TextField
-              name="custom-currency-integer1"
-              label={t('options_currency_custom_value_form1')}
-              variant="standard"
-              fullWidth
-              placeholder="Рубль"
-              value={options.customCurrency.currencyNameCases[0]}
-              onChange={updateOptions}
-            />
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <TextField
-              name="custom-currency-integer2"
-              label={t('options_currency_custom_value_form2')}
-              variant="standard"
-              fullWidth
-              placeholder="Рубля"
-              value={options.customCurrency.currencyNameCases[1]}
-              onChange={updateOptions}
-            />
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <TextField
-              name="custom-currency-integer3"
-              label={t('options_currency_custom_value_form3')}
-              variant="standard"
-              fullWidth
-              placeholder="Рублей"
-              value={options.customCurrency.currencyNameCases[2]}
-              onChange={updateOptions}
-            />
-          </Grid>
+          <CurrencyDeclensionForms numberPart="integer" />
           <DeclensionsFields
             numberPart="integer"
             declensionsObjectName="currencyNameDeclensions"
@@ -77,39 +46,7 @@ export function CurrencyObjectOptions() {
               {t('options_currency_custom_fractional_block_title')}
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <TextField
-              name="custom-currency-fractional1"
-              label={t('options_currency_custom_value_form1')}
-              variant="standard"
-              fullWidth
-              placeholder="Копейка"
-              value={options.customCurrency.fractionalPartNameCases[0]}
-              onChange={updateOptions}
-            />
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <TextField
-              name="custom-currency-fractional2"
-              label={t('options_currency_custom_value_form2')}
-              variant="standard"
-              fullWidth
-              placeholder="Копейки"
-              value={options.customCurrency.fractionalPartNameCases[1]}
-              onChange={updateOptions}
-            />
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <TextField
-              name="custom-currency-fractional3"
-              label={t('options_currency_custom_value_form3')}
-              variant="standard"
-              fullWidth
-              placeholder="Копеек"
-              value={options.customCurrency.fractionalPartNameCases[2]}
-              onChange={updateOptions}
-            />
-          </Grid>
+          <CurrencyDeclensionForms numberPart="fractional" />
           <DeclensionsFields
             numberPart="fractional"
             declensionsObjectName="fractionalPartNameDeclensions"
