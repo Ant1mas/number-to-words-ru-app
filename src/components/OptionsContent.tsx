@@ -8,6 +8,7 @@ import useI18n from 'lib/hooks/useI18n'
 import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
 import InputSelect from 'components/InputSelect'
 import InputSwitch from 'components/InputSwitch'
+import DeclensionSelect from 'components/DeclensionSelect'
 import inputRoundNumberHelperText from 'lib/functions/inputRoundNumberHelperText'
 
 export function OptionsContent() {
@@ -45,39 +46,7 @@ export function OptionsContent() {
           </Grid>
         </Hidden>
         <Grid item xs={12} md={6}>
-          <InputSelect
-            name="declension"
-            label={t('options_declension_label')}
-            fullWidth
-            value={options.declension}
-            onChange={updateOptions}
-            items={[
-              {
-                value: 'nominative',
-                name: t('options_declension_select_value_nominative'),
-              },
-              {
-                value: 'genitive',
-                name: t('options_declension_select_value_genitive'),
-              },
-              {
-                value: 'dative',
-                name: t('options_declension_select_value_dative'),
-              },
-              {
-                value: 'accusative',
-                name: t('options_declension_select_value_accusative'),
-              },
-              {
-                value: 'instrumental',
-                name: t('options_declension_select_value_instrumental'),
-              },
-              {
-                value: 'prepositional',
-                name: t('options_declension_select_value_prepositional'),
-              },
-            ]}
-          />
+          <DeclensionSelect />
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
