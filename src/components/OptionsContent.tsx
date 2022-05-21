@@ -6,10 +6,9 @@ import TextField from '@mui/material/TextField'
 import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
-import InputSelect from 'components/InputSelect'
-import InputSwitch from 'components/InputSwitch'
 import DeclensionSelect from 'components/DeclensionSelect'
 import CurrencySelect from 'components/CurrencySelect'
+import OptionsSwitchesBlock from 'components/OptionsSwitchesBlock'
 import inputRoundNumberHelperText from 'lib/functions/inputRoundNumberHelperText'
 
 export function OptionsContent() {
@@ -46,62 +45,7 @@ export function OptionsContent() {
             onChange={updateOptions}
           />
         </Grid>
-        <Grid item>
-          <InputSwitch
-            name="convert-minus-sign"
-            label={t('options_convert_minus_sign')}
-            checked={options.convertMinusSignToWord}
-            onChange={updateOptions}
-          />
-        </Grid>
-        <Grid item>
-          <InputSwitch
-            name="show-number-part-integer"
-            label={t('options_show_integer_part')}
-            checked={options.showNumberParts.integer}
-            onChange={updateOptions}
-          />
-        </Grid>
-        <Grid item>
-          <InputSwitch
-            name="show-number-part-fractional"
-            label={t('options_show_fractional_part')}
-            checked={options.showNumberParts.fractional}
-            onChange={updateOptions}
-          />
-        </Grid>
-        <Grid item>
-          <InputSwitch
-            name="convert-number-part-integer"
-            label={t('options_convert_integer_part')}
-            checked={options.convertNumbertToWords.integer}
-            onChange={updateOptions}
-          />
-        </Grid>
-        <Grid item>
-          <InputSwitch
-            name="convert-number-part-fractional"
-            label={t('options_convert_fractional_part')}
-            checked={options.convertNumbertToWords.fractional}
-            onChange={updateOptions}
-          />
-        </Grid>
-        <Grid item>
-          <InputSwitch
-            name="show-currency-part-integer"
-            label={t('options_show_currency_integer_part')}
-            checked={options.showCurrency.integer}
-            onChange={updateOptions}
-          />
-        </Grid>
-        <Grid item>
-          <InputSwitch
-            name="show-currency-part-fractional"
-            label={t('options_show_currency_fractional_part')}
-            checked={options.showCurrency.fractional}
-            onChange={updateOptions}
-          />
-        </Grid>
+        <OptionsSwitchesBlock />
       </Grid>
     </>
   )
