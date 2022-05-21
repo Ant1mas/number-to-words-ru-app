@@ -6,8 +6,8 @@ import Typography from '@mui/material/Typography'
 
 import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
-import InputSelect from 'components/InputSelect'
 import DeclensionsFields from 'components/DeclensionsFields'
+import CurrencyForm from 'components/CurrencyForm'
 
 export function CurrencyObjectOptions() {
   const { options, updateOptions } = useModuleOptions()
@@ -67,26 +67,9 @@ export function CurrencyObjectOptions() {
             declensionsObjectName="currencyNameDeclensions"
           />
           <Grid item xs={12}>
-            <InputSelect
+            <CurrencyForm
               name="custom-currency-form-integer"
-              fullWidth
-              label={t('options_currency_custom_value_currency_name_form')}
-              value={options.customCurrency.currencyNounGender.integer}
-              items={[
-                {
-                  value: 0,
-                  name: t('options_currency_custom_value_word_form1'),
-                },
-                {
-                  value: 1,
-                  name: t('options_currency_custom_value_word_form2'),
-                },
-                {
-                  value: 2,
-                  name: t('options_currency_custom_value_word_form3'),
-                },
-              ]}
-              onChange={updateOptions}
+              numberPart="integer"
             />
           </Grid>
           <Grid item xs={12} style={{ marginTop: '1.5rem' }}>
@@ -132,26 +115,9 @@ export function CurrencyObjectOptions() {
             declensionsObjectName="fractionalPartNameDeclensions"
           />
           <Grid item xs={12}>
-            <InputSelect
+            <CurrencyForm
               name="custom-currency-form-fractional"
-              fullWidth
-              label={t('options_currency_custom_value_currency_name_form')}
-              value={options.customCurrency.currencyNounGender.fractionalPart}
-              items={[
-                {
-                  value: 0,
-                  name: t('options_currency_custom_value_word_form1'),
-                },
-                {
-                  value: 1,
-                  name: t('options_currency_custom_value_word_form2'),
-                },
-                {
-                  value: 2,
-                  name: t('options_currency_custom_value_word_form3'),
-                },
-              ]}
-              onChange={updateOptions}
+              numberPart="fractional"
             />
           </Grid>
           <Grid item xs={12} style={{ marginTop: '1.5rem' }}>
