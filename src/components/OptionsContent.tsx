@@ -9,6 +9,7 @@ import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
 import InputSelect from 'components/InputSelect'
 import InputSwitch from 'components/InputSwitch'
 import DeclensionSelect from 'components/DeclensionSelect'
+import CurrencySelect from 'components/CurrencySelect'
 import inputRoundNumberHelperText from 'lib/functions/inputRoundNumberHelperText'
 
 export function OptionsContent() {
@@ -19,26 +20,7 @@ export function OptionsContent() {
     <>
       <Grid container direction="column" spacing={1}>
         <Grid item xs={12} md={6}>
-          <InputSelect
-            name="currency"
-            label={t('options_currency_select_label')}
-            fullWidth
-            value={options.currency as string}
-            onChange={updateOptions}
-            items={[
-              { value: 'rub', name: t('options_currency_select_value_rub') },
-              { value: 'usd', name: t('options_currency_select_value_usd') },
-              { value: 'eur', name: t('options_currency_select_value_eur') },
-              {
-                value: 'number',
-                name: t('options_currency_select_value_number'),
-              },
-              {
-                value: 'custom',
-                name: t('options_currency_select_value_custom'),
-              },
-            ]}
-          />
+          <CurrencySelect />
         </Grid>
         <Hidden xsUp={options.currency !== 'custom'}>
           <Grid item>
