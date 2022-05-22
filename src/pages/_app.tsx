@@ -9,7 +9,7 @@ import { SnackbarProvider } from 'notistack'
 import TagManager from 'react-gtm-module'
 
 import '../../i18n'
-import store from 'app/store'
+import store from 'src/app/store'
 import theme from 'lib/config/mui/theme'
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
 
@@ -22,8 +22,8 @@ interface MyAppProps extends AppProps {
 export function App(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
   React.useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-5D952ZP' });
-  }, []);
+    TagManager.initialize({ gtmId: 'GTM-5D952ZP' })
+  }, [])
 
   return (
     <CacheProvider value={emotionCache}>

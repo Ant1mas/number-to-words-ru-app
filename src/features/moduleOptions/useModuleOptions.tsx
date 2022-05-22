@@ -3,7 +3,7 @@ import cloneDeep from 'lodash/cloneDeep'
 import get from 'lodash/get'
 import set from 'lodash/set'
 
-import { useAppSelector, useAppDispatch } from 'app/store'
+import { useAppSelector, useAppDispatch } from 'src/app/store'
 import {
   moduleOptionsSet,
   selectModuleOptions,

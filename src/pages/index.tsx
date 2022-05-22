@@ -9,6 +9,7 @@ import OptionsBlock from 'components/OptionsBlock'
 import CodeBlock from 'components/CodeBlock'
 import LinksBlock from 'components/LinksBlock'
 import InstallationBlock from 'components/InstallationBlock'
+import ExamplesBlock from 'components/ExamplesBlock'
 
 export function Home() {
   return (
@@ -37,11 +38,12 @@ export function Home() {
           <ResultBlock />
         </Grid>
         <Grid item xs={12} lg={6}>
+          <ExamplesBlock />
           <OptionsBlock />
         </Grid>
         <Grid item xs={12} lg={6}>
           <Grid container direction="column" spacing={6}>
-            <Grid item xs={12} sx={{width: '100%'}}>
+            <Grid item xs={12} sx={{ width: '100%' }}>
               <CodeBlock />
             </Grid>
             <Grid item>

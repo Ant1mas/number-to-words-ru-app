@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useAppSelector } from 'app/store'
+import { useAppSelector } from 'src/app/store'
 import { selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
 import useModuleOptions from 'features/moduleOptions/useModuleOptions'
 import objectToString from 'lib/functions/objectToString'

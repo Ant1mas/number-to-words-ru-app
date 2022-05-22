@@ -1,6 +1,6 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit'
 
-import type { AppState } from 'app/store'
+import type { AppState } from 'src/app/store'
 
 const moduleNumberAdapter = createEntityAdapter()
 

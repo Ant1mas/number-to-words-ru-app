@@ -64,8 +64,8 @@ export const OPTIONS_NAMES_MAP = {
   'convert-minus-sign': 'convertMinusSignToWord',
   'show-number-part-integer': 'showNumberParts.integer',
   'show-number-part-fractional': 'showNumberParts.fractional',
-  'convert-number-part-integer': 'convertNumbertToWords.integer',
-  'convert-number-part-fractional': 'convertNumbertToWords.fractional',
+  'convert-number-part-integer': 'convertNumberToWords.integer',
+  'convert-number-part-fractional': 'convertNumberToWords.fractional',
   'show-currency-part-integer': 'showCurrency.integer',
   'show-currency-part-fractional': 'showCurrency.fractional',
 }

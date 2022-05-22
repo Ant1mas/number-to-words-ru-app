@@ -1,12 +1,15 @@
-const withPWA = require("next-pwa")
+const withPWA = require('next-pwa')
+
+const pwaCaching = require('./pwa-caching')
 
 module.exports = withPWA({
-  basePath: '/number-to-words-ru', // Для "export". Закомментировать для проверки dev и prod версии.
+  basePath: '/number-to-words-ru',
   pwa: {
-    dest: "public",
+    dest: 'public',
     register: true,
-    skipWaiting: true,
-    disable: process.env.NODE_ENV === "development",
+    dynamicStartUrl: false,
+    runtimeCaching: pwaCaching,
+    disable: process.env.NODE_ENV === 'development',
   },
   webpack(config) {
     config.module.rules.push({

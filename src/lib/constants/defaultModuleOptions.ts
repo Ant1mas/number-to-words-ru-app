@@ -12,7 +12,7 @@ export const DEFAULT_MODULE_OPTIONS: options = {
     integer: true,
     fractional: true,
   },
-  convertNumbertToWords: {
+  convertNumberToWords: {
     integer: true,
     fractional: false,
   },
