@@ -23,7 +23,7 @@ export function Footer() {
           >
             <strong>number-to-words-ru</strong>
           </a>{' '}
-          (2.3.3)
+          (2.3.4)
         </Typography>
         <Typography variant="caption" display="block">
           © {new Date().getFullYear()} {t('author_name_anton_moskovskiy')}

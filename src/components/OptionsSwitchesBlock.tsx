@@ -41,7 +41,7 @@ export default function OptionsSwitchesBlock({}: Props) {
         <InputSwitch
           name="convert-number-part-integer"
           label={t('options_convert_integer_part')}
-          checked={options.convertNumbertToWords.integer}
+          checked={options.convertNumberToWords.integer}
           onChange={updateOptions}
         />
       </Grid>
@@ -49,7 +49,7 @@ export default function OptionsSwitchesBlock({}: Props) {
         <InputSwitch
           name="convert-number-part-fractional"
           label={t('options_convert_fractional_part')}
-          checked={options.convertNumbertToWords.fractional}
+          checked={options.convertNumberToWords.fractional}
           onChange={updateOptions}
         />
       </Grid>

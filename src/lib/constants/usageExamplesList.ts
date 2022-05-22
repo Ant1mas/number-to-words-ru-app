@@ -14,7 +14,7 @@ export const USAGE_EXAMPLES_LIST = {
     moduleNumber: '22/100',
     moduleOptions: {
       currency: 'number',
-      convertNumbertToWords: {
+      convertNumberToWords: {
         fractional: true,
       },
       showCurrency: {
@@ -54,7 +54,7 @@ export const USAGE_EXAMPLES_LIST = {
       showNumberParts: {
         fractional: false,
       },
-      convertNumbertToWords: {
+      convertNumberToWords: {
         fractional: true,
       },
       showCurrency: {
@@ -93,7 +93,7 @@ export const USAGE_EXAMPLES_LIST = {
       showNumberParts: {
         fractional: false,
       },
-      convertNumbertToWords: {
+      convertNumberToWords: {
         fractional: true,
       },
       showCurrency: {
@@ -104,7 +104,7 @@ export const USAGE_EXAMPLES_LIST = {
   rubles: {
     moduleNumber: '733,5104',
     moduleOptions: {
-      convertNumbertToWords: {
+      convertNumberToWords: {
         fractional: true,
       },
     },
@@ -113,7 +113,7 @@ export const USAGE_EXAMPLES_LIST = {
     moduleNumber: '622,00421',
     moduleOptions: {
       currency: 'number',
-      convertNumbertToWords: {
+      convertNumberToWords: {
         fractional: true,
       },
     },
