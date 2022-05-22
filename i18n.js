@@ -5,8 +5,6 @@ import LocalStorageBackend from 'i18next-localstorage-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
-const basePath = 'number-to-words-ru'
-
 i18n
   .use(ChainedBackend)
   .use(LanguageDetector)
@@ -19,7 +17,7 @@ i18n
           expirationTime: 90 * 24 * 60 * 60 * 1000, // 90 days
         },
         {
-          loadPath: basePath + '/locales/{{lng}}/{{ns}}.json',
+          loadPath: 'locales/{{lng}}/{{ns}}.json',
         },
       ],
     },
