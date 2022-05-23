@@ -27,7 +27,9 @@ export default function ExamplesBlock({}: Props) {
         sx={{ marginBottom: '20px' }}
       >
         <Grid item>
-          <Typography variant="h4">{t('usage_example_block_title')}</Typography>
+          <Typography align="center" variant="h4">
+            {t('usage_example_block_title')}
+          </Typography>
         </Grid>
         <Grid style={{ width: '100%' }}>
           <InputSelect
