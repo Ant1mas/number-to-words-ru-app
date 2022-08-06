@@ -22,7 +22,7 @@ export default function CurrencyDeclensionForms({ numberPart }: Props) {
       <Grid item xs={12} sm={4} key={listIndex}>
         <TextField
           name={`custom-currency-${numberPart}${listIndex + 1}`}
-          label={t('options_currency_custom_value_form1')}
+          label={t(`options_currency_custom_value_form${listIndex + 1}`)}
           variant="standard"
           fullWidth
           placeholder={DEFAULT_CURRENCY_OBJECT[currencyObjectName][listIndex]}
