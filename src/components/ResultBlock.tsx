@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-import numberToWordsRu from 'number-to-words-ru'
+import { convert as convertNumberToWordsRu } from 'number-to-words-ru'
 import { useSnackbar } from 'notistack'
 
 import { useAppSelector } from 'src/app/store'
@@ -16,7 +16,7 @@ export function ResultBlock() {
   const { formattedOptions } = useModuleOptions()
   const { enqueueSnackbar } = useSnackbar()
   const { t } = useI18n()
-  const resultText = numberToWordsRu.convert(
+  const resultText = convertNumberToWordsRu(
     moduleNumber !== '' && moduleNumber !== '-' ? moduleNumber : '0',
     formattedOptions
   )
