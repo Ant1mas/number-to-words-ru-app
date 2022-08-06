@@ -18,7 +18,7 @@ i18n
         {
           expirationTime: 90 * 24 * 60 * 60 * 1000, // 90 days
           loadPath: basePath + '/locales/{{lng}}/{{ns}}.json',
-          versions: { ru: 'v1.0', en: 'v1.0' }
+          versions: { ru: 'v1.2.6', en: 'v1.2.6' }
         },
         {
           loadPath: basePath + '/locales/{{lng}}/{{ns}}.json',
