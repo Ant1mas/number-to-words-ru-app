@@ -1,7 +1,7 @@
 {
   "name": "number-to-words-ru-app",
   "version": "1.2.6",
-  "author": "Anton Moskovskiy (https://github.com/Ant1mas)",
+  "author": "Anton Moskovskii <ant1mas.dev@gmail.com> (https://github.com/Ant1mas)",
   "private": true,
   "scripts": {
     "dev": "next dev",
