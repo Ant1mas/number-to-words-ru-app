@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
@@ -123,11 +122,6 @@ export function DeclensionsFields(props: props) {
   })
 
   return <>{fieldsJSX}</>
-}
-
-DeclensionsFields.propTypes = {
-  numberPart: PropTypes.string,
-  declensionsObjectName: PropTypes.string,
 }
 
 DeclensionsFields.defaultProps = {
