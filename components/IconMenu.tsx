@@ -1,11 +1,11 @@
-import React from 'react'
+import { useEffect } from 'react'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 
-import { useIconMenu } from 'lib/hooks/useIconMenu'
+import useIconMenu from 'lib/hooks/useIconMenu'
 
-interface props {
+type Props = {
   iconEl: JSX.Element
   items: string[]
   selected: string
@@ -13,14 +13,26 @@ interface props {
   onChange: object
 }
 
-export function IconMenu(props: props) {
-  const { anchorEl, onClick, onClose, onSelect, selected, setSelected } =
-    useIconMenu()
+export default function IconMenu({
+  iconEl,
+  items,
+  selected,
+  itemsNames,
+  onChange,
+}: Props) {
+  const {
+    anchorEl,
+    onClick,
+    onClose,
+    onSelect,
+    selected: selectedState,
+    setSelected,
+  } = useIconMenu()
   const open = Boolean(anchorEl)
 
-  React.useEffect(() => {
-    setSelected(props.selected)
-  }, [props.selected]) // eslint-disable-line
+  useEffect(() => {
+    setSelected(selected)
+  }, [selected]) // eslint-disable-line
 
   return (
     <>
@@ -30,7 +42,7 @@ export function IconMenu(props: props) {
         aria-haspopup="true"
         onClick={onClick}
       >
-        {props.iconEl}
+        {iconEl}
       </IconButton>
       <Menu
         id="icon-menu"
@@ -39,15 +51,15 @@ export function IconMenu(props: props) {
         open={open}
         onClose={onClose}
       >
-        {props.items?.map((item) => {
+        {items?.map((item) => {
           const itemStr = item.toString()
-          const itemName = props.itemsNames[itemStr]
+          const itemName = itemsNames[itemStr]
           return (
             <MenuItem
               key={itemStr}
-              selected={selected === itemStr}
+              selected={selectedState === itemStr}
               onClick={() => {
-                onSelect(itemStr, props.onChange)
+                onSelect(itemStr, onChange)
               }}
             >
               {itemName}
@@ -58,7 +70,3 @@ export function IconMenu(props: props) {
     </>
   )
 }
-
-IconMenu.defaultProps = {}
-
-export default IconMenu

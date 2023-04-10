@@ -1,4 +1,3 @@
-import React from 'react'
 import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
 
@@ -12,13 +11,15 @@ type declensionsObjectName =
   | 'currencyNameDeclensions'
   | 'fractionalPartNameDeclensions'
 
-interface props {
+type Props = {
   numberPart: numberParts
   declensionsObjectName: declensionsObjectName
 }
 
-export function DeclensionsFields(props: props) {
-  const { numberPart, declensionsObjectName } = props
+export default function DeclensionsFields({
+  numberPart = 'integer',
+  declensionsObjectName = 'currencyNameDeclensions',
+}: Props) {
   const { options, updateOptions } = useModuleOptions()
   const { t } = useI18n()
 
@@ -123,10 +124,3 @@ export function DeclensionsFields(props: props) {
 
   return <>{fieldsJSX}</>
 }
-
-DeclensionsFields.defaultProps = {
-  numberPart: 'integer',
-  declensionsObjectName: 'currencyNameDeclensions',
-}
-
-export default DeclensionsFields

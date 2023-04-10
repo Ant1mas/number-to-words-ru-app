@@ -11,7 +11,7 @@ import LinksBlock from 'components/LinksBlock'
 import InstallationBlock from 'components/InstallationBlock'
 import ExamplesBlock from 'components/ExamplesBlock'
 
-export function Home() {
+export default function Home() {
   return (
     <>
       <Head>
@@ -58,5 +58,3 @@ export function Home() {
     </>
   )
 }
-
-export default Home

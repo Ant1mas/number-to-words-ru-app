@@ -1,15 +1,14 @@
-import React from 'react'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import { useSnackbar } from 'notistack'
 
-import { useCodePreview } from 'lib/hooks/useCodePreview'
+import useCodePreview from 'lib/hooks/useCodePreview'
 import useI18n from 'lib/hooks/useI18n'
 import codeData from 'lib/functions/codeDataTemplateString'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 import CodePreview from 'components/CodePreview'
 
-export function CodeContent() {
+export default function CodeContent() {
   const { code } = useCodePreview()
   const { enqueueSnackbar } = useSnackbar()
   const { t } = useI18n()
@@ -38,5 +37,3 @@ export function CodeContent() {
     </>
   )
 }
-
-export default CodeContent

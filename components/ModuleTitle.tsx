@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import LogoSvg from 'public/images/svg/logo.svg'
 import useI18n from 'lib/hooks/useI18n'
 
-export function ModuleTitle() {
+export default function ModuleTitle() {
   const { t } = useI18n()
 
   return (
@@ -27,5 +27,3 @@ export function ModuleTitle() {
     </>
   )
 }
-
-export default ModuleTitle

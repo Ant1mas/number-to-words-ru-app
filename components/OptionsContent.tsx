@@ -1,4 +1,3 @@
-import React from 'react'
 import Grid from '@mui/material/Grid'
 import Hidden from '@mui/material/Hidden'
 import TextField from '@mui/material/TextField'
@@ -11,7 +10,7 @@ import CurrencySelect from 'components/CurrencySelect'
 import OptionsSwitchesBlock from 'components/OptionsSwitchesBlock'
 import inputRoundNumberHelperText from 'lib/functions/inputRoundNumberHelperText'
 
-export function OptionsContent() {
+export default function OptionsContent() {
   const { options, updateOptions } = useModuleOptions()
   const { t } = useI18n()
 
@@ -50,5 +49,3 @@ export function OptionsContent() {
     </>
   )
 }
-
-export default OptionsContent

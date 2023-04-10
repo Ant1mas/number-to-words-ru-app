@@ -1,18 +1,16 @@
-import React from 'react'
+import { useEffect } from 'react'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 import useI18n from 'lib/hooks/useI18n'
-import { useUsedExamples } from 'lib/hooks/useUsedExamples'
+import useUsedExamples from 'lib/hooks/useUsedExamples'
 import InputSelect from 'components/InputSelect'
 
-type Props = {}
-
-export default function ExamplesBlock({}: Props) {
+export default function ExamplesBlock() {
   const { selectedExample, applyExample } = useUsedExamples()
   const { t } = useI18n()
 
-  React.useEffect(() => {
+  useEffect(() => {
     applyExample('justNumber')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

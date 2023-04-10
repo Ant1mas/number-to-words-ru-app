@@ -1,10 +1,15 @@
+import React from 'react'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
-export function Layout({ children }) {
+type Props = {
+  children: React.ReactElement | React.ReactElement[]
+}
+
+export default function Layout({ children }: Props) {
   return (
     <>
       <Container
@@ -29,5 +34,3 @@ export function Layout({ children }) {
     </>
   )
 }
-
-export default Layout

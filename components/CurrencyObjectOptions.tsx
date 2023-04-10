@@ -1,4 +1,3 @@
-import React from 'react'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
@@ -10,7 +9,7 @@ import DeclensionsFields from 'components/DeclensionsFields'
 import CurrencyForm from 'components/CurrencyForm'
 import CurrencyDeclensionForms from 'components/CurrencyDeclensionForms'
 
-export function CurrencyObjectOptions() {
+export default function CurrencyObjectOptions() {
   const { options, updateOptions } = useModuleOptions()
   const { t } = useI18n()
 
@@ -82,5 +81,3 @@ export function CurrencyObjectOptions() {
     </>
   )
 }
-
-export default CurrencyObjectOptions

@@ -1,13 +1,10 @@
-import React from 'react'
 import Grid from '@mui/material/Grid'
 
 import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 import InputSwitch from 'components/InputSwitch'
 
-type Props = {}
-
-export default function OptionsSwitchesBlock({}: Props) {
+export default function OptionsSwitchesBlock() {
   const { options, updateOptions } = useModuleOptions()
   const { t } = useI18n()
 

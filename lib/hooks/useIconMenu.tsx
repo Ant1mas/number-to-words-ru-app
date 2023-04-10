@@ -1,8 +1,8 @@
-import React from 'react'
+import { useState } from 'react'
 
-export function useIconMenu() {
-  const [anchorEl, setAnchorEl] = React.useState(null)
-  const [selected, setSelected] = React.useState(null)
+export default function useIconMenu() {
+  const [anchorEl, setAnchorEl] = useState(null)
+  const [selected, setSelected] = useState(null)
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
@@ -27,5 +27,3 @@ export function useIconMenu() {
     setSelected,
   }
 }
-
-export default useIconMenu

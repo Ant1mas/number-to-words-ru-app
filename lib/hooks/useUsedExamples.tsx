@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import cloneDeep from 'lodash/cloneDeep'
 import merge from 'lodash/merge'
 
@@ -12,7 +12,7 @@ import USAGE_EXAMPLES_LIST from 'lib/constants/usageExamplesList'
 import DEFAULT_MODULE_OPTIONS from 'lib/constants/defaultModuleOptions'
 import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject'
 
-type usageExampleNames =
+type UsageExampleNames =
   | 'justNumber'
   | 'fractionalNumber'
   | 'users'
@@ -20,14 +20,14 @@ type usageExampleNames =
   | 'rubles'
   | 'currencyNumber'
 
-export function useUsedExamples() {
+export default function useUsedExamples() {
   const dispatch = useAppDispatch()
   const moduleOptions = useAppSelector(selectModuleOptions)
-  const [selectedExample, setSelectedExample] = React.useState('')
-  const [optionsUpdatedByHook, setOptionsUpdatedByHook] = React.useState(false)
+  const [selectedExample, setSelectedExample] = useState('')
+  const [optionsUpdatedByHook, setOptionsUpdatedByHook] = useState(false)
 
   // Reset select field value if options have changed
-  React.useEffect(() => {
+  useEffect(() => {
     if (optionsUpdatedByHook) {
       setOptionsUpdatedByHook(false)
     } else {
@@ -36,7 +36,7 @@ export function useUsedExamples() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [moduleOptions])
 
-  const applyExample = (usageExampleName: usageExampleNames) => {
+  const applyExample = (usageExampleName: UsageExampleNames) => {
     const usageExampleObject = USAGE_EXAMPLES_LIST[usageExampleName]
     if (usageExampleObject) {
       dispatch(moduleNumberUpdated(usageExampleObject.moduleNumber))
@@ -45,7 +45,7 @@ export function useUsedExamples() {
       })
       const updatedOptions = merge(
         cloneDeep(defaultOptionsObject),
-        usageExampleObject.moduleOptions
+        usageExampleObject.moduleOptions,
       )
       dispatch(moduleOptionsSet({ value: updatedOptions }))
       setSelectedExample(usageExampleName)
@@ -58,5 +58,3 @@ export function useUsedExamples() {
     applyExample,
   }
 }
-
-export default useUsedExamples

@@ -4,7 +4,7 @@ import Link from '@mui/material/Link'
 
 import useI18n from 'lib/hooks/useI18n'
 
-export function Footer() {
+export default function Footer() {
   const { t } = useI18n()
 
   return (
@@ -44,5 +44,3 @@ export function Footer() {
     </Grid>
   )
 }
-
-export default Footer

@@ -1,6 +1,6 @@
 import projectPath from 'lib/functions/projectPath'
 
-export function DocumentFavicon() {
+export default function DocumentFavicon() {
   return (
     <>
       <link rel="manifest" href={projectPath('/manifest.json')} />
@@ -34,5 +34,3 @@ export function DocumentFavicon() {
     </>
   )
 }
-
-export default DocumentFavicon

@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
 import { Provider } from 'react-redux'
@@ -22,9 +22,9 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
 }
 
-export function App(props: MyAppProps) {
+export default function App(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
-  React.useEffect(() => {
+  useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-5D952ZP' })
   }, [])
 
@@ -46,5 +46,3 @@ export function App(props: MyAppProps) {
     </CacheProvider>
   )
 }
-
-export default App

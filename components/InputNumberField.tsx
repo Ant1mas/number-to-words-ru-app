@@ -1,4 +1,3 @@
-import React from 'react'
 import TextField from '@mui/material/TextField'
 
 import { useAppSelector, useAppDispatch } from '@/app/store'
@@ -8,7 +7,7 @@ import {
 } from 'features/moduleNumber/moduleNumberSlice'
 import useI18n from 'lib/hooks/useI18n'
 
-export function InputNumberField() {
+export default function InputNumberField() {
   const dispatch = useAppDispatch()
   const moduleNumber = useAppSelector(selectModuleNumber)
   const { t } = useI18n()
@@ -31,5 +30,3 @@ export function InputNumberField() {
     </>
   )
 }
-
-export default InputNumberField

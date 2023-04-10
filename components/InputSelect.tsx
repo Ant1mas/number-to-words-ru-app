@@ -3,37 +3,45 @@ import InputLabel from '@mui/material/InputLabel'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 
-interface item {
+type Item = {
   value: string | number
   name: string
 }
 
-interface props {
+type Props = {
   name: string
   label: string
   value: string | number
-  items: item[]
-  onChange: any
+  items: Item[]
   minWidth: number
   fullWidth: boolean
+  onChange: any
 }
 
-export function InputSelect(props: props) {
+export default function InputSelect({
+  name,
+  label,
+  value = '',
+  items = [],
+  minWidth = 100,
+  fullWidth = false,
+  onChange,
+}: Props) {
   return (
     <>
       <FormControl
-        style={{ minWidth: props.minWidth }}
-        fullWidth={props.fullWidth}
+        style={{ minWidth: minWidth }}
+        fullWidth={fullWidth}
         variant="standard"
       >
-        <InputLabel id="label-select">{props.label}</InputLabel>
+        <InputLabel id="label-select">{label}</InputLabel>
         <Select
-          name={props.name}
+          name={name}
           labelId="label-select"
-          value={props.value}
-          onChange={props.onChange}
+          value={value}
+          onChange={onChange}
         >
-          {props.items.map((item) => {
+          {items.map((item) => {
             return (
               <MenuItem key={item.value} value={item.value}>
                 {item.name}
@@ -45,12 +53,3 @@ export function InputSelect(props: props) {
     </>
   )
 }
-
-InputSelect.defaultProps = {
-  value: '',
-  items: [],
-  minWidth: 100,
-  fullWidth: false,
-}
-
-export default InputSelect

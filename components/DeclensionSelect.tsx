@@ -1,12 +1,8 @@
-import React from 'react'
-
 import InputSelect from 'components/InputSelect'
 import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 
-type Props = {}
-
-export default function DeclensionSelect({}: Props) {
+export default function DeclensionSelect() {
   const { options, updateOptions } = useModuleOptions()
   const { t } = useI18n()
 

@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import useI18n from 'lib/hooks/useI18n'
 import OptionsContent from 'components/OptionsContent'
 
-export function OptionsBlock() {
+export default function OptionsBlock() {
   const { t } = useI18n()
   return (
     <>
@@ -19,5 +19,3 @@ export function OptionsBlock() {
     </>
   )
 }
-
-export default OptionsBlock

@@ -1,31 +1,27 @@
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
 
-interface props {
+type Props = {
   name: string
   label: string
   checked: boolean
   onChange: any
 }
 
-export function InputSwitch(props: props) {
+export default function InputSwitch({ name, label, checked, onChange }: Props) {
   return (
     <>
       <FormControlLabel
         control={
           <Switch
-            name={props.name}
-            checked={props.checked}
-            onChange={props.onChange}
+            name={name}
+            checked={checked}
+            onChange={onChange}
             color="primary"
           />
         }
-        label={props.label}
+        label={label}
       />
     </>
   )
 }
-
-InputSwitch.defaultProps = {}
-
-export default InputSwitch

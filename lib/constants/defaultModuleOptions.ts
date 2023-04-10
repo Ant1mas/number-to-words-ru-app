@@ -1,9 +1,9 @@
 import numberToWordsRu from 'number-to-words-ru'
 
-type convertParams = Parameters<typeof numberToWordsRu.convert>
-type options = convertParams[1]
+type ConvertParams = Parameters<typeof numberToWordsRu.convert>
+type Options = ConvertParams[1]
 
-export const DEFAULT_MODULE_OPTIONS: options = {
+export const DEFAULT_MODULE_OPTIONS: Options = {
   currency: 'rub',
   declension: 'nominative',
   roundNumber: -1,

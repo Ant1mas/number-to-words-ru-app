@@ -5,7 +5,7 @@ import LaunchIcon from '@mui/icons-material/Launch'
 
 import useI18n from 'lib/hooks/useI18n'
 
-export function LinksBlock() {
+export default function LinksBlock() {
   const { t } = useI18n()
   return (
     <>
@@ -47,5 +47,3 @@ export function LinksBlock() {
     </>
   )
 }
-
-export default LinksBlock

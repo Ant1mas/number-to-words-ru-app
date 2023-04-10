@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 import InputSelect from 'components/InputSelect'

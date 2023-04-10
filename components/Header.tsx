@@ -1,4 +1,3 @@
-import React from 'react'
 import Grid from '@mui/material/Grid'
 import IconButton from '@mui/material/IconButton'
 import TranslateIcon from '@mui/icons-material/Translate'
@@ -7,7 +6,7 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import IconMenu from 'components/IconMenu'
 import useI18n from 'lib/hooks/useI18n'
 
-export function Header() {
+export default function Header() {
   const { i18n } = useI18n()
 
   return (
@@ -46,5 +45,3 @@ export function Header() {
     </Grid>
   )
 }
-
-export default Header

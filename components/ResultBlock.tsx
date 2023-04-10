@@ -1,4 +1,3 @@
-import React from 'react'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
@@ -11,7 +10,7 @@ import { selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
 import useI18n from 'lib/hooks/useI18n'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 
-export function ResultBlock() {
+export default function ResultBlock() {
   const moduleNumber = useAppSelector(selectModuleNumber)
   const { formattedOptions } = useModuleOptions()
   const { enqueueSnackbar } = useSnackbar()
@@ -63,5 +62,3 @@ export function ResultBlock() {
     </Grid>
   )
 }
-
-export default ResultBlock

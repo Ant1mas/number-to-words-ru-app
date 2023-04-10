@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import CodeContent from 'components/CodeContent'
 import useI18n from 'lib/hooks/useI18n'
 
-export function CodeBlock() {
+export default function CodeBlock() {
   const { t } = useI18n()
 
   return (
@@ -20,5 +20,3 @@ export function CodeBlock() {
     </>
   )
 }
-
-export default CodeBlock

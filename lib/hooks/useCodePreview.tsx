@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
 import { useAppSelector } from '@/app/store'
 import { selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
@@ -7,10 +7,10 @@ import objectToString from 'lib/functions/objectToString'
 import codeData from 'lib/functions/codeDataTemplateString'
 import addSpacesToString from 'lib/functions/addSpacesToString'
 
-export function useCodePreview() {
+export default function useCodePreview() {
   const moduleNumber = useAppSelector(selectModuleNumber)
   const { optionsDifferences } = useModuleOptions()
-  const [code, setCode] = React.useState(`
+  const [code, setCode] = useState(`
     const numberToWordsRu = require('number-to-words-ru');
 
     numberToWordsRu.convert('${moduleNumber}');
@@ -18,10 +18,10 @@ export function useCodePreview() {
 
   const optionsDifferencesString = addSpacesToString(
     objectToString(optionsDifferences),
-    14
+    14,
   )
 
-  React.useEffect(() => {
+  useEffect(() => {
     updateCodeText()
   }, [moduleNumber, optionsDifferences]) // eslint-disable-line
 
@@ -42,7 +42,7 @@ export function useCodePreview() {
       const numberToWordsRu = require('number-to-words-ru');
 
       ${getCodeFnConvert()}
-    `)
+    `),
     )
   }
 
@@ -50,5 +50,3 @@ export function useCodePreview() {
     code,
   }
 }
-
-export default useCodePreview
