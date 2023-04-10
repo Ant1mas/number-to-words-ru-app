@@ -1,10 +1,10 @@
 import TextField from '@mui/material/TextField'
 
-import { useAppSelector, useAppDispatch } from '@/app/store'
+import { useAppSelector, useAppDispatch } from 'lib/config/redux/store'
 import {
   moduleNumberUpdated,
   selectModuleNumber,
-} from 'features/moduleNumber/moduleNumberSlice'
+} from 'lib/config/redux/slices/moduleNumber/moduleNumberSlice'
 import useI18n from 'lib/hooks/useI18n'
 
 export default function InputNumberField() {

@@ -3,11 +3,11 @@ import cloneDeep from 'lodash/cloneDeep'
 import get from 'lodash/get'
 import set from 'lodash/set'
 
-import { useAppSelector, useAppDispatch } from '@/app/store'
+import { useAppSelector, useAppDispatch } from 'lib/config/redux/store'
 import {
   moduleOptionsSet,
   selectModuleOptions,
-} from 'features/moduleOptions/moduleOptionsSlice'
+} from 'lib/config/redux/slices/moduleOptions/moduleOptionsSlice'
 import DEFAULT_MODULE_OPTIONS from 'lib/constants/defaultModuleOptions'
 import OPTIONS_NAMES_MAP from 'lib/constants/optionsNamesMap'
 import OPTIONS_VALUES_TYPE_NUMBER from 'lib/constants/optionsValuesTypeNumber'

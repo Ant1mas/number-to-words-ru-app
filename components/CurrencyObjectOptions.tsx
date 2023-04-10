@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
+import { useModuleOptions } from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 import DeclensionsFields from 'components/DeclensionsFields'
 import CurrencyForm from 'components/CurrencyForm'

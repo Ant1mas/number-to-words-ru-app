@@ -4,9 +4,9 @@ import Button from '@mui/material/Button'
 import { convert as convertNumberToWordsRu } from 'number-to-words-ru'
 import toast from 'react-hot-toast'
 
-import { useAppSelector } from '@/app/store'
-import useModuleOptions from 'features/moduleOptions/useModuleOptions'
-import { selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
+import { useAppSelector } from 'lib/config/redux/store'
+import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
+import { selectModuleNumber } from 'lib/config/redux/slices/moduleNumber/moduleNumberSlice'
 import useI18n from 'lib/hooks/useI18n'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 

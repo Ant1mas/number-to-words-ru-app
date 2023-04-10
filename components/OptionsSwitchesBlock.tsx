@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid'
 
-import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
+import { useModuleOptions } from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 import InputSwitch from 'components/InputSwitch'
 

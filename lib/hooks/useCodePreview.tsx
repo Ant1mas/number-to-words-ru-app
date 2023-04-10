@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 
-import { useAppSelector } from '@/app/store'
-import { selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
-import useModuleOptions from 'features/moduleOptions/useModuleOptions'
+import { useAppSelector } from 'lib/config/redux/store'
+import { selectModuleNumber } from 'lib/config/redux/slices/moduleNumber/moduleNumberSlice'
+import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import objectToString from 'lib/functions/objectToString'
 import codeData from 'lib/functions/codeDataTemplateString'
 import addSpacesToString from 'lib/functions/addSpacesToString'

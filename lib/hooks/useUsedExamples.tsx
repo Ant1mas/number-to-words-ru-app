@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import cloneDeep from 'lodash/cloneDeep'
 import merge from 'lodash/merge'
 
-import { useAppSelector, useAppDispatch } from '@/app/store'
-import { moduleNumberUpdated } from 'features/moduleNumber/moduleNumberSlice'
+import { useAppSelector, useAppDispatch } from 'lib/config/redux/store'
+import { moduleNumberUpdated } from 'lib/config/redux/slices/moduleNumber/moduleNumberSlice'
 import {
   moduleOptionsSet,
   selectModuleOptions,
-} from 'features/moduleOptions/moduleOptionsSlice'
+} from 'lib/config/redux/slices/moduleOptions/moduleOptionsSlice'
 import USAGE_EXAMPLES_LIST from 'lib/constants/usageExamplesList'
 import DEFAULT_MODULE_OPTIONS from 'lib/constants/defaultModuleOptions'
 import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject'

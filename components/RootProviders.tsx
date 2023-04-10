@@ -3,7 +3,7 @@ import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { Provider as ReduxProvider } from 'react-redux'
 
 import theme from 'lib/config/mui/theme'
-import store from '@/app/store'
+import store from 'lib/config/redux/store'
 
 type Props = {
   emotionCache?: any

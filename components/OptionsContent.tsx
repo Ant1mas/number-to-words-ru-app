@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid'
 import Hidden from '@mui/material/Hidden'
 import TextField from '@mui/material/TextField'
 
-import { useModuleOptions } from 'features/moduleOptions/useModuleOptions'
+import { useModuleOptions } from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
 import DeclensionSelect from 'components/DeclensionSelect'
