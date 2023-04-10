@@ -1,16 +1,18 @@
-const withPWA = require('next-pwa')
-
 const pwaCaching = require('./pwa-caching')
 
-module.exports = {
-  basePath: '/number-to-words-ru',
-  // pwa: {
-  //   dest: 'public',
-  //   register: true,
-  //   dynamicStartUrl: false,
-  //   runtimeCaching: pwaCaching,
-  //   disable: process.env.NODE_ENV === 'development',
-  // },
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+  register: true,
+  runtimeCaching: pwaCaching,
+  dynamicStartUrl: false,
+})
+
+const nextConfig = {
+  basePath: '',
+  reactStrictMode: true,
+  swcMinify: true,
+  output: 'standalone',
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -19,3 +21,6 @@ module.exports = {
     return config
   },
 }
+
+module.exports =
+  process.env.NODE_ENV === 'production' ? withPWA(nextConfig) : nextConfig
