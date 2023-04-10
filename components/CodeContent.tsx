@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-import { useSnackbar } from 'notistack'
+import toast from 'react-hot-toast'
 
 import useCodePreview from 'lib/hooks/useCodePreview'
 import useI18n from 'lib/hooks/useI18n'
@@ -10,7 +10,6 @@ import CodePreview from 'components/CodePreview'
 
 export default function CodeContent() {
   const { code } = useCodePreview()
-  const { enqueueSnackbar } = useSnackbar()
   const { t } = useI18n()
 
   return (
@@ -25,8 +24,8 @@ export default function CodeContent() {
             color="inherit"
             onClick={() => {
               copyToClipboard(codeData(code))
-              enqueueSnackbar(t('code_block_button_copy_snackbar_text'), {
-                autoHideDuration: 2000,
+              toast.success(t('code_block_button_copy_snackbar_text'), {
+                duration: 2000,
               })
             }}
           >

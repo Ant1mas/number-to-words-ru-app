@@ -9,6 +9,7 @@ import { roboto } from 'lib/config/fonts'
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
 import Root from 'components/Root'
 import RootProviders from 'components/RootProviders'
+import ReactHotToaster from 'components/ReactHotToaster'
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
@@ -21,6 +22,7 @@ export default function App(props: MyAppProps) {
 
   return (
     <div id="app" className={clsx([roboto.variable])}>
+      <ReactHotToaster />
       <RootProviders emotionCache={emotionCache}>
         <CssBaseline />
         <Root />

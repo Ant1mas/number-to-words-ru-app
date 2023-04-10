@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import { convert as convertNumberToWordsRu } from 'number-to-words-ru'
-import { useSnackbar } from 'notistack'
+import toast from 'react-hot-toast'
 
 import { useAppSelector } from '@/app/store'
 import useModuleOptions from 'features/moduleOptions/useModuleOptions'
@@ -13,7 +13,6 @@ import copyToClipboard from 'lib/functions/copyToClipboard'
 export default function ResultBlock() {
   const moduleNumber = useAppSelector(selectModuleNumber)
   const { formattedOptions } = useModuleOptions()
-  const { enqueueSnackbar } = useSnackbar()
   const { t } = useI18n()
   const resultText = convertNumberToWordsRu(
     moduleNumber !== '' && moduleNumber !== '-' ? moduleNumber : '0',
@@ -51,8 +50,8 @@ export default function ResultBlock() {
           color="inherit"
           onClick={() => {
             copyToClipboard(resultText)
-            enqueueSnackbar(t('result_block_button_copy_snackbar_text'), {
-              autoHideDuration: 2000,
+            toast.success(t('result_block_button_copy_snackbar_text'), {
+              duration: 2000,
             })
           }}
         >

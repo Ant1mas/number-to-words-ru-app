@@ -1,6 +1,5 @@
 import { CacheProvider as EmotionCacheProvider } from '@emotion/react'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
-import { SnackbarProvider } from 'notistack'
 import { Provider as ReduxProvider } from 'react-redux'
 
 import theme from 'lib/config/mui/theme'
@@ -14,11 +13,9 @@ type Props = {
 export default function RootProviders({ emotionCache, children }: Props) {
   return (
     <EmotionCacheProvider value={emotionCache}>
-      <SnackbarProvider transitionDuration={{ enter: 150, exit: 150 }}>
-        <MuiThemeProvider theme={theme}>
-          <ReduxProvider store={store}>{children}</ReduxProvider>
-        </MuiThemeProvider>
-      </SnackbarProvider>
+      <MuiThemeProvider theme={theme}>
+        <ReduxProvider store={store}>{children}</ReduxProvider>
+      </MuiThemeProvider>
     </EmotionCacheProvider>
   )
 }
