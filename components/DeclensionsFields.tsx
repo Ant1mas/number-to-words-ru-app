@@ -23,7 +23,7 @@ export function DeclensionsFields(props: props) {
   const { t } = useI18n()
 
   const declensions = Object.keys(
-    DEFAULT_CURRENCY_OBJECT.currencyNameDeclensions
+    DEFAULT_CURRENCY_OBJECT.currencyNameDeclensions,
   )
   let fieldsObjects = []
   declensions.forEach((declension) => {
@@ -35,7 +35,7 @@ export function DeclensionsFields(props: props) {
       {
         declension: declension,
         form: 'plural',
-      }
+      },
     )
   })
   const fieldsJSX = fieldsObjects.map((fieldObject) => {
@@ -96,7 +96,7 @@ export function DeclensionsFields(props: props) {
         <TextField
           name={`custom-currency-${numberPart}-declension-${fieldObject.declension}-${fieldObject.form}`}
           label={t(
-            `options_currency_custom_value_declension_${fieldObject.declension}_${fieldObject.form}`
+            `options_currency_custom_value_declension_${fieldObject.declension}_${fieldObject.form}`,
           )}
           variant="standard"
           fullWidth

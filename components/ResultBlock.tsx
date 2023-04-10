@@ -18,7 +18,7 @@ export function ResultBlock() {
   const { t } = useI18n()
   const resultText = convertNumberToWordsRu(
     moduleNumber !== '' && moduleNumber !== '-' ? moduleNumber : '0',
-    formattedOptions
+    formattedOptions,
   )
 
   return (

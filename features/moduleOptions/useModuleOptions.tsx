@@ -18,7 +18,7 @@ export function useModuleOptions() {
   const dispatch = useAppDispatch()
   const moduleOptions = useAppSelector(selectModuleOptions)
   const [formattedOptions, setFormattedOptions] = React.useState(
-    DEFAULT_MODULE_OPTIONS
+    DEFAULT_MODULE_OPTIONS,
   )
   const [optionsDifferences, setOptionsDifferences] = React.useState({})
 
@@ -88,7 +88,7 @@ export function useModuleOptions() {
     }
     optionsResult = convertValuesToTypeNumber(
       optionsResult,
-      OPTIONS_VALUES_TYPE_NUMBER
+      OPTIONS_VALUES_TYPE_NUMBER,
     )
     setFormattedOptions(optionsResult)
   }

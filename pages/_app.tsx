@@ -8,6 +8,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react'
 import { SnackbarProvider } from 'notistack'
 import TagManager from 'react-gtm-module'
 
+import '@/styles/globals.css'
 import '@/i18n'
 import store from '@/app/store'
 import theme from 'lib/config/mui/theme'
