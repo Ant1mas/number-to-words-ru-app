@@ -7,9 +7,11 @@ import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import { SnackbarProvider } from 'notistack'
 import TagManager from 'react-gtm-module'
+import clsx from 'clsx'
 
 import '@/styles/globals.css'
 import '@/i18n'
+import { roboto } from 'lib/config/fonts'
 import store from '@/app/store'
 import theme from 'lib/config/mui/theme'
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
@@ -35,7 +37,9 @@ export function App(props: MyAppProps) {
         <SnackbarProvider transitionDuration={{ enter: 150, exit: 150 }}>
           <Provider store={store}>
             <CssBaseline />
-            <Component {...pageProps} />
+            <div id="app" className={clsx([roboto.variable])}>
+              <Component {...pageProps} />
+            </div>
           </Provider>
         </SnackbarProvider>
       </ThemeProvider>

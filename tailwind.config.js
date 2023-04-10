@@ -5,9 +5,9 @@ module.exports = {
     "./lib/functions/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    // fontFamily: {
-    //   sans: ['var(--font-roboto)', 'sans-serif'],
-    // },
+    fontFamily: {
+      sans: ['var(--font-roboto)', 'sans-serif'],
+    },
     extend: {
       colors: {
         'primary': '#556cd6',

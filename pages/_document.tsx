@@ -1,21 +1,19 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import createEmotionServer from '@emotion/server/create-instance'
+import clsx from 'clsx'
 
+import { roboto } from 'lib/config/fonts'
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
 import DocumentFavicon from 'components/DocumentFavicon'
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="ru">
+      <Html lang="ru" className={clsx([roboto.variable])}>
         <Head>
           <DocumentFavicon />
           <meta name="theme-color" content="#efecf4" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
         </Head>
         <body>
           <Main />
