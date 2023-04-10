@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid'
 import IconButton from '@mui/material/IconButton'
-import TranslateIcon from '@mui/icons-material/Translate'
-import GitHubIcon from '@mui/icons-material/GitHub'
+import { MdTranslate } from 'react-icons/md'
+import { FaGithub } from 'react-icons/fa'
 
 import IconMenu from 'components/IconMenu'
 import useI18n from 'lib/hooks/useI18n'
@@ -18,7 +18,7 @@ export default function Header() {
     >
       <Grid item>
         <IconMenu
-          iconEl={<TranslateIcon />}
+          iconEl={<MdTranslate />}
           items={i18n.languages as string[]}
           selected={i18n.language}
           itemsNames={{
@@ -38,7 +38,7 @@ export default function Header() {
           aria-label="Github"
         >
           <IconButton>
-            <GitHubIcon />
+            <FaGithub />
           </IconButton>
         </a>
       </Grid>

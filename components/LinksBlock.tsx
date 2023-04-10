@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
-import LaunchIcon from '@mui/icons-material/Launch'
+import { RxExternalLink } from 'react-icons/rx'
 
 import useI18n from 'lib/hooks/useI18n'
 
@@ -22,8 +22,9 @@ export default function LinksBlock() {
               sx={{
                 color: '#000000de',
               }}
+              className="flex items-center"
             >
-              <LaunchIcon fontSize="small" sx={{ verticalAlign: 'text-top' }} />
+              <RxExternalLink className="mr-1 text-xl" />
               {t('links_block_link_api')}
             </Link>
           </Typography>
@@ -37,8 +38,9 @@ export default function LinksBlock() {
               sx={{
                 color: '#000000de',
               }}
+              className="flex items-center"
             >
-              <LaunchIcon fontSize="small" sx={{ verticalAlign: 'text-top' }} />
+              <RxExternalLink className="mr-1 text-xl" />
               {t('links_block_link_example_codesandbox')}
             </Link>
           </Typography>

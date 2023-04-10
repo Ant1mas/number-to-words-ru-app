@@ -16,7 +16,6 @@
     "@emotion/react": "^11.7.1",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.6.0",
-    "@mui/icons-material": "^5.4.1",
     "@mui/material": "^5.4.1",
     "@reduxjs/toolkit": "^1.7.2",
     "clsx": "^1.2.1",
@@ -34,6 +33,7 @@
     "react-gtm-module": "^2.0.11",
     "react-hot-toast": "^2.4.0",
     "react-i18next": "^12.2.0",
+    "react-icons": "^4.8.0",
     "react-redux": "^8.0.5",
     "react-syntax-highlighter": "^15.4.5"
   },
