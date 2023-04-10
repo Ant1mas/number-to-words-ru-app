@@ -1,22 +1,16 @@
-import Grid from '@mui/material/Grid'
-import IconButton from '@mui/material/IconButton'
 import { MdTranslate } from 'react-icons/md'
 import { FaGithub } from 'react-icons/fa'
 
 import IconMenu from 'components/IconMenu'
+import IconButton from 'components/IconButton'
 import useI18n from 'lib/hooks/useI18n'
 
 export default function Header() {
   const { i18n } = useI18n()
 
   return (
-    <Grid
-      container
-      component="header"
-      justifyContent="flex-end"
-      style={{ paddingTop: '1rem' }}
-    >
-      <Grid item>
+    <header className="flex justify-end pt-4">
+      <div>
         <IconMenu
           iconEl={<MdTranslate />}
           items={i18n.languages as string[]}
@@ -29,8 +23,8 @@ export default function Header() {
             i18n.changeLanguage(selected)
           }}
         />
-      </Grid>
-      <Grid item>
+      </div>
+      <div>
         <a
           href="https://github.com/Ant1mas/number-to-words-ru"
           target="_blank"
@@ -41,7 +35,7 @@ export default function Header() {
             <FaGithub />
           </IconButton>
         </a>
-      </Grid>
-    </Grid>
+      </div>
+    </header>
   )
 }
