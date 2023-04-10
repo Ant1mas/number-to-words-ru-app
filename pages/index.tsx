@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Grid from '@mui/material/Grid'
 
+import DefaultMetadata from 'components/DefaultMetadata'
 import Layout from 'components/Layout'
 import ModuleTitle from 'components/ModuleTitle'
 import InputNumberField from 'components/InputNumberField'
@@ -16,12 +17,13 @@ export default function Home() {
     <>
       <Head>
         <title>
-          number-to-words-ru node module - convert number to russian words
+          number-to-words-ru node module - Convert number to russian words
         </title>
         <meta
           name="description"
           content="Node.js module to convert number to words in russian"
         />
+        <DefaultMetadata />
       </Head>
       <Layout>
         <Grid item xs={12}>

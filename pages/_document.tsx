@@ -5,16 +5,12 @@ import clsx from 'clsx'
 
 import { roboto } from 'lib/config/fonts'
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
-import DocumentFavicon from 'components/DocumentFavicon'
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="ru" className={clsx([roboto.variable])}>
-        <Head>
-          <DocumentFavicon />
-          <meta name="theme-color" content="#efecf4" />
-        </Head>
+      <Html lang="en" className={clsx([roboto.variable])}>
+        <Head />
         <body>
           <Main />
           <NextScript />

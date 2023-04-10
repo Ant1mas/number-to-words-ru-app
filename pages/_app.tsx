@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import Head from 'next/head'
 import { AppProps } from 'next/app'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from '@mui/material/styles'
@@ -30,9 +29,6 @@ export default function App(props: MyAppProps) {
 
   return (
     <CacheProvider value={emotionCache}>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
       <ThemeProvider theme={theme}>
         <SnackbarProvider transitionDuration={{ enter: 150, exit: 150 }}>
           <Provider store={store}>
