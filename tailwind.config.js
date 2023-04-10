@@ -21,8 +21,18 @@ module.exports = {
   ],
   daisyui: {
     themes: [
-      'light',
-      'dark',
+      {
+        light: {
+          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          primary: "#556cd6",
+        },
+      },
+      {
+        dark: {
+          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
+          primary: "#556cd6",
+        },
+      },
     ],
   },
 }

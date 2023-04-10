@@ -9,7 +9,7 @@ import createEmotionCache from 'lib/config/mui/createEmotionCache'
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en" className={clsx([roboto.variable])}>
+      <Html lang="en" className={clsx([roboto.variable])} data-theme="light">
         <Head />
         <body>
           <Main />

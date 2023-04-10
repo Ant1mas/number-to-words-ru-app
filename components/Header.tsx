@@ -1,7 +1,7 @@
 import { MdTranslate } from 'react-icons/md'
 import { FaGithub } from 'react-icons/fa'
 
-import IconMenu from 'components/IconMenu'
+import MenuButton from 'components/MenuButton'
 import IconButton from 'components/IconButton'
 import useI18n from 'lib/hooks/useI18n'
 
@@ -11,18 +11,21 @@ export default function Header() {
   return (
     <header className="flex justify-end pt-4">
       <div>
-        <IconMenu
-          iconEl={<MdTranslate />}
-          items={i18n.languages as string[]}
-          selected={i18n.language}
+        <MenuButton
+          items={[...i18n.languages].sort() as string[]}
           itemsNames={{
             ru: 'Русский',
             en: 'English',
           }}
+          selected={i18n.language}
           onChange={(selected) => {
             i18n.changeLanguage(selected)
           }}
-        />
+        >
+          <IconButton>
+            <MdTranslate />
+          </IconButton>
+        </MenuButton>
       </div>
       <div>
         <a
