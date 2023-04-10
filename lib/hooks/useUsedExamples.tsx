@@ -2,7 +2,7 @@ import React from 'react'
 import cloneDeep from 'lodash/cloneDeep'
 import merge from 'lodash/merge'
 
-import { useAppSelector, useAppDispatch } from 'src/app/store'
+import { useAppSelector, useAppDispatch } from '@/app/store'
 import { moduleNumberUpdated } from 'features/moduleNumber/moduleNumberSlice'
 import {
   moduleOptionsSet,

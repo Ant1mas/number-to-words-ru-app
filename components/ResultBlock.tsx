@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 import { convert as convertNumberToWordsRu } from 'number-to-words-ru'
 import { useSnackbar } from 'notistack'
 
-import { useAppSelector } from 'src/app/store'
+import { useAppSelector } from '@/app/store'
 import useModuleOptions from 'features/moduleOptions/useModuleOptions'
 import { selectModuleNumber } from 'features/moduleNumber/moduleNumberSlice'
 import useI18n from 'lib/hooks/useI18n'

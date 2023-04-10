@@ -3,7 +3,7 @@ import set from 'lodash/set'
 
 import DEFAULT_MODULE_OPTIONS from 'lib/constants/defaultModuleOptions'
 import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject'
-import type { AppState } from 'src/app/store'
+import type { AppState } from '@/app/store'
 
 const moduleOptionsAdapter = createEntityAdapter()
 
