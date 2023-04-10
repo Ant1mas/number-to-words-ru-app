@@ -1,11 +1,9 @@
-import { useEffect } from 'react'
 import { AppProps } from 'next/app'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import { SnackbarProvider } from 'notistack'
-import TagManager from 'react-gtm-module'
 import clsx from 'clsx'
 
 import '@/styles/globals.css'
@@ -14,6 +12,7 @@ import { roboto } from 'lib/config/fonts'
 import store from '@/app/store'
 import theme from 'lib/config/mui/theme'
 import createEmotionCache from 'lib/config/mui/createEmotionCache'
+import Root from 'components/Root'
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -23,9 +22,6 @@ interface MyAppProps extends AppProps {
 
 export default function App(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
-  useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-5D952ZP' })
-  }, [])
 
   return (
     <CacheProvider value={emotionCache}>
@@ -34,6 +30,7 @@ export default function App(props: MyAppProps) {
           <Provider store={store}>
             <CssBaseline />
             <div id="app" className={clsx([roboto.variable])}>
+              <Root />
               <Component {...pageProps} />
             </div>
           </Provider>
