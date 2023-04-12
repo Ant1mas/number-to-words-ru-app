@@ -1,51 +1,43 @@
-import Grid from '@mui/material/Grid'
-import Hidden from '@mui/material/Hidden'
-import TextField from '@mui/material/TextField'
-
 import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
 import DeclensionSelect from 'components/DeclensionSelect'
 import CurrencySelect from 'components/CurrencySelect'
 import OptionsSwitchesBlock from 'components/OptionsSwitchesBlock'
+import InputField from 'components/InputField'
 import inputRoundNumberHelperText from 'lib/functions/inputRoundNumberHelperText'
 
 export default function OptionsContent() {
-  const { options, updateOptions } = useModuleOptions()
+  const { updateOptions } = useModuleOptions()
+  const options: any = useModuleOptions().options
   const { t } = useI18n()
 
   return (
-    <>
-      <Grid container direction="column" spacing={1}>
-        <Grid item xs={12} md={6}>
-          <CurrencySelect />
-        </Grid>
-        <Hidden xsUp={options.currency !== 'custom'}>
-          <Grid item>
-            <CurrencyObjectOptions />
-          </Grid>
-        </Hidden>
-        <Grid item xs={12} md={6}>
-          <DeclensionSelect />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            name="round-number"
-            label={t('options_round_number')}
-            variant="standard"
-            fullWidth
-            placeholder="2"
-            type="number"
-            inputProps={{
-              min: -1,
-            }}
-            helperText={inputRoundNumberHelperText(options, t)}
-            value={options.roundNumber}
-            onChange={updateOptions}
-          />
-        </Grid>
-        <OptionsSwitchesBlock />
-      </Grid>
-    </>
+    <div className="flex flex-col">
+      <div className="w-full py-2">
+        <CurrencySelect />
+      </div>
+      {options.currency === 'custom' ? (
+        <div className="w-full py-2">
+          <CurrencyObjectOptions />
+        </div>
+      ) : null}
+      <div className="w-full py-2">
+        <DeclensionSelect />
+      </div>
+      <div className="w-full py-2">
+        <InputField
+          name="round-number"
+          type="number"
+          placeholder="2"
+          value={options.roundNumber}
+          onChange={updateOptions}
+          min={-1}
+          label={t('options_round_number')}
+          helperText={inputRoundNumberHelperText(options, t)}
+        />
+      </div>
+      <OptionsSwitchesBlock />
+    </div>
   )
 }

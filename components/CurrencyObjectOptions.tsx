@@ -1,10 +1,6 @@
-import Grid from '@mui/material/Grid'
-import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
-
-import  useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
+import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
+import InputField from 'components/InputField'
 import DeclensionsFields from 'components/DeclensionsFields'
 import CurrencyForm from 'components/CurrencyForm'
 import CurrencyDeclensionForms from 'components/CurrencyDeclensionForms'
@@ -14,70 +10,51 @@ export default function CurrencyObjectOptions() {
   const { t } = useI18n()
 
   return (
-    <>
-      <Box
-        sx={{
-          borderLeft: 2,
-          borderColor: 'rgb(85, 108, 214, 0.5)',
-          marginY: 1,
-          paddingX: 1,
-        }}
-      >
-        <Grid container spacing={1}>
-          <Grid item xs={12}>
-            <Typography variant="h5" display="block">
-              {t('options_currency_custom_integer_block_title')}
-            </Typography>
-          </Grid>
-          <CurrencyDeclensionForms numberPart="integer" />
-          <DeclensionsFields
+    <div className="my-1 border-l-2 border-primary/50 px-2">
+      <div className="flex flex-wrap">
+        <h5 className="w-full text-2xl">
+          {t('options_currency_custom_integer_block_title')}
+        </h5>
+        <CurrencyDeclensionForms numberPart="integer" />
+        <DeclensionsFields
+          numberPart="integer"
+          declensionsObjectName="currencyNameDeclensions"
+        />
+        <div className="w-full">
+          <CurrencyForm
+            name="custom-currency-form-integer"
             numberPart="integer"
-            declensionsObjectName="currencyNameDeclensions"
           />
-          <Grid item xs={12}>
-            <CurrencyForm
-              name="custom-currency-form-integer"
-              numberPart="integer"
-            />
-          </Grid>
-          <Grid item xs={12} style={{ marginTop: '1.5rem' }}>
-            <Typography variant="h5" display="block">
-              {t('options_currency_custom_fractional_block_title')}
-            </Typography>
-          </Grid>
-          <CurrencyDeclensionForms numberPart="fractional" />
-          <DeclensionsFields
+        </div>
+        <h5 className="mt-4 w-full text-2xl">
+          {t('options_currency_custom_fractional_block_title')}
+        </h5>
+        <CurrencyDeclensionForms numberPart="fractional" />
+        <DeclensionsFields
+          numberPart="fractional"
+          declensionsObjectName="fractionalPartNameDeclensions"
+        />
+        <div className="w-full">
+          <CurrencyForm
+            name="custom-currency-form-fractional"
             numberPart="fractional"
-            declensionsObjectName="fractionalPartNameDeclensions"
           />
-          <Grid item xs={12}>
-            <CurrencyForm
-              name="custom-currency-form-fractional"
-              numberPart="fractional"
-            />
-          </Grid>
-          <Grid item xs={12} style={{ marginTop: '1.5rem' }}>
-            <Typography variant="h5" display="block">
-              {t('options_currency_custom_common_block_title')}
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              name="custom-currency-fractional-min-length"
-              label={t('options_currency_fractionalPartMinLength')}
-              variant="standard"
-              fullWidth
-              type="number"
-              inputProps={{
-                min: 0,
-              }}
-              placeholder="2"
-              value={options.customCurrency.fractionalPartMinLength}
-              onChange={updateOptions}
-            />
-          </Grid>
-        </Grid>
-      </Box>
-    </>
+        </div>
+        <h5 className="mt-4 w-full text-2xl">
+          {t('options_currency_custom_common_block_title')}
+        </h5>
+        <div className="w-full">
+          <InputField
+            name="custom-currency-fractional-min-length"
+            type="number"
+            placeholder="2"
+            value={options.customCurrency.fractionalPartMinLength}
+            onChange={updateOptions}
+            min={0}
+            label={t('options_currency_fractionalPartMinLength')}
+          />
+        </div>
+      </div>
+    </div>
   )
 }

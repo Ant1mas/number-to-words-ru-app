@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next'
-import Skeleton from '@mui/material/Skeleton'
+
+import SkeletonText from 'components/SkeletonText'
 
 export default function useI18n(
   ns = '',
   options = {},
   hookOptions = {
-    loadingComponent: <Skeleton sx={{ minWidth: 50 }} variant="text" />,
+    loadingComponent: <SkeletonText maxWidth={50} />,
   },
 ) {
   const { t, i18n } = useTranslation(ns, options)

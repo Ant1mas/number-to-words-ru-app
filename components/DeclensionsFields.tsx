@@ -1,9 +1,9 @@
-import Grid from '@mui/material/Grid'
-import TextField from '@mui/material/TextField'
+import clsx from 'clsx'
 
 import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject'
 import useI18n from 'lib/hooks/useI18n'
+import InputField from 'components/InputField'
 
 type numberParts = 'integer' | 'fractional'
 
@@ -88,20 +88,18 @@ export default function DeclensionsFields({
     }
 
     return (
-      <Grid
-        item
-        xs={12}
-        sm={6}
+      <div
+        className="w-full sm:w-1/2 sm:px-1"
         key={`${fieldObject.declension}-${fieldObject.form}`}
       >
-        <TextField
+        <InputField
           name={`custom-currency-${numberPart}-declension-${fieldObject.declension}-${fieldObject.form}`}
           label={t(
             `options_currency_custom_value_declension_${fieldObject.declension}_${fieldObject.form}`,
           )}
-          variant="standard"
-          fullWidth
-          disabled={disabled}
+          helperText={
+            selected ? t('options_currency_custom_value_declension_used') : ''
+          }
           placeholder={
             DEFAULT_CURRENCY_OBJECT[declensionsObjectName][
               fieldObject.declension
@@ -109,16 +107,10 @@ export default function DeclensionsFields({
           }
           value={value}
           onChange={updateOptions}
-          sx={{
-            input: {
-              color: selected ? 'primary.main' : '',
-            },
-          }}
-          helperText={
-            selected ? t('options_currency_custom_value_declension_used') : ''
-          }
+          disabled={disabled}
+          className={clsx(selected && 'text-primary')}
         />
-      </Grid>
+      </div>
     )
   })
 
