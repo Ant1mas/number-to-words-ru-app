@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
 
 import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject'
-import { useModuleOptions } from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
+import  useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 
 type Props = {

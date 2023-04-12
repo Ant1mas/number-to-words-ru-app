@@ -14,7 +14,7 @@ import OPTIONS_VALUES_TYPE_NUMBER from 'lib/constants/optionsValuesTypeNumber'
 import OPTIONS_SYNCED_VALUES_MAP from 'lib/constants/optionsSyncedValuesMap'
 import objectsDiff from 'lib/functions/objectsDiff'
 
-export function useModuleOptions() {
+export default function useModuleOptions() {
   const dispatch = useAppDispatch()
   const moduleOptions = useAppSelector(selectModuleOptions)
   const [formattedOptions, setFormattedOptions] = React.useState(
@@ -111,5 +111,3 @@ export function useModuleOptions() {
     updateOptions,
   }
 }
-
-export default useModuleOptions

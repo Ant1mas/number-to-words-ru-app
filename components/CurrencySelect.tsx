@@ -1,5 +1,5 @@
 import InputSelect from 'components/InputSelect'
-import { useModuleOptions } from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
+import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 
 export default function CurrencySelect() {
