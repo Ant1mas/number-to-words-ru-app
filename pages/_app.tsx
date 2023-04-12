@@ -21,7 +21,7 @@ export default function App(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
   return (
-    <div id="app" className={clsx([roboto.variable])}>
+    <div id="app" className={clsx([roboto.variable], 'flex justify-center')}>
       <ReactHotToaster />
       <RootProviders emotionCache={emotionCache}>
         <CssBaseline />

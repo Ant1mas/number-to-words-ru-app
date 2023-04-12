@@ -1,6 +1,3 @@
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 import { convert as convertNumberToWordsRu } from 'number-to-words-ru'
 import toast from 'react-hot-toast'
 
@@ -20,34 +17,18 @@ export default function ResultBlock() {
   )
 
   return (
-    <Grid container direction="column" alignItems="center" spacing={1}>
-      <Grid item xs={12}>
-        <Typography variant="h4">{t('result_block_title')}</Typography>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        style={{
-          width: '100%',
-          textAlign: 'center',
-          borderRadius: 4,
-        }}
-      >
-        <Typography
-          id="result-text"
-          style={{
-            padding: '1rem',
-            backgroundColor: '#efecf4',
-            overflowX: 'hidden',
-          }}
-        >
+    <div className="flex flex-col items-center">
+      <h4 className="my-2 w-full text-center text-4xl">
+        {t('result_block_title')}
+      </h4>
+      <div className="w-full text-center">
+        <div className="overflow-hidden rounded-2xl bg-slate-100 p-4">
           {resultText}
-        </Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <Button
-          variant="contained"
-          color="inherit"
+        </div>
+      </div>
+      <div className="mt-3 flex w-full justify-center">
+        <button
+          className="btn-outline btn"
           onClick={() => {
             copyToClipboard(resultText)
             toast.success(t('result_block_button_copy_snackbar_text'), {
@@ -56,8 +37,8 @@ export default function ResultBlock() {
           }}
         >
           {t('result_block_button_copy')}
-        </Button>
-      </Grid>
-    </Grid>
+        </button>
+      </div>
+    </div>
   )
 }

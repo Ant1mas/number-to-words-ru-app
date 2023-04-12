@@ -1,6 +1,3 @@
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
-
 import LogoSvg from 'public/images/svg/logo.svg'
 import useI18n from 'lib/hooks/useI18n'
 
@@ -8,22 +5,16 @@ export default function ModuleTitle() {
   const { t } = useI18n()
 
   return (
-    <>
-      <Grid container justifyContent="center">
-        <Grid item>
-          <LogoSvg style={{ width: 100 }} />
-        </Grid>
-      </Grid>
-      <Grid item xs={12}>
-        <Typography variant="h2" align="center">
-          number-to-words-ru
-        </Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <Typography variant="h5" align="center">
-          {t('main_module_description')}
-        </Typography>
-      </Grid>
-    </>
+    <div className="flex flex-wrap justify-center">
+      <div className="flex w-full justify-center">
+        <LogoSvg className="w-[100px]" />
+      </div>
+      <h2 className="my-2 w-full text-center text-6xl font-light">
+        number-to-words-ru
+      </h2>
+      <h5 className="w-full text-center text-2xl">
+        {t('main_module_description')}
+      </h5>
+    </div>
   )
 }

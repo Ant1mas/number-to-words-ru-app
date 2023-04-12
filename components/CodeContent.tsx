@@ -13,26 +13,23 @@ export default function CodeContent() {
   const { t } = useI18n()
 
   return (
-    <>
-      <Grid container direction="column" alignItems="center" spacing={1}>
-        <Grid item sx={{ width: '100%', maxWidth: '100%' }}>
-          <CodePreview code={code} language="javascript" />
-        </Grid>
-        <Grid item>
-          <Button
-            variant="contained"
-            color="inherit"
-            onClick={() => {
-              copyToClipboard(codeData(code))
-              toast.success(t('code_block_button_copy_snackbar_text'), {
-                duration: 2000,
-              })
-            }}
-          >
-            {t('code_block_button_copy')}
-          </Button>
-        </Grid>
-      </Grid>
-    </>
+    <div className="flex flex-col items-center">
+      <div className="w-full">
+        <CodePreview code={code} language="javascript" />
+      </div>
+      <div className="mt-3 flex w-full justify-center">
+        <button
+          className="btn-outline btn"
+          onClick={() => {
+            copyToClipboard(codeData(code))
+            toast.success(t('code_block_button_copy_snackbar_text'), {
+              duration: 2000,
+            })
+          }}
+        >
+          {t('code_block_button_copy')}
+        </button>
+      </div>
+    </div>
   )
 }

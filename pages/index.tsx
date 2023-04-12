@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Grid from '@mui/material/Grid'
 
 import DefaultMetadata from 'components/DefaultMetadata'
 import Layout from 'components/Layout'
@@ -26,36 +25,32 @@ export default function Home() {
         <DefaultMetadata />
       </Head>
       <Layout>
-        <Grid item xs={12}>
+        <div className="mt-2 w-full px-4">
           <ModuleTitle />
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container justifyContent="center">
-            <Grid item xs={12} sm={6}>
-              <InputNumberField />
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
+        </div>
+        <div className="flex w-full justify-center p-4">
+          <div className="w-full sm:w-1/2">
+            <InputNumberField />
+          </div>
+        </div>
+        <div className="w-full p-4">
           <ResultBlock />
-        </Grid>
-        <Grid item xs={12} lg={6}>
+        </div>
+        <div className="w-full p-4 lg:w-1/2">
           <ExamplesBlock />
           <OptionsBlock />
-        </Grid>
-        <Grid item xs={12} lg={6}>
-          <Grid container direction="column" spacing={6}>
-            <Grid item xs={12} sx={{ width: '100%' }}>
-              <CodeBlock />
-            </Grid>
-            <Grid item>
-              <LinksBlock />
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
+        </div>
+        <div className="flex w-full flex-col lg:w-1/2">
+          <div className="w-full p-4">
+            <CodeBlock />
+          </div>
+          <div className="w-full p-4">
+            <LinksBlock />
+          </div>
+        </div>
+        <div className="w-full p-4">
           <InstallationBlock />
-        </Grid>
+        </div>
       </Layout>
     </>
   )

@@ -13,20 +13,18 @@ export default function InputNumberField() {
   const { t } = useI18n()
 
   return (
-    <>
-      <TextField
-        id="input-number"
-        label={t('module_number_input_label')}
-        margin="normal"
-        variant="outlined"
-        fullWidth
-        value={moduleNumber}
-        placeholder="12345.6789"
-        helperText={t('module_number_input_helper_text')}
-        onChange={(event) => {
-          dispatch(moduleNumberUpdated(event.target.value))
-        }}
-      />
-    </>
+    <TextField
+      id="input-number"
+      label={t('module_number_input_label')}
+      margin="normal"
+      variant="outlined"
+      fullWidth
+      value={moduleNumber}
+      placeholder="12345.6789"
+      helperText={t('module_number_input_helper_text')}
+      onChange={(event) => {
+        dispatch(moduleNumberUpdated(event.target.value))
+      }}
+    />
   )
 }

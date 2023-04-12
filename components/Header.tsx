@@ -7,12 +7,13 @@ import useI18n from 'lib/hooks/useI18n'
 
 export default function Header() {
   const { i18n } = useI18n()
+  const languages = i18n.languages || []
 
   return (
     <header className="flex justify-end pt-4">
       <div>
         <MenuButton
-          items={[...i18n.languages].sort() as string[]}
+          items={[...languages].sort()}
           itemsNames={{
             ru: 'Русский',
             en: 'English',
