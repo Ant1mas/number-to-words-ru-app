@@ -1,8 +1,3 @@
-import FormControl from '@mui/material/FormControl'
-import InputLabel from '@mui/material/InputLabel'
-import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-
 type Item = {
   value: string | number
   name: string
@@ -13,8 +8,7 @@ type Props = {
   label: string
   value: string | number
   items: Item[]
-  minWidth: number
-  fullWidth: boolean
+  canHaveEmptyValue?: boolean
   onChange: any
 }
 
@@ -23,33 +17,32 @@ export default function InputSelect({
   label,
   value = '',
   items = [],
-  minWidth = 100,
-  fullWidth = false,
+  canHaveEmptyValue = false,
   onChange,
 }: Props) {
   return (
-    <>
-      <FormControl
-        style={{ minWidth: minWidth }}
-        fullWidth={fullWidth}
-        variant="standard"
+    <div className="form-control">
+      <label className="label py-1">
+        <span className="label-text">{label}</span>
+      </label>
+      <select
+        className="select-bordered select"
+        name={name}
+        onChange={onChange}
       >
-        <InputLabel id="label-select">{label}</InputLabel>
-        <Select
-          name={name}
-          labelId="label-select"
-          value={value}
-          onChange={onChange}
-        >
-          {items.map((item) => {
-            return (
-              <MenuItem key={item.value} value={item.value}>
-                {item.name}
-              </MenuItem>
-            )
-          })}
-        </Select>
-      </FormControl>
-    </>
+        {canHaveEmptyValue ? <option value=""></option> : null}
+        {items.map((item) => {
+          return (
+            <option
+              key={item.value}
+              value={item.value}
+              selected={value === item.value}
+            >
+              {item.name}
+            </option>
+          )
+        })}
+      </select>
+    </div>
   )
 }

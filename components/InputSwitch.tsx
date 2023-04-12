@@ -1,6 +1,3 @@
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Switch from '@mui/material/Switch'
-
 type Props = {
   name: string
   label: string
@@ -10,18 +7,17 @@ type Props = {
 
 export default function InputSwitch({ name, label, checked, onChange }: Props) {
   return (
-    <>
-      <FormControlLabel
-        control={
-          <Switch
-            name={name}
-            checked={checked}
-            onChange={onChange}
-            color="primary"
-          />
-        }
-        label={label}
-      />
-    </>
+    <div className="form-control">
+      <label className="label cursor-pointer justify-start">
+        <input
+          type="checkbox"
+          className="toggle-primary toggle"
+          name={name}
+          checked={checked}
+          onChange={onChange}
+        />
+        <span className="label-text ml-2 text-base">{label}</span>
+      </label>
+    </div>
   )
 }

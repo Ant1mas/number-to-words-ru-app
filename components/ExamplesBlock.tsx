@@ -1,6 +1,4 @@
 import { useEffect } from 'react'
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
 
 import useI18n from 'lib/hooks/useI18n'
 import useUsedExamples from 'lib/hooks/useUsedExamples'
@@ -16,57 +14,48 @@ export default function ExamplesBlock() {
   }, [])
 
   return (
-    <>
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-        spacing={1}
-        sx={{ marginBottom: '20px' }}
-      >
-        <Grid item>
-          <Typography align="center" variant="h4">
-            {t('usage_example_block_title')}
-          </Typography>
-        </Grid>
-        <Grid style={{ width: '100%' }}>
-          <InputSelect
-            name="usageExamples"
-            label={t('usage_example_select_label')}
-            fullWidth
-            value={selectedExample}
-            onChange={(e) => {
-              applyExample(e.target.value)
-            }}
-            items={[
-              {
-                value: 'justNumber',
-                name: t('usage_example_select_value_just_number'),
-              },
-              {
-                value: 'fractionalNumber',
-                name: t('usage_example_select_value_fractional_number'),
-              },
-              {
-                value: 'users',
-                name: '«Пользователи»',
-              },
-              {
-                value: 'messages',
-                name: '«Сообщения»',
-              },
-              {
-                value: 'rubles',
-                name: '«Рубли»',
-              },
-              {
-                value: 'currencyNumber',
-                name: t('usage_example_select_value_currency_number'),
-              },
-            ]}
-          />
-        </Grid>
-      </Grid>
-    </>
+    <div className="flex flex-col items-center p-4">
+      <h4 className="my-2 w-full text-center text-4xl">
+        {t('usage_example_block_title')}
+      </h4>
+      <div className=" w-full">
+        <InputSelect
+          name="usageExamples"
+          label={t('usage_example_select_label')}
+          fullWidth
+          value={selectedExample}
+          canHaveEmptyValue
+          onChange={(e) => {
+            applyExample(e.target.value)
+          }}
+          items={[
+            {
+              value: 'justNumber',
+              name: t('usage_example_select_value_just_number'),
+            },
+            {
+              value: 'fractionalNumber',
+              name: t('usage_example_select_value_fractional_number'),
+            },
+            {
+              value: 'users',
+              name: '«Пользователи»',
+            },
+            {
+              value: 'messages',
+              name: '«Сообщения»',
+            },
+            {
+              value: 'rubles',
+              name: '«Рубли»',
+            },
+            {
+              value: 'currencyNumber',
+              name: t('usage_example_select_value_currency_number'),
+            },
+          ]}
+        />
+      </div>
+    </div>
   )
 }

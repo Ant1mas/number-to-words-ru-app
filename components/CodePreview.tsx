@@ -14,7 +14,9 @@ export default function CodePreview({ language, code }: Props) {
         style={stackoverflowLight}
         customStyle={{
           padding: '1rem',
+          borderRadius: 16,
         }}
+        className="scrollbar"
       >
         {code}
       </SyntaxHighlighter>

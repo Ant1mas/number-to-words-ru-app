@@ -36,7 +36,7 @@ export default function Home() {
         <div className="w-full p-4">
           <ResultBlock />
         </div>
-        <div className="w-full p-4 lg:w-1/2">
+        <div className="w-full lg:w-1/2">
           <ExamplesBlock />
           <OptionsBlock />
         </div>

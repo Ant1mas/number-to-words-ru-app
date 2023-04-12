@@ -1,6 +1,3 @@
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
-
 import useI18n from 'lib/hooks/useI18n'
 import CodePreview from 'components/CodePreview'
 
@@ -12,30 +9,24 @@ export default function InstallationBlock() {
   const { t } = useI18n()
 
   return (
-    <>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography variant="h4" align="center">
-            {t('installation_block_title')}
-          </Typography>
-        </Grid>
-        <Grid item xs={12} lg={4}>
-          <Typography variant="body1">{t('installation_npm_title')}</Typography>
+    <div className="flex flex-col items-center">
+      <h4 className="my-2 w-full text-center text-4xl">
+        {t('installation_block_title')}
+      </h4>
+      <div className="flex w-full flex-wrap">
+        <div className="w-full px-2 lg:w-1/3">
+          <div className="mb-2 text-base">{t('installation_npm_title')}</div>
           <CodePreview code={CODE_NPM} language="bash" />
-        </Grid>
-        <Grid item xs={12} lg={4}>
-          <Typography variant="body1">
-            {t('installation_yarn_title')}
-          </Typography>
+        </div>
+        <div className="w-full px-2 lg:w-1/3">
+          <div className="mb-2 text-base">{t('installation_yarn_title')}</div>
           <CodePreview code={CODE_YARN} language="bash" />
-        </Grid>
-        <Grid item xs={12} lg={4}>
-          <Typography variant="body1">
-            {t('installation_pnpm_title')}
-          </Typography>
+        </div>
+        <div className="w-full px-2 lg:w-1/3">
+          <div className="mb-2 text-base">{t('installation_pnpm_title')}</div>
           <CodePreview code={CODE_PNPM} language="bash" />
-        </Grid>
-      </Grid>
-    </>
+        </div>
+      </div>
+    </div>
   )
 }
