@@ -51,7 +51,7 @@ export default function DeclensionsFields({
         fieldObject.form === 'singular' ? 0 : 1
       ]
     if (disabled) {
-      value = t('options_currency_custom_value_declension_disabled')
+      value = t('options_currency_custom_value_declension_disabled', '')
     }
     let selected = false
     if (

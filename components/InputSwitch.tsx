@@ -1,3 +1,5 @@
+import LoadingText from 'components/LoadingText'
+
 type Props = {
   name: string
   label: string
@@ -16,7 +18,9 @@ export default function InputSwitch({ name, label, checked, onChange }: Props) {
           checked={checked}
           onChange={onChange}
         />
-        <span className="label-text ml-2 text-base">{label}</span>
+        <span className="label-text ml-2 text-base">
+          <LoadingText text={label} skeletonWidth={160} skeletonHeight={24} />
+        </span>
       </label>
     </div>
   )

@@ -1,12 +1,13 @@
 type Props = {
-  maxWidth?: number
+  width?: number
+  height?: number
 }
 
-export default function SkeletonText({ maxWidth = 120 }: Props) {
+export default function SkeletonText({ width = 120, height = 16 }: Props) {
   return (
     <div
-      className="h-4 animate-pulse rounded-full bg-gray-200 dark:bg-gray-700"
-      style={{ maxWidth: maxWidth }}
+      className="animate-pulse rounded-full bg-gray-200 dark:bg-gray-700"
+      style={{ width, height }}
     ></div>
   )
 }

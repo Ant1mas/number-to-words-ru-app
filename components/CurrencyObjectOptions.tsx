@@ -1,5 +1,6 @@
 import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
+import LoadingText from 'components/LoadingText'
 import InputField from 'components/InputField'
 import DeclensionsFields from 'components/DeclensionsFields'
 import CurrencyForm from 'components/CurrencyForm'
@@ -13,7 +14,11 @@ export default function CurrencyObjectOptions() {
     <div className="my-1 border-l-2 border-primary/50 px-2">
       <div className="flex flex-wrap">
         <h5 className="w-full text-2xl">
-          {t('options_currency_custom_integer_block_title')}
+          <LoadingText
+            text={t('options_currency_custom_integer_block_title')}
+            skeletonWidth={320}
+            skeletonHeight={32}
+          />
         </h5>
         <CurrencyDeclensionForms numberPart="integer" />
         <DeclensionsFields
@@ -27,7 +32,11 @@ export default function CurrencyObjectOptions() {
           />
         </div>
         <h5 className="mt-4 w-full text-2xl">
-          {t('options_currency_custom_fractional_block_title')}
+          <LoadingText
+            text={t('options_currency_custom_fractional_block_title')}
+            skeletonWidth={320}
+            skeletonHeight={32}
+          />
         </h5>
         <CurrencyDeclensionForms numberPart="fractional" />
         <DeclensionsFields
@@ -41,7 +50,11 @@ export default function CurrencyObjectOptions() {
           />
         </div>
         <h5 className="mt-4 w-full text-2xl">
-          {t('options_currency_custom_common_block_title')}
+          <LoadingText
+            text={t('options_currency_custom_common_block_title')}
+            skeletonWidth={320}
+            skeletonHeight={32}
+          />
         </h5>
         <div className="w-full">
           <InputField

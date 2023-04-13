@@ -1,3 +1,5 @@
+import LoadingText from 'components/LoadingText'
+
 type Item = {
   value: string | number
   name: string
@@ -23,7 +25,9 @@ export default function InputSelect({
   return (
     <div className="form-control">
       <label className="label py-1">
-        <span className="label-text">{label}</span>
+        <span className="label-text">
+          <LoadingText text={label} skeletonWidth={220} skeletonHeight={20} />
+        </span>
       </label>
       <select
         className="select-bordered select"

@@ -1,22 +1,16 @@
 import { useTranslation } from 'react-i18next'
 
-import SkeletonText from 'components/SkeletonText'
+export const DEFAULT_LOADING_STATE = '[[LOADING]]'
 
-export default function useI18n(
-  ns = '',
-  options = {},
-  hookOptions = {
-    loadingComponent: <SkeletonText maxWidth={50} />,
-  },
-) {
-  const { t, i18n } = useTranslation(ns, options)
+export default function useI18n(ns = '', options = {}) {
+  const { t: tLib, i18n } = useTranslation(ns, options)
 
-  const tSkeleton = () => {
-    return hookOptions.loadingComponent
+  const t = (textKey, loadingState = DEFAULT_LOADING_STATE): string => {
+    return i18n.resolvedLanguage ? tLib(textKey) : loadingState
   }
 
   return {
-    t: i18n.resolvedLanguage ? t : tSkeleton,
+    t,
     i18n,
     translationReady: i18n.resolvedLanguage ? true : false,
   }

@@ -5,6 +5,7 @@ import useI18n from 'lib/hooks/useI18n'
 import codeData from 'lib/functions/codeDataTemplateString'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 import CodePreview from 'components/CodePreview'
+import LoadingText from 'components/LoadingText'
 
 export default function CodeContent() {
   const { code } = useCodePreview()
@@ -25,7 +26,11 @@ export default function CodeContent() {
             })
           }}
         >
-          {t('code_block_button_copy')}
+          <LoadingText
+            text={t('code_block_button_copy')}
+            skeletonWidth={120}
+            skeletonHeight={20}
+          />
         </button>
       </div>
     </div>

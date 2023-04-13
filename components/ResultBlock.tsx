@@ -6,6 +6,7 @@ import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOpt
 import { selectModuleNumber } from 'lib/config/redux/slices/moduleNumber/moduleNumberSlice'
 import useI18n from 'lib/hooks/useI18n'
 import copyToClipboard from 'lib/functions/copyToClipboard'
+import LoadingText from 'components/LoadingText'
 
 export default function ResultBlock() {
   const moduleNumber = useAppSelector(selectModuleNumber)
@@ -18,8 +19,12 @@ export default function ResultBlock() {
 
   return (
     <div className="flex flex-col items-center">
-      <h4 className="my-2 w-full text-center text-4xl">
-        {t('result_block_title')}
+      <h4 className="my-2 flex w-full justify-center text-center text-4xl">
+        <LoadingText
+          text={t('result_block_title')}
+          skeletonWidth={200}
+          skeletonHeight={40}
+        />
       </h4>
       <div className="w-full text-center">
         <div className="overflow-hidden rounded-2xl bg-slate-100 p-4">
@@ -36,7 +41,11 @@ export default function ResultBlock() {
             })
           }}
         >
-          {t('result_block_button_copy')}
+          <LoadingText
+            text={t('result_block_button_copy')}
+            skeletonWidth={160}
+            skeletonHeight={20}
+          />
         </button>
       </div>
     </div>

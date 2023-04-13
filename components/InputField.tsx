@@ -1,3 +1,5 @@
+import LoadingText from 'components/LoadingText'
+
 type Props = {
   name?: string
   type?: string
@@ -25,7 +27,9 @@ export default function InputField({
     <div className="form-control">
       {label.length > 0 ? (
         <label className="label pb-2 pt-1">
-          <span className="label-text">{label}</span>
+          <span className="label-text">
+            <LoadingText text={label} skeletonWidth={100} skeletonHeight={20} />
+          </span>
         </label>
       ) : null}
       <input
@@ -38,7 +42,13 @@ export default function InputField({
         {...other}
       />
       <label className="label pt-0.5">
-        <span className="label-text-alt">{helperText}</span>
+        <span className="label-text-alt">
+          <LoadingText
+            text={helperText}
+            skeletonWidth={300}
+            skeletonHeight={16}
+          />
+        </span>
       </label>
     </div>
   )
