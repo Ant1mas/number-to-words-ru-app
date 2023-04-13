@@ -8,7 +8,7 @@ type Props = {
 export default function IconButton({ children, ...otherProps }: Props) {
   return (
     <button
-      className="btn-ghost btn-circle btn relative text-2xl text-black/50"
+      className="relative text-2xl btn-ghost btn-circle btn text-black/50"
       type="button"
       tabIndex={0}
       {...otherProps}

@@ -25,10 +25,10 @@ export default function Home() {
         <DefaultMetadata />
       </Head>
       <Layout>
-        <div className="mt-2 w-full px-4">
+        <div className="w-full px-4 mt-2">
           <ModuleTitle />
         </div>
-        <div className="flex w-full justify-center p-4">
+        <div className="flex justify-center w-full p-4">
           <div className="w-full sm:w-1/2">
             <InputNumberField />
           </div>
@@ -40,7 +40,7 @@ export default function Home() {
           <ExamplesBlock />
           <OptionsBlock />
         </div>
-        <div className="flex w-full flex-col lg:w-1/2">
+        <div className="flex flex-col w-full lg:w-1/2">
           <div className="w-full p-4">
             <CodeBlock />
           </div>

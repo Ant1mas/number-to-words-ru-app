@@ -16,7 +16,7 @@ export default function CodeContent() {
       <div className="w-full">
         <CodePreview code={code} language="javascript" />
       </div>
-      <div className="mt-3 flex w-full justify-center">
+      <div className="flex justify-center w-full mt-3">
         <button
           className="btn-outline btn"
           onClick={() => {

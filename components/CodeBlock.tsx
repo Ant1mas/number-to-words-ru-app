@@ -7,7 +7,7 @@ export default function CodeBlock() {
 
   return (
     <div className="flex flex-col items-center">
-      <h4 className="my-2 w-full text-center text-4xl flex justify-center">
+      <h4 className="flex justify-center w-full my-2 text-4xl text-center">
         <LoadingText
           text={t('code_block_title')}
           skeletonWidth={120}

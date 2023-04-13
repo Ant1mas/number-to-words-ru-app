@@ -11,7 +11,7 @@ export default function CurrencyObjectOptions() {
   const { t } = useI18n()
 
   return (
-    <div className="my-1 border-l-2 border-primary/50 px-2">
+    <div className="px-2 my-1 border-l-2 border-primary/50">
       <div className="flex flex-wrap">
         <h5 className="w-full text-2xl">
           <LoadingText
@@ -31,7 +31,7 @@ export default function CurrencyObjectOptions() {
             numberPart="integer"
           />
         </div>
-        <h5 className="mt-4 w-full text-2xl">
+        <h5 className="w-full mt-4 text-2xl">
           <LoadingText
             text={t('options_currency_custom_fractional_block_title')}
             skeletonWidth={320}
@@ -49,7 +49,7 @@ export default function CurrencyObjectOptions() {
             numberPart="fractional"
           />
         </div>
-        <h5 className="mt-4 w-full text-2xl">
+        <h5 className="w-full mt-4 text-2xl">
           <LoadingText
             text={t('options_currency_custom_common_block_title')}
             skeletonWidth={320}

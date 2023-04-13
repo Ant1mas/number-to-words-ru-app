@@ -20,16 +20,16 @@ export default function Footer() {
           (v2.3.4)
         </div>
       ) : null}
-      <div className="mt-2 flex w-full justify-center font-sans">
+      <div className="flex justify-center w-full mt-2 font-sans">
         <LoadingText
           text={t('made_by_project')}
           skeletonWidth={120}
           skeletonHeight={24}
         />
       </div>
-      <div className="my-1 flex w-full justify-center">
+      <div className="flex justify-center w-full my-1">
         <a href="https://github.com/Ant1mas" target="_blank" rel="noreferrer">
-          <LogoAnt1mas className="h-16 cursor-pointer fill-black opacity-70 duration-150 hover:opacity-100 focus:opacity-100" />
+          <LogoAnt1mas className="h-16 duration-150 cursor-pointer fill-black opacity-70 hover:opacity-100 focus:opacity-100" />
         </a>
       </div>
     </footer>

@@ -24,7 +24,7 @@ export default function InputSelect({
 }: Props) {
   return (
     <div className="form-control">
-      <label className="label py-1">
+      <label className="py-1 label">
         <span className="label-text">
           <LoadingText text={label} skeletonWidth={220} skeletonHeight={20} />
         </span>

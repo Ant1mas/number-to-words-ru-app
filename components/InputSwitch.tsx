@@ -10,7 +10,7 @@ type Props = {
 export default function InputSwitch({ name, label, checked, onChange }: Props) {
   return (
     <div className="form-control">
-      <label className="label cursor-pointer justify-start">
+      <label className="justify-start cursor-pointer label">
         <input
           type="checkbox"
           className="toggle-primary toggle"
@@ -18,7 +18,7 @@ export default function InputSwitch({ name, label, checked, onChange }: Props) {
           checked={checked}
           onChange={onChange}
         />
-        <span className="label-text ml-2 text-base">
+        <span className="ml-2 text-base label-text">
           <LoadingText text={label} skeletonWidth={160} skeletonHeight={24} />
         </span>
       </label>

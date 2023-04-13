@@ -11,7 +11,7 @@ export default function Layout({ children }: Props) {
   return (
     <div className="flex min-h-screen max-w-[1200px] flex-col">
       <Header />
-      <main className="flex grow flex-wrap justify-center">{children}</main>
+      <main className="flex flex-wrap justify-center grow">{children}</main>
       <Footer />
     </div>
   )

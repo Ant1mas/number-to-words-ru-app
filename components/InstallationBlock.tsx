@@ -11,14 +11,14 @@ export default function InstallationBlock() {
 
   return (
     <div className="flex flex-col items-center">
-      <h4 className="my-2 flex w-full justify-center text-center text-4xl">
+      <h4 className="flex justify-center w-full my-2 text-4xl text-center">
         <LoadingText
           text={t('installation_block_title')}
           skeletonWidth={200}
           skeletonHeight={40}
         />
       </h4>
-      <div className="flex w-full flex-wrap">
+      <div className="flex flex-wrap w-full">
         <div className="w-full px-2 lg:w-1/3">
           <div className="mb-2 text-base">
             <LoadingText

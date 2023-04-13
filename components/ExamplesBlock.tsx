@@ -16,7 +16,7 @@ export default function ExamplesBlock() {
 
   return (
     <div className="flex flex-col items-center p-4">
-      <h4 className="my-2 flex w-full justify-center text-center text-4xl">
+      <h4 className="flex justify-center w-full my-2 text-4xl text-center">
         <LoadingText
           text={t('usage_example_block_title')}
           skeletonWidth={400}

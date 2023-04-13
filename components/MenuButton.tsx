@@ -42,7 +42,7 @@ export default function MenuButton({
       {children}
       <ul
         tabIndex={0}
-        className="dropdown-content menu rounded-box mt-1 w-28 bg-white p-2 shadow-md"
+        className="p-2 mt-1 bg-white shadow-md dropdown-content menu rounded-box w-28"
         ref={menuRef}
       >
         {items?.map((item) => {

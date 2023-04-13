@@ -7,13 +7,13 @@ export default function ModuleTitle() {
 
   return (
     <div className="flex flex-wrap justify-center">
-      <div className="flex w-full justify-center">
+      <div className="flex justify-center w-full">
         <LogoSvg className="w-[100px]" />
       </div>
-      <h2 className="my-2 w-full text-center text-6xl font-light">
+      <h2 className="w-full my-2 text-6xl font-light text-center">
         number-to-words-ru
       </h2>
-      <h5 className="flex w-full justify-center text-center text-2xl">
+      <h5 className="flex justify-center w-full text-2xl text-center">
         <LoadingText
           text={t('main_module_description')}
           skeletonWidth={680}

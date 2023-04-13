@@ -26,7 +26,7 @@ export default function InputField({
   return (
     <div className="form-control">
       {label.length > 0 ? (
-        <label className="label pb-2 pt-1">
+        <label className="pt-1 pb-2 label">
           <span className="label-text">
             <LoadingText text={label} skeletonWidth={100} skeletonHeight={20} />
           </span>

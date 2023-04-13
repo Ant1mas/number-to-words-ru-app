@@ -19,7 +19,7 @@ export default function ResultBlock() {
 
   return (
     <div className="flex flex-col items-center">
-      <h4 className="my-2 flex w-full justify-center text-center text-4xl">
+      <h4 className="flex justify-center w-full my-2 text-4xl text-center">
         <LoadingText
           text={t('result_block_title')}
           skeletonWidth={200}
@@ -27,11 +27,11 @@ export default function ResultBlock() {
         />
       </h4>
       <div className="w-full text-center">
-        <div className="overflow-hidden rounded-2xl bg-slate-100 p-4">
+        <div className="p-4 overflow-hidden rounded-2xl bg-slate-100">
           {resultText}
         </div>
       </div>
-      <div className="mt-3 flex w-full justify-center">
+      <div className="flex justify-center w-full mt-3">
         <button
           className="btn-outline btn"
           onClick={() => {
