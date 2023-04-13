@@ -1,16 +1,14 @@
 import { AppProps } from 'next/app'
+import { appWithTranslation } from 'next-i18next'
 import clsx from 'clsx'
 
 import '@/styles/globals.css'
-import '@/i18n'
 import { roboto } from 'lib/config/fonts'
 import Root from 'components/Root'
 import RootProviders from 'components/RootProviders'
 import ReactHotToaster from 'components/ReactHotToaster'
 
-export default function App(props: AppProps) {
-  const { Component, pageProps } = props
-
+export function App({ Component, pageProps }: AppProps) {
   return (
     <div id="app" className={clsx([roboto.variable], 'flex justify-center')}>
       <ReactHotToaster />
@@ -21,3 +19,5 @@ export default function App(props: AppProps) {
     </div>
   )
 }
+
+export default appWithTranslation(App)

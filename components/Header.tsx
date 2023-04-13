@@ -1,26 +1,25 @@
 import { MdTranslate } from 'react-icons/md'
 import { FaGithub } from 'react-icons/fa'
 
+import useI18n from 'lib/hooks/useI18n'
 import MenuButton from 'components/MenuButton'
 import IconButton from 'components/IconButton'
-import useI18n from 'lib/hooks/useI18n'
 
 export default function Header() {
-  const { i18n } = useI18n()
-  const languages = i18n.languages || []
+  const { locales, locale, changeLocale } = useI18n()
 
   return (
     <header className="flex justify-end pt-4">
       <div>
         <MenuButton
-          items={[...languages].sort()}
+          items={[...locales].sort()}
           itemsNames={{
             ru: 'Русский',
             en: 'English',
           }}
-          selected={i18n.language}
+          selected={locale}
           onChange={(selected) => {
-            i18n.changeLanguage(selected)
+            changeLocale(selected)
           }}
         >
           <IconButton>
