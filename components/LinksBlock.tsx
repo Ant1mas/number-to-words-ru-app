@@ -7,7 +7,7 @@ export default function LinksBlock() {
   const { t } = useI18n()
   return (
     <div className="flex flex-col items-center">
-      <h4 className="flex justify-center w-full my-2 text-4xl text-center">
+      <h4 className="my-2 flex w-full justify-center text-center text-4xl">
         <LoadingText
           text={t('links_block_title')}
           skeletonWidth={280}
@@ -19,9 +19,11 @@ export default function LinksBlock() {
           href="https://github.com/Ant1mas/number-to-words-ru/blob/master/README.md#api"
           target="_blank"
           rel="noreferrer"
-          className="my-0.5 flex w-full items-center justify-center hover:underline"
+          className="my-0.5 text-center hover:underline"
         >
-          <RxExternalLink className="mr-1 text-xl" />
+          <div className="relative top-1 mr-1 inline-block">
+            <RxExternalLink className="text-xl" />
+          </div>
           <LoadingText
             text={t('links_block_link_api')}
             skeletonWidth={200}
@@ -32,9 +34,11 @@ export default function LinksBlock() {
           href="https://github.com/Ant1mas/number-to-words-ru/blob/master/README.md#api"
           target="_blank"
           rel="noreferrer"
-          className="my-0.5 flex w-full items-center justify-center hover:underline"
+          className="my-0.5 text-center hover:underline"
         >
-          <RxExternalLink className="mr-1 text-xl" />
+          <div className="relative top-1 mr-1 inline-block">
+            <RxExternalLink className="text-xl" />
+          </div>
           <LoadingText
             text={t('links_block_link_example_codesandbox')}
             skeletonWidth={200}
