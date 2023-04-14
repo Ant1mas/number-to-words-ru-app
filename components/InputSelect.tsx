@@ -33,15 +33,12 @@ export default function InputSelect({
         className="select-bordered select"
         name={name}
         onChange={onChange}
+        value={value}
       >
         {canHaveEmptyValue ? <option value=""></option> : null}
         {items.map((item) => {
           return (
-            <option
-              key={item.value}
-              value={item.value}
-              selected={value === item.value}
-            >
+            <option key={item.value} value={item.value}>
               {item.name}
             </option>
           )
