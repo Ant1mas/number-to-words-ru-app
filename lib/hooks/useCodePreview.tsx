@@ -28,18 +28,18 @@ export default function useCodePreview() {
   const getCodeFnConvert = () => {
     if (optionsDifferencesString.length > 0) {
       return codeData(`
-        numberToWordsRu.convert('${moduleNumber}', {
+        numberToWordsRu('${moduleNumber}', {
           ${codeData(optionsDifferencesString)}
         })
       `)
     }
-    return `numberToWordsRu.convert('${moduleNumber}');`
+    return `numberToWordsRu('${moduleNumber}');`
   }
 
   const updateCodeText = () => {
     setCode(
       codeData(`
-      const numberToWordsRu = require('number-to-words-ru');
+      import { convert as numberToWordsRu } from 'number-to-words-ru';
 
       ${getCodeFnConvert()}
     `),

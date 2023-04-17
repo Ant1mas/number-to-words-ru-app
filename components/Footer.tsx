@@ -17,7 +17,7 @@ export default function Footer() {
           >
             <span className="font-bold underline">number-to-words-ru</span>
           </a>{' '}
-          (v2.3.4)
+          (v2.3.5)
         </div>
       ) : null}
       <div className="flex justify-center w-full mt-2 font-sans">
