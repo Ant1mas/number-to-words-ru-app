@@ -70,6 +70,7 @@
   "installation_npm_title": "Установить с помощью npm:",
   "installation_yarn_title": "Установить с помощью yarn:",
   "installation_pnpm_title": "Установить с помощью pnpm:",
+  "installation_bun_title": "Установить с помощью bun:",
   "info_module_version_text": "Здесь используется",
   "made_by_project": "Создал"
 }

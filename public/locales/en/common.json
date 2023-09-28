@@ -70,6 +70,7 @@
   "installation_npm_title": "Install with npm:",
   "installation_yarn_title": "Install with yarn:",
   "installation_pnpm_title": "Install with pnpm:",
+  "installation_bun_title": "Install with bun:",
   "info_module_version_text": "Here is used",
   "made_by_project": "Made by"
 }
