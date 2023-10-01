@@ -8,7 +8,7 @@ import useI18n from 'lib/hooks/useI18n'
 import copyToClipboard from 'lib/functions/copyToClipboard'
 import LoadingText from 'components/LoadingText'
 
-export default function ResultBlock() {
+export default function SectionResult() {
   const moduleNumber = useAppSelector(selectModuleNumber)
   const { formattedOptions } = useModuleOptions()
   const { t } = useI18n()

@@ -7,19 +7,19 @@ const CODE_YARN = `yarn add number-to-words-ru`
 const CODE_PNPM = `pnpm add number-to-words-ru`
 const CODE_BUN = `bun add number-to-words-ru`
 
-export default function InstallationBlock() {
+export default function SectionInstallation() {
   const { t } = useI18n()
 
   return (
     <div className="flex flex-col items-center">
-      <h4 className="flex justify-center w-full my-2 text-4xl text-center">
+      <h4 className="my-2 flex w-full justify-center text-center text-4xl">
         <LoadingText
           text={t('installation_block_title')}
           skeletonWidth={200}
           skeletonHeight={40}
         />
       </h4>
-      <div className="flex flex-wrap w-full">
+      <div className="flex w-full flex-wrap">
         <div className="w-full px-2 lg:w-1/3">
           <div className="mb-2 text-base">
             <LoadingText

@@ -5,7 +5,7 @@ import useUsedExamples from 'lib/hooks/useUsedExamples'
 import InputSelect from 'components/InputSelect'
 import LoadingText from 'components/LoadingText'
 
-export default function ExamplesBlock() {
+export default function SectionExamples() {
   const { selectedExample, applyExample } = useUsedExamples()
   const { t } = useI18n()
 
@@ -16,7 +16,7 @@ export default function ExamplesBlock() {
 
   return (
     <div className="flex flex-col items-center p-4">
-      <h4 className="flex justify-center w-full my-2 text-4xl text-center">
+      <h4 className="my-2 flex w-full justify-center text-center text-4xl">
         <LoadingText
           text={t('usage_example_block_title')}
           skeletonWidth={400}
