@@ -1,3 +1,4 @@
+import { Button } from '@nextui-org/button'
 import toast from 'react-hot-toast'
 
 import useCodePreview from 'lib/hooks/useCodePreview'
@@ -16,9 +17,10 @@ export default function CodeContent() {
       <div className="w-full">
         <CodePreview code={code} language="javascript" />
       </div>
-      <div className="flex justify-center w-full mt-3">
-        <button
-          className="btn-outline btn"
+      <div className="mt-3 flex w-full justify-center">
+        <Button
+          variant="ghost"
+          className="font-bold uppercase"
           onClick={() => {
             copyToClipboard(codeData(code))
             toast.success(t('code_block_button_copy_snackbar_text'), {
@@ -31,7 +33,7 @@ export default function CodeContent() {
             skeletonWidth={120}
             skeletonHeight={20}
           />
-        </button>
+        </Button>
       </div>
     </div>
   )

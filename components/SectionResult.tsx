@@ -1,5 +1,6 @@
 import { convert as convertNumberToWordsRu } from 'number-to-words-ru'
 import toast from 'react-hot-toast'
+import { Button } from '@nextui-org/button'
 
 import { useAppSelector } from 'lib/config/redux/store'
 import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
@@ -19,7 +20,7 @@ export default function SectionResult() {
 
   return (
     <div className="flex flex-col items-center">
-      <h4 className="flex justify-center w-full my-2 text-4xl text-center">
+      <h4 className="my-2 flex w-full justify-center text-center text-4xl">
         <LoadingText
           text={t('result_block_title')}
           skeletonWidth={200}
@@ -27,13 +28,14 @@ export default function SectionResult() {
         />
       </h4>
       <div className="w-full text-center">
-        <div className="p-4 overflow-hidden rounded-2xl bg-slate-100">
+        <div className="overflow-hidden rounded-2xl bg-slate-100 p-4">
           {resultText}
         </div>
       </div>
-      <div className="flex justify-center w-full mt-3">
-        <button
-          className="btn-outline btn"
+      <div className="mt-3 flex w-full justify-center">
+        <Button
+          variant="ghost"
+          className="font-bold uppercase"
           onClick={() => {
             copyToClipboard(resultText)
             toast.success(t('result_block_button_copy_snackbar_text'), {
@@ -46,7 +48,7 @@ export default function SectionResult() {
             skeletonWidth={160}
             skeletonHeight={20}
           />
-        </button>
+        </Button>
       </div>
     </div>
   )

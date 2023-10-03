@@ -12,8 +12,8 @@ export default class MyDocument extends Document {
     return (
       <Html
         lang={currentLocale}
-        className={clsx([roboto.variable])}
-        data-theme="light"
+        className={clsx(['light', roboto.variable])}
+        data-theme="light" // For DaisyUI
       >
         <Head />
         <body>
