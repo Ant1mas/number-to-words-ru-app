@@ -1,10 +1,11 @@
+import { Input } from '@nextui-org/input'
+
 import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
 import DeclensionSelect from 'components/DeclensionSelect'
 import CurrencySelect from 'components/CurrencySelect'
 import OptionsSwitchesBlock from 'components/OptionsSwitchesBlock'
-import InputField from 'components/InputField'
 import inputRoundNumberHelperText from 'lib/functions/inputRoundNumberHelperText'
 
 export default function OptionsContent() {
@@ -26,15 +27,17 @@ export default function OptionsContent() {
         <DeclensionSelect />
       </div>
       <div className="w-full py-2">
-        <InputField
+        <Input
+          id="round-number"
           name="round-number"
           type="number"
           placeholder="2"
+          label={t('options_round_number')}
+          description={inputRoundNumberHelperText(options, t)}
+          variant="bordered"
+          min={-1}
           value={options.roundNumber}
           onChange={updateOptions}
-          min={-1}
-          label={t('options_round_number')}
-          helperText={inputRoundNumberHelperText(options, t)}
         />
       </div>
       <OptionsSwitchesBlock />
