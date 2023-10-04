@@ -19,22 +19,5 @@ module.exports = {
         dark: {},
       },
     }),
-    require('daisyui'),
   ],
-  daisyui: {
-    themes: [
-      {
-        light: {
-          ...require('daisyui/src/theming/themes')['[data-theme=light]'],
-          primary: '#556cd6',
-        },
-      },
-      {
-        dark: {
-          ...require('daisyui/src/theming/themes')['[data-theme=dark]'],
-          primary: '#556cd6',
-        },
-      },
-    ],
-  },
 }

@@ -10,11 +10,7 @@ export default class MyDocument extends Document {
     const currentLocale =
       this.props.__NEXT_DATA__.locale ?? i18nextConfig.i18n.defaultLocale
     return (
-      <Html
-        lang={currentLocale}
-        className={clsx(['light', roboto.variable])}
-        data-theme="light" // For DaisyUI
-      >
+      <Html lang={currentLocale} className={clsx(['light', roboto.variable])}>
         <Head />
         <body>
           <Main />
