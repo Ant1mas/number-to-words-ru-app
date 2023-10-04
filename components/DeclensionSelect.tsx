@@ -1,43 +1,59 @@
-import InputSelect from 'components/InputSelect'
+import { Select, SelectItem } from '@nextui-org/select'
+
 import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import useI18n from 'lib/hooks/useI18n'
 
 export default function DeclensionSelect() {
   const { options, updateOptions } = useModuleOptions()
   const { t } = useI18n()
+  const declensions = [
+    {
+      value: 'nominative',
+      label: t('options_declension_select_value_nominative', '...'),
+    },
+    {
+      value: 'genitive',
+      label: t('options_declension_select_value_genitive', '...'),
+    },
+    {
+      value: 'dative',
+      label: t('options_declension_select_value_dative', '...'),
+    },
+    {
+      value: 'accusative',
+      label: t('options_declension_select_value_accusative', '...'),
+    },
+    {
+      value: 'instrumental',
+      label: t('options_declension_select_value_instrumental', '...'),
+    },
+    {
+      value: 'prepositional',
+      label: t('options_declension_select_value_prepositional', '...'),
+    },
+  ]
 
   return (
-    <InputSelect
+    <Select
       name="declension"
+      items={declensions}
       label={t('options_declension_label')}
-      value={options.declension}
-      onChange={updateOptions}
-      items={[
-        {
-          value: 'nominative',
-          name: t('options_declension_select_value_nominative', '...'),
-        },
-        {
-          value: 'genitive',
-          name: t('options_declension_select_value_genitive', '...'),
-        },
-        {
-          value: 'dative',
-          name: t('options_declension_select_value_dative', '...'),
-        },
-        {
-          value: 'accusative',
-          name: t('options_declension_select_value_accusative', '...'),
-        },
-        {
-          value: 'instrumental',
-          name: t('options_declension_select_value_instrumental', '...'),
-        },
-        {
-          value: 'prepositional',
-          name: t('options_declension_select_value_prepositional', '...'),
-        },
-      ]}
-    />
+      variant="bordered"
+      selectedKeys={[options.declension]}
+      className="w-full"
+      onSelectionChange={(selected: any) => {
+        selected.forEach((element) => {
+          updateOptions({
+            target: { name: 'declension', value: element, type: 'text' },
+          })
+        })
+      }}
+    >
+      {declensions.map((declension) => (
+        <SelectItem key={declension.value} value={declension.value}>
+          {declension.label}
+        </SelectItem>
+      ))}
+    </Select>
   )
 }
