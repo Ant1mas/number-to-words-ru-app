@@ -16,6 +16,10 @@ export default function CodePreview({ language, code }: Props) {
           padding: '1rem',
           borderRadius: 16,
         }}
+        lineProps={{
+          style: { wordBreak: 'break-all', whiteSpace: 'pre-wrap' },
+        }}
+        wrapLines={true}
         className="scrollbar"
       >
         {code}
