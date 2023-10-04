@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { Select, SelectItem } from '@nextui-org/select'
 
-import useI18n from 'lib/hooks/useI18n'
-import useUsedExamples from 'lib/hooks/useUsedExamples'
-import LoadingText from 'components/LoadingText'
+import useI18n from '@/lib/hooks/useI18n'
+import useUsedExamples from '@/lib/hooks/useUsedExamples'
+import LoadingText from '@/components/LoadingText'
 
 export default function SectionExamples() {
   const { selectedExample, applyExample } = useUsedExamples()

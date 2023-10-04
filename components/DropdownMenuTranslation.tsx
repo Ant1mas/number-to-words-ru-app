@@ -1,6 +1,6 @@
 import { DropdownMenu, DropdownItem } from '@nextui-org/dropdown'
 
-import useI18n from 'lib/hooks/useI18n'
+import useI18n from '@/lib/hooks/useI18n'
 
 export default function DropdownMenuTranslation() {
   const { locale, changeLocale } = useI18n()

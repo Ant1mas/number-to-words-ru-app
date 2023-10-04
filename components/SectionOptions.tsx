@@ -1,6 +1,6 @@
-import useI18n from 'lib/hooks/useI18n'
-import OptionsContent from 'components/OptionsContent'
-import LoadingText from 'components/LoadingText'
+import useI18n from '@/lib/hooks/useI18n'
+import OptionsContent from '@/components/OptionsContent'
+import LoadingText from '@/components/LoadingText'
 
 export default function SectionOptions() {
   const { t } = useI18n()

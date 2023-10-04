@@ -1,6 +1,6 @@
-import useI18n from 'lib/hooks/useI18n'
-import LoadingText from 'components/LoadingText'
-import CodeContent from 'components/CodeContent'
+import useI18n from '@/lib/hooks/useI18n'
+import LoadingText from '@/components/LoadingText'
+import CodeContent from '@/components/CodeContent'
 
 export default function SectionCode() {
   const { t } = useI18n()

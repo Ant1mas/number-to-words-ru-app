@@ -1,7 +1,7 @@
 import { Switch } from '@nextui-org/switch'
 
-import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
-import useI18n from 'lib/hooks/useI18n'
+import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
+import useI18n from '@/lib/hooks/useI18n'
 
 export default function OptionsSwitchesBlock() {
   const { options, updateOptions } = useModuleOptions()

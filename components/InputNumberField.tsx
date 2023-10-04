@@ -1,11 +1,11 @@
 import { Input } from '@nextui-org/input'
 
-import { useAppSelector, useAppDispatch } from 'lib/config/redux/store'
+import { useAppSelector, useAppDispatch } from '@/lib/config/redux/store'
 import {
   moduleNumberUpdated,
   selectModuleNumber,
-} from 'lib/config/redux/slices/moduleNumber/moduleNumberSlice'
-import useI18n from 'lib/hooks/useI18n'
+} from '@/lib/config/redux/slices/moduleNumber/moduleNumberSlice'
+import useI18n from '@/lib/hooks/useI18n'
 
 export default function InputNumberField() {
   const dispatch = useAppDispatch()

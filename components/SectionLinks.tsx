@@ -1,7 +1,7 @@
 import { RxExternalLink } from 'react-icons/rx'
 
-import useI18n from 'lib/hooks/useI18n'
-import LoadingText from 'components/LoadingText'
+import useI18n from '@/lib/hooks/useI18n'
+import LoadingText from '@/components/LoadingText'
 
 export default function SectionLinks() {
   const { t } = useI18n()

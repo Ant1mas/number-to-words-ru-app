@@ -1,7 +1,7 @@
 import { Provider as ReduxProvider } from 'react-redux'
 import { NextUIProvider } from '@nextui-org/react'
 
-import store from 'lib/config/redux/store'
+import store from '@/lib/config/redux/store'
 
 type Props = {
   children: React.ReactElement | React.ReactElement[]

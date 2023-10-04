@@ -1,6 +1,6 @@
-import LogoSvg from 'public/images/svg/logo.svg'
-import useI18n from 'lib/hooks/useI18n'
-import LoadingText from 'components/LoadingText'
+import LogoSvg from '@/public/images/svg/logo.svg'
+import useI18n from '@/lib/hooks/useI18n'
+import LoadingText from '@/components/LoadingText'
 
 export default function SectionTitle() {
   const { t } = useI18n()

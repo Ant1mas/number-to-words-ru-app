@@ -2,7 +2,7 @@ import { MdTranslate } from 'react-icons/md'
 import { Dropdown, DropdownTrigger } from '@nextui-org/dropdown'
 import { Button } from '@nextui-org/button'
 
-import DropdownMenuTranslation from 'components/DropdownMenuTranslation'
+import DropdownMenuTranslation from '@/components/DropdownMenuTranslation'
 
 export default function ButtonChangeLanguage() {
   return (

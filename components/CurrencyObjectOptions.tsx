@@ -1,11 +1,11 @@
 import { Input } from '@nextui-org/input'
 
-import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
-import useI18n from 'lib/hooks/useI18n'
-import LoadingText from 'components/LoadingText'
-import DeclensionsFields from 'components/DeclensionsFields'
-import CurrencyForm from 'components/CurrencyForm'
-import CurrencyDeclensionForms from 'components/CurrencyDeclensionForms'
+import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
+import useI18n from '@/lib/hooks/useI18n'
+import LoadingText from '@/components/LoadingText'
+import DeclensionsFields from '@/components/DeclensionsFields'
+import CurrencyForm from '@/components/CurrencyForm'
+import CurrencyDeclensionForms from '@/components/CurrencyDeclensionForms'
 
 export default function CurrencyObjectOptions() {
   const { options, updateOptions } = useModuleOptions()

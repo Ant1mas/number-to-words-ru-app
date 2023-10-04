@@ -2,7 +2,7 @@ import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import clsx from 'clsx'
 
-import { roboto } from 'lib/config/fonts'
+import { roboto } from '@/lib/config/fonts'
 import i18nextConfig from '@/next-i18next.config'
 
 export default class MyDocument extends Document {

@@ -1,6 +1,6 @@
-import useI18n from 'lib/hooks/useI18n'
-import CodePreview from 'components/CodePreview'
-import LoadingText from 'components/LoadingText'
+import useI18n from '@/lib/hooks/useI18n'
+import CodePreview from '@/components/CodePreview'
+import LoadingText from '@/components/LoadingText'
 
 const CODE_NPM = `npm install number-to-words-ru`
 const CODE_YARN = `yarn add number-to-words-ru`

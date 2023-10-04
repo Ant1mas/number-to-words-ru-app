@@ -1,12 +1,12 @@
 import { Input } from '@nextui-org/input'
 
-import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
-import useI18n from 'lib/hooks/useI18n'
-import CurrencyObjectOptions from 'components/CurrencyObjectOptions'
-import DeclensionSelect from 'components/DeclensionSelect'
-import CurrencySelect from 'components/CurrencySelect'
-import OptionsSwitchesBlock from 'components/OptionsSwitchesBlock'
-import inputRoundNumberHelperText from 'lib/functions/inputRoundNumberHelperText'
+import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
+import useI18n from '@/lib/hooks/useI18n'
+import inputRoundNumberHelperText from '@/lib/functions/inputRoundNumberHelperText'
+import CurrencyObjectOptions from '@/components/CurrencyObjectOptions'
+import DeclensionSelect from '@/components/DeclensionSelect'
+import CurrencySelect from '@/components/CurrencySelect'
+import OptionsSwitchesBlock from '@/components/OptionsSwitchesBlock'
 
 export default function OptionsContent() {
   const { updateOptions } = useModuleOptions()

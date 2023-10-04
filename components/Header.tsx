@@ -1,7 +1,7 @@
 import { FaGithub } from 'react-icons/fa'
 
-import IconButton from 'components/IconButton'
-import ButtonChangeLanguage from 'components/ButtonChangeLanguage'
+import IconButton from '@/components/IconButton'
+import ButtonChangeLanguage from '@/components/ButtonChangeLanguage'
 
 export default function Header() {
   return (

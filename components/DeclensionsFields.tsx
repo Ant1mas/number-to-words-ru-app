@@ -1,9 +1,9 @@
 import clsx from 'clsx'
 import { Input } from '@nextui-org/input'
 
-import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
-import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject'
-import useI18n from 'lib/hooks/useI18n'
+import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
+import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
+import useI18n from '@/lib/hooks/useI18n'
 
 type numberParts = 'integer' | 'fractional'
 

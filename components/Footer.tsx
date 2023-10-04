@@ -1,6 +1,6 @@
-import useI18n, { DEFAULT_LOADING_STATE } from 'lib/hooks/useI18n'
-import LogoAnt1mas from 'public/images/svg/logo-ant1mas.svg'
-import LoadingText from 'components/LoadingText'
+import useI18n, { DEFAULT_LOADING_STATE } from '@/lib/hooks/useI18n'
+import LogoAnt1mas from '@/public/images/svg/logo-ant1mas.svg'
+import LoadingText from '@/components/LoadingText'
 
 export default function Footer() {
   const { t } = useI18n()

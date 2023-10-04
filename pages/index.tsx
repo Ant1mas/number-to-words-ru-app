@@ -1,16 +1,16 @@
 import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import DefaultMetadata from 'components/DefaultMetadata'
-import Layout from 'components/Layout'
-import SectionTitle from 'components/SectionTitle'
-import SectionResult from 'components/SectionResult'
-import SectionExamples from 'components/SectionExamples'
-import SectionOptions from 'components/SectionOptions'
-import SectionCode from 'components/SectionCode'
-import SectionLinks from 'components/SectionLinks'
-import SectionInstallation from 'components/SectionInstallation'
-import InputNumberField from 'components/InputNumberField'
+import DefaultMetadata from '@/components/DefaultMetadata'
+import Layout from '@/components/Layout'
+import SectionTitle from '@/components/SectionTitle'
+import SectionResult from '@/components/SectionResult'
+import SectionExamples from '@/components/SectionExamples'
+import SectionOptions from '@/components/SectionOptions'
+import SectionCode from '@/components/SectionCode'
+import SectionLinks from '@/components/SectionLinks'
+import SectionInstallation from '@/components/SectionInstallation'
+import InputNumberField from '@/components/InputNumberField'
 
 export default function Home() {
   return (

@@ -1,12 +1,12 @@
 import { Button } from '@nextui-org/button'
 import toast from 'react-hot-toast'
 
-import useCodePreview from 'lib/hooks/useCodePreview'
-import useI18n from 'lib/hooks/useI18n'
-import codeData from 'lib/functions/codeDataTemplateString'
-import copyToClipboard from 'lib/functions/copyToClipboard'
-import CodePreview from 'components/CodePreview'
-import LoadingText from 'components/LoadingText'
+import useCodePreview from '@/lib/hooks/useCodePreview'
+import useI18n from '@/lib/hooks/useI18n'
+import codeData from '@/lib/functions/codeDataTemplateString'
+import copyToClipboard from '@/lib/functions/copyToClipboard'
+import CodePreview from '@/components/CodePreview'
+import LoadingText from '@/components/LoadingText'
 
 export default function CodeContent() {
   const { code } = useCodePreview()

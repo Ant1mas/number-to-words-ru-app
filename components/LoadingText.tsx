@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SkeletonText from 'components/SkeletonText'
+import SkeletonText from '@/components/SkeletonText'
 
 type Props = {
   text?: string
