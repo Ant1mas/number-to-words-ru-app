@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect } from 'react'
 import { Select, SelectItem } from '@nextui-org/select'
 
 import useI18n from 'lib/hooks/useI18n'
@@ -14,38 +14,36 @@ export default function SectionExamples() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const examples = useMemo(() => {
-    return [
-      {
-        value: 'empty',
-        label: '',
-      },
-      {
-        value: 'justNumber',
-        label: t('usage_example_select_value_just_number', '...'),
-      },
-      {
-        value: 'fractionalNumber',
-        label: t('usage_example_select_value_fractional_number', '...'),
-      },
-      {
-        value: 'users',
-        label: '«Пользователи»',
-      },
-      {
-        value: 'messages',
-        label: '«Сообщения»',
-      },
-      {
-        value: 'rubles',
-        label: '«Рубли»',
-      },
-      {
-        value: 'currencyNumber',
-        label: t('usage_example_select_value_currency_number', '...'),
-      },
-    ]
-  }, [])
+  const examples = [
+    {
+      value: 'empty',
+      label: '',
+    },
+    {
+      value: 'justNumber',
+      label: t('usage_example_select_value_just_number', '...'),
+    },
+    {
+      value: 'fractionalNumber',
+      label: t('usage_example_select_value_fractional_number', '...'),
+    },
+    {
+      value: 'users',
+      label: '«Пользователи»',
+    },
+    {
+      value: 'messages',
+      label: '«Сообщения»',
+    },
+    {
+      value: 'rubles',
+      label: '«Рубли»',
+    },
+    {
+      value: 'currencyNumber',
+      label: t('usage_example_select_value_currency_number', '...'),
+    },
+  ]
 
   return (
     <div className="flex flex-col items-center p-4">
