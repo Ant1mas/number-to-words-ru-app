@@ -23,11 +23,12 @@ export default function CurrencySelect() {
   return (
     <Select
       name="currency"
-      items={currencies}
       label={t('options_currency_select_label')}
       variant="bordered"
       selectedKeys={[options.currency as string]}
-      className="w-full"
+      fullWidth
+      disallowEmptySelection={true}
+      selectionMode="single"
       onSelectionChange={(selected: any) => {
         selected.forEach((element) => {
           updateOptions({

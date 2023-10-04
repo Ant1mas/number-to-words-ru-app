@@ -36,11 +36,12 @@ export default function DeclensionSelect() {
   return (
     <Select
       name="declension"
-      items={declensions}
       label={t('options_declension_label')}
       variant="bordered"
       selectedKeys={[options.declension]}
-      className="w-full"
+      fullWidth
+      disallowEmptySelection={true}
+      selectionMode="single"
       onSelectionChange={(selected: any) => {
         selected.forEach((element) => {
           updateOptions({

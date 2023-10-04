@@ -16,10 +16,6 @@ export default function SectionExamples() {
 
   const examples = [
     {
-      value: 'empty',
-      label: '',
-    },
-    {
       value: 'justNumber',
       label: t('usage_example_select_value_just_number', '...'),
     },
@@ -56,20 +52,18 @@ export default function SectionExamples() {
       </h4>
       <div className="w-full ">
         <Select
-          items={examples}
           label={t('usage_example_select_label')}
           variant="bordered"
-          className="w-full"
-          selectedKeys={[selectedExample]}
-          onSelectionChange={(selected: any) => {
-            selected.forEach((element) => {
-              applyExample(element)
-            })
+          fullWidth
+          selectionMode="single"
+          selectedKeys={selectedExample ? [selectedExample] : []}
+          onChange={(event: any) => {
+            applyExample(event.target.value)
           }}
         >
-          {(example) => (
+          {examples.map((example) => (
             <SelectItem key={example.value}>{example.label}</SelectItem>
-          )}
+          ))}
         </Select>
       </div>
     </div>

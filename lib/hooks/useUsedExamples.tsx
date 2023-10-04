@@ -31,7 +31,7 @@ export default function useUsedExamples() {
     if (optionsUpdatedByHook) {
       setOptionsUpdatedByHook(false)
     } else {
-      setSelectedExample('empty')
+      setSelectedExample('')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [moduleOptions])
