@@ -1,9 +1,9 @@
 import clsx from 'clsx'
+import { Input } from '@nextui-org/input'
 
 import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
 import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject'
 import useI18n from 'lib/hooks/useI18n'
-import InputField from 'components/InputField'
 
 type numberParts = 'integer' | 'fractional'
 
@@ -89,25 +89,28 @@ export default function DeclensionsFields({
 
     return (
       <div
-        className="w-full sm:w-1/2 sm:px-1"
+        className="w-full py-2 sm:w-1/2 sm:px-1"
         key={`${fieldObject.declension}-${fieldObject.form}`}
       >
-        <InputField
+        <Input
           name={`custom-currency-${numberPart}-declension-${fieldObject.declension}-${fieldObject.form}`}
-          label={t(
-            `options_currency_custom_value_declension_${fieldObject.declension}_${fieldObject.form}`,
-          )}
-          helperText={
-            selected ? t('options_currency_custom_value_declension_used') : ''
-          }
+          type="text"
+          fullWidth
+          variant="bordered"
           placeholder={
             DEFAULT_CURRENCY_OBJECT[declensionsObjectName][
               fieldObject.declension
             ][fieldObject.form === 'singular' ? 0 : 1]
           }
+          label={t(
+            `options_currency_custom_value_declension_${fieldObject.declension}_${fieldObject.form}`,
+          )}
+          description={
+            selected ? t('options_currency_custom_value_declension_used') : ''
+          }
           value={value}
           onChange={updateOptions}
-          disabled={disabled}
+          isDisabled={disabled}
           className={clsx(selected && 'text-primary')}
         />
       </div>

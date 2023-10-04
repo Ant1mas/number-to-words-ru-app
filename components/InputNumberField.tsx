@@ -16,6 +16,7 @@ export default function InputNumberField() {
     <Input
       id="input-number"
       type="text"
+      fullWidth
       placeholder="12345.6789"
       label={t('module_number_input_label')}
       description={t('module_number_input_helper_text')}

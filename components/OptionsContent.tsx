@@ -31,6 +31,7 @@ export default function OptionsContent() {
           id="round-number"
           name="round-number"
           type="number"
+          fullWidth
           placeholder="2"
           label={t('options_round_number')}
           description={inputRoundNumberHelperText(options, t)}
