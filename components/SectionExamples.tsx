@@ -17,6 +17,10 @@ export default function SectionExamples() {
   const examples = useMemo(() => {
     return [
       {
+        value: 'empty',
+        label: '',
+      },
+      {
         value: 'justNumber',
         label: t('usage_example_select_value_just_number', '...'),
       },
