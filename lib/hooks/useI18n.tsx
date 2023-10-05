@@ -8,7 +8,7 @@ export default function useI18n(ns = 'common') {
   const router = useRouter()
   const { t: tLib, i18n } = useTranslation(ns)
 
-  const t = (textKey, loadingState = DEFAULT_LOADING_STATE): string => {
+  const t = (textKey: string, loadingState = DEFAULT_LOADING_STATE): string => {
     return i18n.resolvedLanguage ? tLib(textKey) : loadingState
   }
 

@@ -30,13 +30,13 @@ export default function useModuleOptions() {
     setOptionsDifferences(objectsDiff(DEFAULT_MODULE_OPTIONS, formattedOptions))
   }, [formattedOptions]) // eslint-disable-line
 
-  const updateOptions = (event) => {
+  const updateOptions = (event: any) => {
     const name = event.target.name
     const value = getValue(event.target)
     updateOptionValueByPath(name, value)
   }
 
-  const getValue = (target) => {
+  const getValue = (target: any) => {
     const type = target.type
     let value = target.value
     if (type === 'number') {
@@ -47,7 +47,7 @@ export default function useModuleOptions() {
     return value
   }
 
-  const checkValueRange = (target) => {
+  const checkValueRange = (target: any) => {
     let value = target.value
     if (value !== '') {
       if (target.min !== '') {
@@ -60,7 +60,7 @@ export default function useModuleOptions() {
     return value
   }
 
-  const updateOptionValueByPath = (name, newValue) => {
+  const updateOptionValueByPath = (name: string, newValue: string) => {
     const path = get(OPTIONS_NAMES_MAP, [name])
     if (path !== undefined) {
       let updatedOptions = cloneDeep(moduleOptions)
@@ -70,7 +70,11 @@ export default function useModuleOptions() {
     }
   }
 
-  const updateSyncedValues = (optionsObject, name, newValue) => {
+  const updateSyncedValues = (
+    optionsObject: any,
+    name: string,
+    newValue: string,
+  ) => {
     const path = get(OPTIONS_SYNCED_VALUES_MAP, [name])
     if (path !== undefined) {
       let updatedOptions = cloneDeep(optionsObject)
@@ -80,7 +84,7 @@ export default function useModuleOptions() {
     return optionsObject
   }
 
-  const saveFormattedOptions = (options) => {
+  const saveFormattedOptions = (options: any) => {
     let optionsResult = cloneDeep(options)
     delete optionsResult.customCurrency
     if (options.currency === 'custom') {
@@ -93,9 +97,9 @@ export default function useModuleOptions() {
     setFormattedOptions(optionsResult)
   }
 
-  const convertValuesToTypeNumber = (object, valuesPaths) => {
+  const convertValuesToTypeNumber = (object: any, valuesPaths: any) => {
     let resultObject = cloneDeep(object)
-    valuesPaths.some((path) => {
+    valuesPaths.some((path: any) => {
       const valueByPath = get(resultObject, path)
       if (valueByPath !== undefined) {
         resultObject = set(resultObject, path, Number(valueByPath))

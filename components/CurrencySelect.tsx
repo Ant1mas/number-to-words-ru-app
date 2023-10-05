@@ -30,7 +30,7 @@ export default function CurrencySelect() {
       disallowEmptySelection={true}
       selectionMode="single"
       onSelectionChange={(selected: any) => {
-        selected.forEach((element) => {
+        selected.forEach((element: string) => {
           updateOptions({
             target: { name: 'currency', value: element, type: 'text' },
           })

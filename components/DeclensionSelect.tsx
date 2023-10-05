@@ -38,12 +38,12 @@ export default function DeclensionSelect() {
       name="declension"
       label={t('options_declension_label')}
       variant="bordered"
-      selectedKeys={[options.declension]}
+      selectedKeys={[options.declension as string]}
       fullWidth
       disallowEmptySelection={true}
       selectionMode="single"
       onSelectionChange={(selected: any) => {
-        selected.forEach((element) => {
+        selected.forEach((element: string) => {
           updateOptions({
             target: { name: 'declension', value: element, type: 'text' },
           })

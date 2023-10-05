@@ -26,7 +26,7 @@ export default function DeclensionsFields({
   const declensions = Object.keys(
     DEFAULT_CURRENCY_OBJECT.currencyNameDeclensions,
   )
-  let fieldsObjects = []
+  let fieldsObjects: any[] = []
   declensions.forEach((declension) => {
     fieldsObjects.push(
       {
@@ -46,7 +46,8 @@ export default function DeclensionsFields({
       (fieldObject.declension === 'accusative' && fieldObject.form === 'plural')
         ? true
         : false
-    let value =
+    let value: any =
+      // @ts-ignore
       options.customCurrency[declensionsObjectName][fieldObject.declension][
         fieldObject.form === 'singular' ? 0 : 1
       ]
@@ -98,6 +99,7 @@ export default function DeclensionsFields({
           fullWidth
           variant="bordered"
           placeholder={
+            // @ts-ignore
             DEFAULT_CURRENCY_OBJECT[declensionsObjectName][
               fieldObject.declension
             ][fieldObject.form === 'singular' ? 0 : 1]

@@ -30,17 +30,17 @@ export const codeDataTemplateStringTag = (parts: any, ...keys: any): string => {
   const spacesFirstString = trimdParts[0]
     .substring(1)
     .split('')
-    .findIndex((sign) => {
+    .findIndex((sign: any) => {
       if (sign !== ' ') {
         return true
       }
     })
   const stringWithExtraSpaces = '\n' + ' '.repeat(spacesFirstString)
   let resultString = ''
-  parts.some((part, index) => {
+  parts.some((part: any, index: any) => {
     const partWithoutExtraSpaces = part.replace(
       new RegExp(stringWithExtraSpaces, 'gi'),
-      '\n'
+      '\n',
     )
     resultString += partWithoutExtraSpaces
     resultString += keys[index] !== undefined ? keys[index] : ''

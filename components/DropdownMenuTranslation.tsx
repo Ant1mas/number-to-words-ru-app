@@ -10,9 +10,9 @@ export default function DropdownMenuTranslation() {
       aria-label="Languages list"
       disallowEmptySelection
       selectionMode="single"
-      selectedKeys={[locale]}
+      selectedKeys={[locale as string]}
       onSelectionChange={(selected: any) => {
-        selected.forEach((value) => {
+        selected.forEach((value: string) => {
           changeLocale(value)
         })
       }}
