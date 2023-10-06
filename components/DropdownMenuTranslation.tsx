@@ -1,19 +1,23 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
 import { DropdownMenu, DropdownItem } from '@nextui-org/dropdown'
 
-import useI18n from '@/lib/hooks/useI18n'
+import { useTranslation } from '@/lib/config/i18n/client'
 
 export default function DropdownMenuTranslation() {
-  const { locale, changeLocale } = useI18n()
+  const router = useRouter()
+  const { i18n } = useTranslation()
 
   return (
     <DropdownMenu
       aria-label="Languages list"
       disallowEmptySelection
       selectionMode="single"
-      selectedKeys={[locale as string]}
+      selectedKeys={[i18n.resolvedLanguage as string]}
       onSelectionChange={(selected: any) => {
-        selected.forEach((value: string) => {
-          changeLocale(value)
+        selected.forEach((language: string) => {
+          router.push('/' + language)
         })
       }}
     >

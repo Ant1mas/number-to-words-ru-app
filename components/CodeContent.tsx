@@ -1,16 +1,14 @@
-import { Button } from '@nextui-org/button'
-import toast from 'react-hot-toast'
+'use client'
 
 import useCodePreview from '@/lib/hooks/useCodePreview'
-import useI18n from '@/lib/hooks/useI18n'
+import { useTranslation } from '@/lib/config/i18n/client'
 import codeData from '@/lib/functions/codeDataTemplateString'
-import copyToClipboard from '@/lib/functions/copyToClipboard'
 import CodePreview from '@/components/CodePreview'
-import LoadingText from '@/components/LoadingText'
+import ButtonCopy from '@/components/ButtonCopy'
 
 export default function CodeContent() {
   const { code } = useCodePreview()
-  const { t } = useI18n()
+  const { t } = useTranslation()
 
   return (
     <div className="flex flex-col items-center">
@@ -18,22 +16,11 @@ export default function CodeContent() {
         <CodePreview code={code} language="javascript" />
       </div>
       <div className="mt-3 flex w-full justify-center">
-        <Button
-          variant="ghost"
-          className="font-bold uppercase"
-          onClick={() => {
-            copyToClipboard(codeData(code))
-            toast.success(t('code_block_button_copy_snackbar_text'), {
-              duration: 2000,
-            })
-          }}
-        >
-          <LoadingText
-            text={t('code_block_button_copy')}
-            skeletonWidth={120}
-            skeletonHeight={20}
-          />
-        </Button>
+        <ButtonCopy
+          text={t('code_block_button_copy')}
+          toastSuccess={t('code_block_button_copy_snackbar_text')}
+          contentToCopy={codeData(code)}
+        />
       </div>
     </div>
   )

@@ -1,9 +1,8 @@
-import LogoSvg from '@/public/images/svg/logo.svg'
-import useI18n from '@/lib/hooks/useI18n'
-import LoadingText from '@/components/LoadingText'
+import LogoSvg from '@/public/assets/images/svg/logo.svg'
+import { useTranslation } from '@/lib/config/i18n/server'
 
-export default function SectionTitle() {
-  const { t } = useI18n()
+export default async function SectionTitle() {
+  const { t } = await useTranslation()
 
   return (
     <div className="flex flex-wrap justify-center">
@@ -14,11 +13,7 @@ export default function SectionTitle() {
         number-to-words-ru
       </h2>
       <h5 className="flex w-full justify-center text-center text-2xl">
-        <LoadingText
-          text={t('main_module_description')}
-          skeletonWidth={680}
-          skeletonHeight={30}
-        />
+        {t('main_module_description')}
       </h5>
     </div>
   )

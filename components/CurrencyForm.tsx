@@ -1,7 +1,9 @@
+'use client'
+
 import { Select, SelectItem } from '@nextui-org/select'
 
 import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
-import useI18n from '@/lib/hooks/useI18n'
+import { useTranslation } from '@/lib/config/i18n/client'
 
 type Props = {
   name: string
@@ -10,7 +12,7 @@ type Props = {
 
 export default function CurrencyForm({ name, numberPart }: Props) {
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useI18n()
+  const { t } = useTranslation()
   const numberPartObjectName =
     numberPart === 'integer' ? 'integer' : 'fractionalPart'
   const forms = [

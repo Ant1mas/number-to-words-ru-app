@@ -1,13 +1,14 @@
+'use client'
+
 import { useEffect } from 'react'
 import { Select, SelectItem } from '@nextui-org/select'
 
-import useI18n from '@/lib/hooks/useI18n'
+import { useTranslation } from '@/lib/config/i18n/client'
 import useUsedExamples from '@/lib/hooks/useUsedExamples'
-import LoadingText from '@/components/LoadingText'
 
 export default function SectionExamples() {
   const { selectedExample, applyExample } = useUsedExamples()
-  const { t } = useI18n()
+  const { t } = useTranslation()
 
   useEffect(() => {
     applyExample('justNumber')
@@ -17,11 +18,11 @@ export default function SectionExamples() {
   const examples = [
     {
       value: 'justNumber',
-      label: t('usage_example_select_value_just_number', '...'),
+      label: t('usage_example_select_value_just_number'),
     },
     {
       value: 'fractionalNumber',
-      label: t('usage_example_select_value_fractional_number', '...'),
+      label: t('usage_example_select_value_fractional_number'),
     },
     {
       value: 'users',
@@ -37,18 +38,14 @@ export default function SectionExamples() {
     },
     {
       value: 'currencyNumber',
-      label: t('usage_example_select_value_currency_number', '...'),
+      label: t('usage_example_select_value_currency_number'),
     },
   ]
 
   return (
     <div className="flex flex-col items-center p-4">
       <h4 className="my-2 flex w-full justify-center text-center text-4xl">
-        <LoadingText
-          text={t('usage_example_block_title')}
-          skeletonWidth={400}
-          skeletonHeight={40}
-        />
+        {t('usage_example_block_title')}
       </h4>
       <div className="w-full ">
         <Select

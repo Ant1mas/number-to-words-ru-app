@@ -1,20 +1,19 @@
-import useI18n from '@/lib/hooks/useI18n'
+import { useTranslation } from '@/lib/config/i18n/server'
 import OptionsContent from '@/components/OptionsContent'
-import LoadingText from '@/components/LoadingText'
+import CurrencyObjectOptions from '@/components/CurrencyObjectOptions'
 
-export default function SectionOptions() {
-  const { t } = useI18n()
+export default async function SectionOptions() {
+  const { t } = await useTranslation()
+
   return (
     <div className="flex flex-col items-center p-4">
       <h4 className="my-2 flex w-full justify-center text-center text-4xl">
-        <LoadingText
-          text={t('options_block_title')}
-          skeletonWidth={140}
-          skeletonHeight={40}
-        />
+        {t('options_block_title')}
       </h4>
       <div className="w-full">
-        <OptionsContent />
+        <OptionsContent
+          componentCurrencyObjectOptions={<CurrencyObjectOptions />}
+        />
       </div>
     </div>
   )

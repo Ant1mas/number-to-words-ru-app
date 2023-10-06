@@ -1,11 +1,13 @@
+'use client'
+
 import { Switch } from '@nextui-org/switch'
 
 import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
-import useI18n from '@/lib/hooks/useI18n'
+import { useTranslation } from '@/lib/config/i18n/client'
 
 export default function OptionsSwitchesBlock() {
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useI18n()
+  const { t } = useTranslation()
 
   return (
     <>

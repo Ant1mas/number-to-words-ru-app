@@ -1,8 +1,10 @@
+'use client'
+
 import { Input } from '@nextui-org/input'
 
 import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
 import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
-import useI18n from '@/lib/hooks/useI18n'
+import { useTranslation } from '@/lib/config/i18n/client'
 
 type Props = {
   numberPart: 'integer' | 'fractional'
@@ -10,7 +12,7 @@ type Props = {
 
 export default function CurrencyDeclensionForms({ numberPart }: Props) {
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useI18n()
+  const { t } = useTranslation()
 
   const currencyObjectName =
     numberPart === 'integer' ? 'currencyNameCases' : 'fractionalPartNameCases'

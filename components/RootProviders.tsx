@@ -1,3 +1,5 @@
+'use client'
+
 import { Provider as ReduxProvider } from 'react-redux'
 import { NextUIProvider } from '@nextui-org/react'
 

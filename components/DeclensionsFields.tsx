@@ -1,9 +1,11 @@
+'use client'
+
 import clsx from 'clsx'
 import { Input } from '@nextui-org/input'
 
 import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
 import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
-import useI18n from '@/lib/hooks/useI18n'
+import { useTranslation } from '@/lib/config/i18n/client'
 
 type numberParts = 'integer' | 'fractional'
 
@@ -21,7 +23,7 @@ export default function DeclensionsFields({
   declensionsObjectName = 'currencyNameDeclensions',
 }: Props) {
   const { options, updateOptions } = useModuleOptions()
-  const { t } = useI18n()
+  const { t } = useTranslation()
 
   const declensions = Object.keys(
     DEFAULT_CURRENCY_OBJECT.currencyNameDeclensions,
