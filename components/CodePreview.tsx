@@ -11,6 +11,7 @@ type Props = {
 export default function CodePreview({ language, code }: Props) {
   return (
     <>
+      {/* @ts-ignore */}
       <SyntaxHighlighter
         language={language}
         style={stackoverflowLight}
