@@ -1,5 +1,7 @@
 'use client'
 
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+
 type Props = {
   text: string
   contentToCopy: string
@@ -9,25 +11,24 @@ type Props = {
 import { Button } from '@nextui-org/button'
 import toast from 'react-hot-toast'
 
-import copyToClipboard from '@/lib/functions/copyToClipboard'
-
 export default function ButtonCopy({
   text,
   contentToCopy,
   toastSuccess = '',
 }: Props) {
   return (
-    <Button
-      variant="ghost"
-      className="font-bold uppercase"
-      onClick={() => {
-        copyToClipboard(contentToCopy)
+    // @ts-ignore
+    <CopyToClipboard
+      text={contentToCopy}
+      onCopy={() => {
         toast.success(toastSuccess, {
           duration: 2000,
         })
       }}
     >
-      {text}
-    </Button>
+      <Button variant="ghost" className="font-bold uppercase">
+        {text}
+      </Button>
+    </CopyToClipboard>
   )
 }
