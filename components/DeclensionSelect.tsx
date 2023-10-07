@@ -2,8 +2,8 @@
 
 import { Select, SelectItem } from '@nextui-org/select'
 
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
 import { useTranslation } from '@/lib/config/i18n/client'
+import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
 
 export default function DeclensionSelect() {
   const { options, updateOptions } = useModuleOptions()

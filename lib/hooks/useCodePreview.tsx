@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-import { useAppSelector } from '@/lib/config/redux/store'
 import { selectModuleNumber } from '@/lib/config/redux/slices/moduleNumber/moduleNumberSlice'
 import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
-import objectToString from '@/lib/functions/objectToString'
-import codeData from '@/lib/functions/codeDataTemplateString'
+import { useAppSelector } from '@/lib/config/redux/store'
 import addSpacesToString from '@/lib/functions/addSpacesToString'
+import codeData from '@/lib/functions/codeDataTemplateString'
+import objectToString from '@/lib/functions/objectToString'
 
 export default function useCodePreview() {
   const moduleNumber = useAppSelector(selectModuleNumber)

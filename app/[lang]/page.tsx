@@ -1,15 +1,15 @@
+import InputNumberField from '@/components/InputNumberField'
+import Layout from '@/components/Layout'
+import ReactHotToaster from '@/components/ReactHotToaster'
 import Root from '@/components/Root'
 import RootProviders from '@/components/RootProviders'
-import ReactHotToaster from '@/components/ReactHotToaster'
-import Layout from '@/components/Layout'
-import SectionTitle from '@/components/SectionTitle'
-import InputNumberField from '@/components/InputNumberField'
-import SectionResult from '@/components/SectionResult'
-import SectionExamples from '@/components/SectionExamples'
-import SectionOptions from '@/components/SectionOptions'
 import SectionCode from '@/components/SectionCode'
-import SectionLinks from '@/components/SectionLinks'
+import SectionExamples from '@/components/SectionExamples'
 import SectionInstallation from '@/components/SectionInstallation'
+import SectionLinks from '@/components/SectionLinks'
+import SectionOptions from '@/components/SectionOptions'
+import SectionResult from '@/components/SectionResult'
+import SectionTitle from '@/components/SectionTitle'
 
 export default async function Page() {
   return (

@@ -1,9 +1,9 @@
-import { createSlice, createEntityAdapter } from '@reduxjs/toolkit'
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
 import set from 'lodash/set'
 
-import DEFAULT_MODULE_OPTIONS from '@/lib/constants/defaultModuleOptions'
-import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
 import type { AppState } from '@/lib/config/redux/store'
+import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
+import DEFAULT_MODULE_OPTIONS from '@/lib/constants/defaultModuleOptions'
 
 const moduleOptionsAdapter = createEntityAdapter()
 

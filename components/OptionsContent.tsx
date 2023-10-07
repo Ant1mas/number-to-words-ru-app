@@ -2,11 +2,11 @@
 
 import React from 'react'
 
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
-import DeclensionSelect from '@/components/DeclensionSelect'
 import CurrencySelect from '@/components/CurrencySelect'
-import OptionsSwitchesBlock from '@/components/OptionsSwitchesBlock'
+import DeclensionSelect from '@/components/DeclensionSelect'
 import OptionRoundNumber from '@/components/OptionRoundNumber'
+import OptionsSwitchesBlock from '@/components/OptionsSwitchesBlock'
+import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
 
 type Props = {
   componentCurrencyObjectOptions?: React.ReactElement

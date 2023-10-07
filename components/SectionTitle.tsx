@@ -1,5 +1,5 @@
-import LogoSvg from '@/public/assets/images/svg/logo.svg'
 import { useTranslation } from '@/lib/config/i18n/server'
+import LogoSvg from '@/public/assets/images/svg/logo.svg'
 
 export default async function SectionTitle() {
   const { t } = await useTranslation()

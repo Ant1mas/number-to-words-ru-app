@@ -2,12 +2,12 @@
 
 import { Input } from '@nextui-org/input'
 
-import { useAppSelector, useAppDispatch } from '@/lib/config/redux/store'
+import { useTranslation } from '@/lib/config/i18n/client'
 import {
   moduleNumberUpdated,
   selectModuleNumber,
 } from '@/lib/config/redux/slices/moduleNumber/moduleNumberSlice'
-import { useTranslation } from '@/lib/config/i18n/client'
+import { useAppDispatch, useAppSelector } from '@/lib/config/redux/store'
 
 export default function InputNumberField() {
   const dispatch = useAppDispatch()

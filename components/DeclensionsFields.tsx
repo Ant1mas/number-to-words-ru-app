@@ -1,11 +1,11 @@
 'use client'
 
-import clsx from 'clsx'
 import { Input } from '@nextui-org/input'
+import clsx from 'clsx'
 
+import { useTranslation } from '@/lib/config/i18n/client'
 import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
 import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
-import { useTranslation } from '@/lib/config/i18n/client'
 
 type numberParts = 'integer' | 'fractional'
 

@@ -1,10 +1,10 @@
 'use client'
 
-import useCodePreview from '@/lib/hooks/useCodePreview'
+import ButtonCopy from '@/components/ButtonCopy'
+import CodePreview from '@/components/CodePreview'
 import { useTranslation } from '@/lib/config/i18n/client'
 import codeData from '@/lib/functions/codeDataTemplateString'
-import CodePreview from '@/components/CodePreview'
-import ButtonCopy from '@/components/ButtonCopy'
+import useCodePreview from '@/lib/hooks/useCodePreview'
 
 export default function CodeContent() {
   const { code } = useCodePreview()

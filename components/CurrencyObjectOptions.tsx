@@ -1,8 +1,8 @@
-import { useTranslation } from '@/lib/config/i18n/server'
-import DeclensionsFields from '@/components/DeclensionsFields'
-import CurrencyForm from '@/components/CurrencyForm'
 import CurrencyDeclensionForms from '@/components/CurrencyDeclensionForms'
+import CurrencyForm from '@/components/CurrencyForm'
+import DeclensionsFields from '@/components/DeclensionsFields'
 import OptionCustomFractionalMinLen from '@/components/OptionCustomFractionalMinLen'
+import { useTranslation } from '@/lib/config/i18n/server'
 
 export default async function CurrencyObjectOptions() {
   const { t } = await useTranslation()

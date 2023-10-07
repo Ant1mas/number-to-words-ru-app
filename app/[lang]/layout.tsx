@@ -1,11 +1,11 @@
-import type { Metadata } from 'next'
-import { dir } from 'i18next'
 import clsx from 'clsx'
+import { dir } from 'i18next'
+import type { Metadata } from 'next'
 
-import { languages } from '@/lib/config/i18n/settings'
-import { roboto } from '@/lib/config/fonts'
-import '@/styles/globals.css'
 import { DEFAULT_METADATA } from '@/lib/config/defaultMetadata'
+import { roboto } from '@/lib/config/fonts'
+import { languages } from '@/lib/config/i18n/settings'
+import '@/styles/globals.css'
 
 export async function generateStaticParams() {
   return languages.map((lang) => ({ lang }))

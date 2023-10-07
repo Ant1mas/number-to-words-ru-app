@@ -1,5 +1,5 @@
-import React from 'react'
 import { Button } from '@nextui-org/button'
+import React from 'react'
 
 type Props = {
   children: React.ReactElement

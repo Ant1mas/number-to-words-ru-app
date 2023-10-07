@@ -2,9 +2,9 @@
 
 import { Input } from '@nextui-org/input'
 
-import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
 import { useTranslation } from '@/lib/config/i18n/client'
+import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
+import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
 
 type Props = {
   numberPart: 'integer' | 'fractional'

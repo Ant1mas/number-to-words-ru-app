@@ -1,7 +1,7 @@
 'use client'
 
+import { DropdownItem, DropdownMenu } from '@nextui-org/dropdown'
 import { useRouter } from 'next/navigation'
-import { DropdownMenu, DropdownItem } from '@nextui-org/dropdown'
 
 import { useTranslation } from '@/lib/config/i18n/client'
 

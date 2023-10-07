@@ -1,5 +1,5 @@
-import { useTranslation } from '@/lib/config/i18n/server'
 import CodePreview from '@/components/CodePreview'
+import { useTranslation } from '@/lib/config/i18n/server'
 
 const CODE_NPM = `npm install number-to-words-ru`
 const CODE_YARN = `yarn add number-to-words-ru`

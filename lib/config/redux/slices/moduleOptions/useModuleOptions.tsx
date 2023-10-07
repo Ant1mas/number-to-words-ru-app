@@ -1,17 +1,17 @@
-import React from 'react'
 import cloneDeep from 'lodash/cloneDeep'
 import get from 'lodash/get'
 import set from 'lodash/set'
+import React from 'react'
 
-import { useAppSelector, useAppDispatch } from '@/lib/config/redux/store'
 import {
   moduleOptionsSet,
   selectModuleOptions,
 } from '@/lib/config/redux/slices/moduleOptions/moduleOptionsSlice'
+import { useAppDispatch, useAppSelector } from '@/lib/config/redux/store'
 import DEFAULT_MODULE_OPTIONS from '@/lib/constants/defaultModuleOptions'
 import OPTIONS_NAMES_MAP from '@/lib/constants/optionsNamesMap'
-import OPTIONS_VALUES_TYPE_NUMBER from '@/lib/constants/optionsValuesTypeNumber'
 import OPTIONS_SYNCED_VALUES_MAP from '@/lib/constants/optionsSyncedValuesMap'
+import OPTIONS_VALUES_TYPE_NUMBER from '@/lib/constants/optionsValuesTypeNumber'
 import objectsDiff from '@/lib/functions/objectsDiff'
 
 export default function useModuleOptions() {

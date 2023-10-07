@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react'
 import cloneDeep from 'lodash/cloneDeep'
 import merge from 'lodash/merge'
+import { useEffect, useState } from 'react'
 
-import { useAppSelector, useAppDispatch } from '@/lib/config/redux/store'
 import { moduleNumberUpdated } from '@/lib/config/redux/slices/moduleNumber/moduleNumberSlice'
 import {
   moduleOptionsSet,
   selectModuleOptions,
 } from '@/lib/config/redux/slices/moduleOptions/moduleOptionsSlice'
-import USAGE_EXAMPLES_LIST from '@/lib/constants/usageExamplesList'
-import DEFAULT_MODULE_OPTIONS from '@/lib/constants/defaultModuleOptions'
+import { useAppDispatch, useAppSelector } from '@/lib/config/redux/store'
 import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
+import DEFAULT_MODULE_OPTIONS from '@/lib/constants/defaultModuleOptions'
+import USAGE_EXAMPLES_LIST from '@/lib/constants/usageExamplesList'
 
 type UsageExampleNames =
   | 'justNumber'

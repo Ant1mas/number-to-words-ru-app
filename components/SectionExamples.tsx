@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect } from 'react'
 import { Select, SelectItem } from '@nextui-org/select'
+import { useEffect } from 'react'
 
 import { useTranslation } from '@/lib/config/i18n/client'
 import useUsedExamples from '@/lib/hooks/useUsedExamples'

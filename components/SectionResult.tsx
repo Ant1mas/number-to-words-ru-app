@@ -2,11 +2,11 @@
 
 import { convert as convertNumberToWordsRu } from 'number-to-words-ru'
 
-import { useAppSelector } from '@/lib/config/redux/store'
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
-import { selectModuleNumber } from '@/lib/config/redux/slices/moduleNumber/moduleNumberSlice'
-import { useTranslation } from '@/lib/config/i18n/client'
 import ButtonCopy from '@/components/ButtonCopy'
+import { useTranslation } from '@/lib/config/i18n/client'
+import { selectModuleNumber } from '@/lib/config/redux/slices/moduleNumber/moduleNumberSlice'
+import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
+import { useAppSelector } from '@/lib/config/redux/store'
 
 export default function SectionResult() {
   const moduleNumber = useAppSelector(selectModuleNumber)

@@ -6,8 +6,8 @@ type Props = {
   toastSuccess?: string
 }
 
-import toast from 'react-hot-toast'
 import { Button } from '@nextui-org/button'
+import toast from 'react-hot-toast'
 
 import copyToClipboard from '@/lib/functions/copyToClipboard'
 

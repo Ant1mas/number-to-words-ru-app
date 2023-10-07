@@ -1,5 +1,5 @@
-import { useTranslation } from '@/lib/config/i18n/server'
 import CodeContent from '@/components/CodeContent'
+import { useTranslation } from '@/lib/config/i18n/server'
 
 export default async function SectionCode() {
   const { t } = await useTranslation()

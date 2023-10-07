@@ -1,6 +1,6 @@
-import { useTranslation } from '@/lib/config/i18n/server'
-import OptionsContent from '@/components/OptionsContent'
 import CurrencyObjectOptions from '@/components/CurrencyObjectOptions'
+import OptionsContent from '@/components/OptionsContent'
+import { useTranslation } from '@/lib/config/i18n/server'
 
 export default async function SectionOptions() {
   const { t } = await useTranslation()

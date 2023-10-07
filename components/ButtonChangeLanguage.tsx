@@ -1,6 +1,6 @@
-import { MdTranslate } from 'react-icons/md'
-import { Dropdown, DropdownTrigger } from '@nextui-org/dropdown'
 import { Button } from '@nextui-org/button'
+import { Dropdown, DropdownTrigger } from '@nextui-org/dropdown'
+import { MdTranslate } from 'react-icons/md'
 
 import DropdownMenuTranslation from '@/components/DropdownMenuTranslation'
 
