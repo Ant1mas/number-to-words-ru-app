@@ -1,12 +1,14 @@
 'use client'
 
 import { Select, SelectItem } from '@nextui-org/select'
+import cloneDeep from 'lodash/cloneDeep'
+import set from 'lodash/set'
 
 import { useTranslation } from '@/lib/config/i18n/client'
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
+import useOptions from '@/lib/hooks/useOptions'
 
 export default function DeclensionSelect() {
-  const { options, updateOptions } = useModuleOptions()
+  const { options, setOptions } = useOptions()
   const { t } = useTranslation()
   const declensions = [
     {
@@ -44,12 +46,9 @@ export default function DeclensionSelect() {
       fullWidth
       disallowEmptySelection={true}
       selectionMode="single"
-      onSelectionChange={(selected: any) => {
-        selected.forEach((element: string) => {
-          updateOptions({
-            target: { name: 'declension', value: element, type: 'text' },
-          })
-        })
+      onChange={(event) => {
+        const value = event.target.value
+        setOptions(set(cloneDeep(options), 'declension', value))
       }}
     >
       {declensions.map((declension) => (

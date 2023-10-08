@@ -4,14 +4,10 @@ import merge from 'lodash/merge'
 import { useEffect, useState } from 'react'
 
 import { formatNumber, numberAtom } from '@/lib/config/jotai/numberAtom'
-import {
-  moduleOptionsSet,
-  selectModuleOptions,
-} from '@/lib/config/redux/slices/moduleOptions/moduleOptionsSlice'
-import { useAppDispatch, useAppSelector } from '@/lib/config/redux/store'
 import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
 import DEFAULT_MODULE_OPTIONS from '@/lib/constants/defaultModuleOptions'
 import USAGE_EXAMPLES_LIST from '@/lib/constants/usageExamplesList'
+import useOptions from '@/lib/hooks/useOptions'
 
 type UsageExampleNames =
   | 'justNumber'
@@ -22,11 +18,10 @@ type UsageExampleNames =
   | 'currencyNumber'
 
 export default function useUsedExamples() {
-  const dispatch = useAppDispatch()
-  const moduleOptions = useAppSelector(selectModuleOptions)
   const [selectedExample, setSelectedExample] = useState('')
   const [optionsUpdatedByHook, setOptionsUpdatedByHook] = useState(false)
   const [, setNumber] = useAtom(numberAtom)
+  const { options, setOptions } = useOptions()
 
   // Reset select field value if options have changed
   useEffect(() => {
@@ -36,7 +31,7 @@ export default function useUsedExamples() {
       setSelectedExample('')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [moduleOptions])
+  }, [options])
 
   const applyExample = (usageExampleName: UsageExampleNames) => {
     const usageExampleObject = USAGE_EXAMPLES_LIST[usageExampleName]
@@ -49,12 +44,12 @@ export default function useUsedExamples() {
         cloneDeep(defaultOptionsObject),
         usageExampleObject.moduleOptions,
       )
-      dispatch(moduleOptionsSet({ value: updatedOptions }))
+      setOptions(updatedOptions)
       setSelectedExample(usageExampleName)
       setOptionsUpdatedByHook(true)
     }
   }
-
+  
   return {
     selectedExample,
     applyExample,

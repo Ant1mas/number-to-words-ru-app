@@ -1,15 +1,16 @@
 'use client'
 
 import { Input } from '@nextui-org/input'
+import cloneDeep from 'lodash/cloneDeep'
+import set from 'lodash/set'
 
 import { useTranslation } from '@/lib/config/i18n/client'
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
 import inputRoundNumberHelperText from '@/lib/functions/inputRoundNumberHelperText'
+import useOptions from '@/lib/hooks/useOptions'
 
 export default function OptionRoundNumber() {
   const { t } = useTranslation()
-  const { updateOptions } = useModuleOptions()
-  const options: any = useModuleOptions().options
+  const { options, setOptions } = useOptions()
 
   return (
     <Input
@@ -22,8 +23,11 @@ export default function OptionRoundNumber() {
       description={inputRoundNumberHelperText(options, t)}
       variant="bordered"
       min={-1}
-      value={options.roundNumber}
-      onChange={updateOptions}
+      value={options.roundNumber?.toString()}
+      onChange={(event) => {
+        const value = event.target.value
+        setOptions(set(cloneDeep(options), 'roundNumber', value))
+      }}
     />
   )
 }

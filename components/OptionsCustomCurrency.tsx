@@ -5,11 +5,11 @@ import CurrencyForm from '@/components/CurrencyForm'
 import DeclensionsFields from '@/components/DeclensionsFields'
 import OptionCustomFractionalMinLen from '@/components/OptionCustomFractionalMinLen'
 import { useTranslation } from '@/lib/config/i18n/client'
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
+import useOptions from '@/lib/hooks/useOptions'
 
 export default function OptionsCustomCurrency() {
   const { t } = useTranslation()
-  const options: any = useModuleOptions().options
+  const { options }: { options: any } = useOptions()
 
   if (options.currency !== 'custom') return null
 

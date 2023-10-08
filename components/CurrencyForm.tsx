@@ -1,9 +1,11 @@
 'use client'
 
 import { Select, SelectItem } from '@nextui-org/select'
+import cloneDeep from 'lodash/cloneDeep'
+import set from 'lodash/set'
 
 import { useTranslation } from '@/lib/config/i18n/client'
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
+import useOptions from '@/lib/hooks/useOptions'
 
 type Props = {
   name: string
@@ -11,8 +13,8 @@ type Props = {
 }
 
 export default function CurrencyForm({ name, numberPart }: Props) {
-  const { options, updateOptions } = useModuleOptions()
   const { t } = useTranslation()
+  const { options, setOptions } = useOptions()
   const numberPartObjectName =
     numberPart === 'integer' ? 'integer' : 'fractionalPart'
   const forms = [
@@ -43,7 +45,16 @@ export default function CurrencyForm({ name, numberPart }: Props) {
             numberPartObjectName
           ].toString(),
         ]}
-        onChange={updateOptions}
+        onChange={(event) => {
+          const value = event.target.value
+          setOptions(
+            set(
+              cloneDeep(options),
+              `customCurrency.currencyNounGender[${numberPartObjectName}]`,
+              value,
+            ),
+          )
+        }}
       >
         {forms.map((form) => (
           <SelectItem key={form.value}>{form.label}</SelectItem>

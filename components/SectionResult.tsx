@@ -6,12 +6,12 @@ import { convert as convertNumberToWordsRu } from 'number-to-words-ru'
 import ButtonCopy from '@/components/ButtonCopy'
 import { useTranslation } from '@/lib/config/i18n/client'
 import { numberAtom } from '@/lib/config/jotai/numberAtom'
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
+import useOptions from '@/lib/hooks/useOptions'
 
 export default function SectionResult() {
-  const [number] = useAtom(numberAtom)
-  const { formattedOptions } = useModuleOptions()
   const { t } = useTranslation()
+  const [number] = useAtom(numberAtom)
+  const { formattedOptions } = useOptions()
   const resultText = convertNumberToWordsRu(
     number !== '' && number !== '-' ? number : '0',
     formattedOptions,

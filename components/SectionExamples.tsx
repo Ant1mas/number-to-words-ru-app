@@ -55,7 +55,8 @@ export default function SectionExamples() {
           selectionMode="single"
           selectedKeys={selectedExample ? [selectedExample] : []}
           onChange={(event: any) => {
-            applyExample(event.target.value)
+            const value = event.target.value
+            applyExample(value)
           }}
         >
           {examples.map((example) => (

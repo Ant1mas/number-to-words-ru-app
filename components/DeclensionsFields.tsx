@@ -4,8 +4,10 @@ import { Input } from '@nextui-org/input'
 import clsx from 'clsx'
 
 import { useTranslation } from '@/lib/config/i18n/client'
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
 import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
+import useOptions from '@/lib/hooks/useOptions'
+import cloneDeep from 'lodash/cloneDeep'
+import set from 'lodash/set'
 
 type numberParts = 'integer' | 'fractional'
 
@@ -22,9 +24,11 @@ export default function DeclensionsFields({
   numberPart = 'integer',
   declensionsObjectName = 'currencyNameDeclensions',
 }: Props) {
-  const { options, updateOptions } = useModuleOptions()
   const { t } = useTranslation()
+  const { options, setOptions } = useOptions()
 
+  const objectNameCurrencyNameCases =
+    numberPart === 'integer' ? 'currencyNameCases' : 'fractionalPartNameCases'
   const declensions = Object.keys(
     DEFAULT_CURRENCY_OBJECT.currencyNameDeclensions,
   )
@@ -90,6 +94,8 @@ export default function DeclensionsFields({
       selected = options.declension === 'prepositional' ? true : false
     }
 
+    const declensionFormIndex: 0 | 1 = fieldObject.form === 'singular' ? 0 : 1
+
     return (
       <div
         className="w-full py-2 sm:w-1/2 sm:px-1"
@@ -104,7 +110,7 @@ export default function DeclensionsFields({
             // @ts-ignore
             DEFAULT_CURRENCY_OBJECT[declensionsObjectName][
               fieldObject.declension
-            ][fieldObject.form === 'singular' ? 0 : 1]
+            ][declensionFormIndex]
           }
           label={t(
             `options_currency_custom_value_declension_${fieldObject.declension}_${fieldObject.form}`,
@@ -113,7 +119,46 @@ export default function DeclensionsFields({
             selected ? t('options_currency_custom_value_declension_used') : ''
           }
           value={value}
-          onChange={updateOptions}
+          onChange={(event) => {
+            const value = event.target.value
+            const updatedObject = cloneDeep(options)
+            set(
+              updatedObject,
+              `customCurrency[${declensionsObjectName}][${fieldObject.declension}][${declensionFormIndex}]`,
+              value,
+            )
+            if (
+              fieldObject.declension === 'nominative' &&
+              declensionFormIndex === 0
+            ) {
+              set(
+                updatedObject,
+                `customCurrency[${objectNameCurrencyNameCases}][0]`,
+                value,
+              )
+            }
+            if (
+              fieldObject.declension === 'genitive' &&
+              declensionFormIndex === 0
+            ) {
+              set(
+                updatedObject,
+                `customCurrency[${objectNameCurrencyNameCases}][1]`,
+                value,
+              )
+            }
+            if (
+              fieldObject.declension === 'genitive' &&
+              declensionFormIndex === 1
+            ) {
+              set(
+                updatedObject,
+                `customCurrency[${objectNameCurrencyNameCases}][2]`,
+                value,
+              )
+            }
+            setOptions(updatedObject)
+          }}
           isDisabled={disabled}
           className={clsx(selected && 'text-primary')}
         />
