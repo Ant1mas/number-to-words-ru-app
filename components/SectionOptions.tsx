@@ -1,4 +1,3 @@
-import CurrencyObjectOptions from '@/components/CurrencyObjectOptions'
 import OptionsContent from '@/components/OptionsContent'
 import { useTranslation } from '@/lib/config/i18n/server'
 
@@ -11,9 +10,7 @@ export default async function SectionOptions() {
         {t('options_block_title')}
       </h4>
       <div className="w-full">
-        <OptionsContent
-          componentCurrencyObjectOptions={<CurrencyObjectOptions />}
-        />
+        <OptionsContent />
       </div>
     </div>
   )

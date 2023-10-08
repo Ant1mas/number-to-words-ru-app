@@ -1,30 +1,16 @@
-'use client'
-
-import React from 'react'
-
 import CurrencySelect from '@/components/CurrencySelect'
 import DeclensionSelect from '@/components/DeclensionSelect'
 import OptionRoundNumber from '@/components/OptionRoundNumber'
+import OptionsCustomCurrency from '@/components/OptionsCustomCurrency'
 import OptionsSwitchesBlock from '@/components/OptionsSwitchesBlock'
-import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
 
-type Props = {
-  componentCurrencyObjectOptions?: React.ReactElement
-}
-
-export default function OptionsContent({
-  componentCurrencyObjectOptions,
-}: Props) {
-  const options: any = useModuleOptions().options
-
+export default function OptionsContent() {
   return (
     <div className="flex flex-col">
       <div className="w-full py-2">
         <CurrencySelect />
       </div>
-      {options.currency === 'custom' ? (
-        <div className="w-full py-2">{componentCurrencyObjectOptions}</div>
-      ) : null}
+      <OptionsCustomCurrency />
       <div className="w-full py-2">
         <DeclensionSelect />
       </div>
