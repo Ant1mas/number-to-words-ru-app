@@ -1,19 +1,19 @@
+import { useAtom } from 'jotai'
 import { useEffect, useState } from 'react'
 
-import { selectModuleNumber } from '@/lib/config/redux/slices/moduleNumber/moduleNumberSlice'
+import { numberAtom } from '@/lib/config/jotai/numberAtom'
 import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
-import { useAppSelector } from '@/lib/config/redux/store'
 import addSpacesToString from '@/lib/functions/addSpacesToString'
 import codeData from '@/lib/functions/codeDataTemplateString'
 import objectToString from '@/lib/functions/objectToString'
 
 export default function useCodePreview() {
-  const moduleNumber = useAppSelector(selectModuleNumber)
+  const [number] = useAtom(numberAtom)
   const { optionsDifferences } = useModuleOptions()
   const [code, setCode] = useState(`
     const numberToWordsRu = require('number-to-words-ru');
 
-    numberToWordsRu.convert('${moduleNumber}');
+    numberToWordsRu.convert('${number}');
   `)
 
   const optionsDifferencesString = addSpacesToString(
@@ -23,17 +23,17 @@ export default function useCodePreview() {
 
   useEffect(() => {
     updateCodeText()
-  }, [moduleNumber, optionsDifferences]) // eslint-disable-line
+  }, [number, optionsDifferences]) // eslint-disable-line
 
   const getCodeFnConvert = () => {
     if (optionsDifferencesString.length > 0) {
       return codeData(`
-        numberToWordsRu('${moduleNumber}', {
+        numberToWordsRu('${number}', {
           ${codeData(optionsDifferencesString)}
         })
       `)
     }
-    return `numberToWordsRu('${moduleNumber}');`
+    return `numberToWordsRu('${number}');`
   }
 
   const updateCodeText = () => {

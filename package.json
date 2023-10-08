@@ -20,6 +20,7 @@
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-resources-to-backend": "^1.1.4",
+    "jotai": "^2.4.3",
     "lodash": "^4.17.21",
     "next": "^13.5.4",
     "next-pwa": "^5.6.0",
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@swc-jotai/react-refresh": "^0.1.0",
     "@types/node": "^20.8.3",
     "@types/react": "^18.2.25",
     "@types/react-copy-to-clipboard": "^5.0.5",

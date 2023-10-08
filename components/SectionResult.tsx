@@ -1,19 +1,19 @@
 'use client'
 
+import { useAtom } from 'jotai'
 import { convert as convertNumberToWordsRu } from 'number-to-words-ru'
 
 import ButtonCopy from '@/components/ButtonCopy'
 import { useTranslation } from '@/lib/config/i18n/client'
-import { selectModuleNumber } from '@/lib/config/redux/slices/moduleNumber/moduleNumberSlice'
+import { numberAtom } from '@/lib/config/jotai/numberAtom'
 import useModuleOptions from '@/lib/config/redux/slices/moduleOptions/useModuleOptions'
-import { useAppSelector } from '@/lib/config/redux/store'
 
 export default function SectionResult() {
-  const moduleNumber = useAppSelector(selectModuleNumber)
+  const [number] = useAtom(numberAtom)
   const { formattedOptions } = useModuleOptions()
   const { t } = useTranslation()
   const resultText = convertNumberToWordsRu(
-    moduleNumber !== '' && moduleNumber !== '-' ? moduleNumber : '0',
+    number !== '' && number !== '-' ? number : '0',
     formattedOptions,
   )
 

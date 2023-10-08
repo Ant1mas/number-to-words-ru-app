@@ -1,8 +1,9 @@
+import { useAtom } from 'jotai'
 import cloneDeep from 'lodash/cloneDeep'
 import merge from 'lodash/merge'
 import { useEffect, useState } from 'react'
 
-import { moduleNumberUpdated } from '@/lib/config/redux/slices/moduleNumber/moduleNumberSlice'
+import { formatNumber, numberAtom } from '@/lib/config/jotai/numberAtom'
 import {
   moduleOptionsSet,
   selectModuleOptions,
@@ -25,6 +26,7 @@ export default function useUsedExamples() {
   const moduleOptions = useAppSelector(selectModuleOptions)
   const [selectedExample, setSelectedExample] = useState('')
   const [optionsUpdatedByHook, setOptionsUpdatedByHook] = useState(false)
+  const [, setNumber] = useAtom(numberAtom)
 
   // Reset select field value if options have changed
   useEffect(() => {
@@ -39,7 +41,7 @@ export default function useUsedExamples() {
   const applyExample = (usageExampleName: UsageExampleNames) => {
     const usageExampleObject = USAGE_EXAMPLES_LIST[usageExampleName]
     if (usageExampleObject) {
-      dispatch(moduleNumberUpdated(usageExampleObject.moduleNumber))
+      setNumber(formatNumber(usageExampleObject.moduleNumber))
       const defaultOptionsObject = merge(cloneDeep(DEFAULT_MODULE_OPTIONS), {
         customCurrency: DEFAULT_CURRENCY_OBJECT,
       })

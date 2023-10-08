@@ -1,12 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
-import moduleNumberReducer from '@/lib/config/redux/slices/moduleNumber/moduleNumberSlice'
 import moduleOptionsReducer from '@/lib/config/redux/slices/moduleOptions/moduleOptionsSlice'
 
 const store = configureStore({
   reducer: {
-    moduleNumber: moduleNumberReducer,
     moduleOptions: moduleOptionsReducer,
   },
 })
