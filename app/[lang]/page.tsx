@@ -18,15 +18,13 @@ export default async function Page() {
       <RootProviders>
         <Root />
         <Layout>
-          <div className="mt-2 w-full px-4">
+          <div className="w-full p-4">
             <SectionTitle />
           </div>
-          <div className="flex w-full justify-center p-4">
-            <div className="w-full sm:w-1/2">
-              <InputNumberField />
-            </div>
+          <div className="flex w-full justify-center p-4 sm:w-1/2">
+            <InputNumberField />
           </div>
-          <div className="w-full p-4">
+          <div className="w-full">
             <SectionResult />
           </div>
           <div className="w-full lg:w-1/2">
@@ -34,14 +32,10 @@ export default async function Page() {
             <SectionOptions />
           </div>
           <div className="flex w-full flex-col lg:w-1/2">
-            <div className="w-full p-4">
-              <SectionCode />
-            </div>
-            <div className="w-full p-4">
-              <SectionLinks />
-            </div>
+            <SectionCode />
+            <SectionLinks />
           </div>
-          <div className="w-full p-4">
+          <div className="w-full">
             <SectionInstallation />
           </div>
         </Layout>
