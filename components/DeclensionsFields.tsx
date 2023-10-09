@@ -1,9 +1,13 @@
+'use client'
+
+import { Input } from '@nextui-org/input'
 import clsx from 'clsx'
 
-import useModuleOptions from 'lib/config/redux/slices/moduleOptions/useModuleOptions'
-import DEFAULT_CURRENCY_OBJECT from 'lib/constants/defaultCurrencyObject'
-import useI18n from 'lib/hooks/useI18n'
-import InputField from 'components/InputField'
+import { useTranslation } from '@/lib/config/i18n/client'
+import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
+import useOptions from '@/lib/hooks/useOptions'
+import cloneDeep from 'lodash/cloneDeep'
+import set from 'lodash/set'
 
 type numberParts = 'integer' | 'fractional'
 
@@ -20,13 +24,15 @@ export default function DeclensionsFields({
   numberPart = 'integer',
   declensionsObjectName = 'currencyNameDeclensions',
 }: Props) {
-  const { options, updateOptions } = useModuleOptions()
-  const { t } = useI18n()
+  const { t } = useTranslation()
+  const { options, setOptions } = useOptions()
 
+  const objectNameCurrencyNameCases =
+    numberPart === 'integer' ? 'currencyNameCases' : 'fractionalPartNameCases'
   const declensions = Object.keys(
     DEFAULT_CURRENCY_OBJECT.currencyNameDeclensions,
   )
-  let fieldsObjects = []
+  let fieldsObjects: any[] = []
   declensions.forEach((declension) => {
     fieldsObjects.push(
       {
@@ -46,7 +52,8 @@ export default function DeclensionsFields({
       (fieldObject.declension === 'accusative' && fieldObject.form === 'plural')
         ? true
         : false
-    let value =
+    let value: any =
+      // @ts-ignore
       options.customCurrency[declensionsObjectName][fieldObject.declension][
         fieldObject.form === 'singular' ? 0 : 1
       ]
@@ -87,27 +94,72 @@ export default function DeclensionsFields({
       selected = options.declension === 'prepositional' ? true : false
     }
 
+    const declensionFormIndex: 0 | 1 = fieldObject.form === 'singular' ? 0 : 1
+
     return (
       <div
-        className="w-full sm:w-1/2 sm:px-1"
+        className="w-full py-2 sm:w-1/2 sm:px-1"
         key={`${fieldObject.declension}-${fieldObject.form}`}
       >
-        <InputField
+        <Input
           name={`custom-currency-${numberPart}-declension-${fieldObject.declension}-${fieldObject.form}`}
+          type="text"
+          fullWidth
+          variant="bordered"
+          placeholder={
+            // @ts-ignore
+            DEFAULT_CURRENCY_OBJECT[declensionsObjectName][
+              fieldObject.declension
+            ][declensionFormIndex]
+          }
           label={t(
             `options_currency_custom_value_declension_${fieldObject.declension}_${fieldObject.form}`,
           )}
-          helperText={
+          description={
             selected ? t('options_currency_custom_value_declension_used') : ''
           }
-          placeholder={
-            DEFAULT_CURRENCY_OBJECT[declensionsObjectName][
-              fieldObject.declension
-            ][fieldObject.form === 'singular' ? 0 : 1]
-          }
           value={value}
-          onChange={updateOptions}
-          disabled={disabled}
+          onChange={(event) => {
+            const value = event.target.value
+            const updatedObject = cloneDeep(options)
+            set(
+              updatedObject,
+              `customCurrency[${declensionsObjectName}][${fieldObject.declension}][${declensionFormIndex}]`,
+              value,
+            )
+            if (
+              fieldObject.declension === 'nominative' &&
+              declensionFormIndex === 0
+            ) {
+              set(
+                updatedObject,
+                `customCurrency[${objectNameCurrencyNameCases}][0]`,
+                value,
+              )
+            }
+            if (
+              fieldObject.declension === 'genitive' &&
+              declensionFormIndex === 0
+            ) {
+              set(
+                updatedObject,
+                `customCurrency[${objectNameCurrencyNameCases}][1]`,
+                value,
+              )
+            }
+            if (
+              fieldObject.declension === 'genitive' &&
+              declensionFormIndex === 1
+            ) {
+              set(
+                updatedObject,
+                `customCurrency[${objectNameCurrencyNameCases}][2]`,
+                value,
+              )
+            }
+            setOptions(updatedObject)
+          }}
+          isDisabled={disabled}
           className={clsx(selected && 'text-primary')}
         />
       </div>

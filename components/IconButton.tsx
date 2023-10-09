@@ -1,3 +1,4 @@
+import { Button } from '@nextui-org/button'
 import React from 'react'
 
 type Props = {
@@ -7,13 +8,13 @@ type Props = {
 
 export default function IconButton({ children, ...otherProps }: Props) {
   return (
-    <button
-      className="relative text-2xl btn-ghost btn-circle btn text-black/50"
-      type="button"
-      tabIndex={0}
+    <Button
       {...otherProps}
+      variant="light"
+      radius="full"
+      className="min-w-6 relative h-12 w-12 p-0 text-2xl text-black/50"
     >
       {children}
-    </button>
+    </Button>
   )
 }

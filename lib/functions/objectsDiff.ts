@@ -5,7 +5,7 @@
  * @param  {Object} obj2 The object to compare against it
  * @return {Object}      An object of differences between the two
  */
-var diff = function (obj1, obj2) {
+var diff = function (obj1: any, obj2: any) {
   // Make sure an object to compare is provided
   if (!obj2 || Object.prototype.toString.call(obj2) !== '[object Object]') {
     return obj1
@@ -15,7 +15,7 @@ var diff = function (obj1, obj2) {
   // Variables
   //
 
-  var diffs = {}
+  var diffs: any = {}
   var key
 
   //
@@ -28,7 +28,7 @@ var diff = function (obj1, obj2) {
    * @param  {Array}   arr2 The second array
    * @return {Boolean}      If true, both arrays are equal
    */
-  var arraysMatch = function (arr1, arr2) {
+  var arraysMatch = function (arr1: any[], arr2: any[]) {
     // Check if the arrays are the same length
     if (arr1.length !== arr2.length) return false
 
@@ -47,7 +47,7 @@ var diff = function (obj1, obj2) {
    * @param  {*}      item2 The second item
    * @param  {String} key   The key in our object
    */
-  var compare = function (item1, item2, key) {
+  var compare = function (item1: any, item2: any, key: any) {
     // Get the object type
     var type1 = Object.prototype.toString.call(item1)
     var type2 = Object.prototype.toString.call(item2)

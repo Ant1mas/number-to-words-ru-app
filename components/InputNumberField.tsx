@@ -1,28 +1,27 @@
-import { useAppSelector, useAppDispatch } from 'lib/config/redux/store'
-import {
-  moduleNumberUpdated,
-  selectModuleNumber,
-} from 'lib/config/redux/slices/moduleNumber/moduleNumberSlice'
-import useI18n from 'lib/hooks/useI18n'
+'use client'
 
-import InputField from 'components/InputField'
+import { Input } from '@nextui-org/input'
+import { useAtom } from 'jotai'
+
+import { useTranslation } from '@/lib/config/i18n/client'
+import { formatNumber, numberAtom } from '@/lib/config/jotai/numberAtom'
 
 export default function InputNumberField() {
-  const dispatch = useAppDispatch()
-  const moduleNumber = useAppSelector(selectModuleNumber)
-  const { t } = useI18n()
+  const [number, setNumber] = useAtom(numberAtom)
+  const { t } = useTranslation()
 
   return (
-    <InputField
+    <Input
       id="input-number"
       type="text"
+      fullWidth
       placeholder="12345.6789"
-      value={moduleNumber}
-      onChange={(event) => {
-        dispatch(moduleNumberUpdated(event.target.value))
-      }}
       label={t('module_number_input_label')}
-      helperText={t('module_number_input_helper_text')}
+      description={t('module_number_input_helper_text')}
+      value={number}
+      onValueChange={(value) => {
+        setNumber(formatNumber(value))
+      }}
     />
   )
 }

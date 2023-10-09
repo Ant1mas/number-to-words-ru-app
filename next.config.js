@@ -1,4 +1,3 @@
-const { i18n } = require('./next-i18next.config')
 const pwaCaching = require('./pwa-caching')
 
 const withPWA = require('next-pwa')({
@@ -14,13 +13,15 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   output: 'standalone',
-  i18n,
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     })
     return config
+  },
+  experimental: {
+    swcPlugins: [['@swc-jotai/react-refresh', {}]],
   },
 }
 

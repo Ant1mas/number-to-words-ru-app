@@ -5,7 +5,10 @@
  * @param translation Переменная "t" из хука "useTranslation"
  * @returns Текстовое значение для helper
  */
-const inputRoundNumberHelperText = (options, translation): string => {
+const inputRoundNumberHelperText = (
+  options: any,
+  translation: any,
+): string | undefined => {
   if (options.roundNumber <= -1) {
     return translation('options_round_number_helper_disabled')
   }

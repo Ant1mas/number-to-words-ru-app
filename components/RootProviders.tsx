@@ -1,11 +1,16 @@
-import { Provider as ReduxProvider } from 'react-redux'
+'use client'
 
-import store from 'lib/config/redux/store'
+import { NextUIProvider } from '@nextui-org/react'
+import { Provider as JotaiProvider } from 'jotai'
 
 type Props = {
   children: React.ReactElement | React.ReactElement[]
 }
 
 export default function RootProviders({ children }: Props) {
-  return <ReduxProvider store={store}>{children}</ReduxProvider>
+  return (
+    <JotaiProvider>
+      <NextUIProvider>{children}</NextUIProvider>
+    </JotaiProvider>
+  )
 }
