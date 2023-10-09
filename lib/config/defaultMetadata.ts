@@ -11,30 +11,18 @@ export const DEFAULT_METADATA: Metadata = {
   icons: {
     icon: [
       {
-        type: 'image/x-icon',
-        url: BASE_PATH + '/assets/images/favicon/favicon.ico',
-      },
-      {
-        type: 'image/png',
-        sizes: '16x16',
-        url: BASE_PATH + '/assets/images/favicon/favicon-16x16.png',
-      },
-      {
-        type: 'image/png',
         sizes: '32x32',
-        url: BASE_PATH + '/assets/images/favicon/favicon-32x32.png',
+        url: BASE_PATH + '/assets/images/icons/app/favicon.ico',
+      },
+      {
+        type: 'image/svg+xml',
+        sizes: 'any',
+        url: BASE_PATH + '/assets/images/icons/app/favicon.svg',
       },
     ],
     apple: [
       {
-        sizes: '180x180',
-        url: BASE_PATH + '/assets/images/favicon/apple-touch-icon.png',
-      },
-    ],
-    other: [
-      {
-        rel: 'mask-icon',
-        url: BASE_PATH + '/assets/images/favicon/safari-pinned-tab.svg',
+        url: BASE_PATH + '/assets/images/icons/app/apple-touch-icon.png',
       },
     ],
   },
