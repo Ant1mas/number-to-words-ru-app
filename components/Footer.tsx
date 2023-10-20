@@ -15,7 +15,7 @@ export default async function Footer() {
         >
           <span className="font-bold underline">number-to-words-ru</span>
         </a>{' '}
-        (v2.3.6)
+        (v2.4.0)
       </div>
       <div className="my-2 flex w-full justify-center">
         <a href="https://ant1mas.dev" target="_blank" rel="noreferrer">
