@@ -1,14 +1,14 @@
 import CodeContent from '@/components/CodeContent'
 import SectionLayout from '@/components/SectionLayout'
-import { useTranslation } from '@/lib/config/i18n/server'
+import { getDictionary } from '@/lib/config/i18n/functions/getDictionary'
 
 export default async function SectionCode() {
-  const { t } = await useTranslation()
+  const dictionary = await getDictionary()
 
   return (
-    <SectionLayout title={t('code_block_title')}>
+    <SectionLayout title={dictionary.sectionCode.title}>
       <div className="w-full">
-        <CodeContent />
+        <CodeContent dictionary={dictionary} />
       </div>
     </SectionLayout>
   )

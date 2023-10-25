@@ -1,14 +1,13 @@
 import clsx from 'clsx'
-import { dir } from 'i18next'
 import type { Metadata } from 'next'
 
 import { DEFAULT_METADATA } from '@/lib/config/defaultMetadata'
 import { roboto } from '@/lib/config/fonts'
-import { languages } from '@/lib/config/i18n/settings'
+import { i18n } from '@/lib/config/i18n/config'
 import '@/styles/globals.css'
 
 export async function generateStaticParams() {
-  return languages.map((lang) => ({ lang }))
+  return i18n.locales.map((locale) => ({ lang: locale }))
 }
 
 export const metadata: Metadata = {
@@ -25,11 +24,7 @@ export default function RootLayout({
   params: { lang: string }
 }) {
   return (
-    <html
-      lang={lang}
-      dir={dir(lang)}
-      className={clsx(['light', roboto.variable])}
-    >
+    <html lang={lang} className={clsx(['light', roboto.variable])}>
       <head />
       <body>{children}</body>
     </html>

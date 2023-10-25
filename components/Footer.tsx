@@ -1,13 +1,13 @@
-import { useTranslation } from '@/lib/config/i18n/server'
+import { getDictionary } from '@/lib/config/i18n/functions/getDictionary'
 import LogoAnt1mas from '@/public/assets/images/svg/logo-ant1mas.svg'
 
 export default async function Footer() {
-  const { t } = await useTranslation()
+  const dictionary = await getDictionary()
 
   return (
     <footer className="my-8 text-center">
       <div className="text-sm">
-        {t('info_module_version_text') + ' '}
+        {dictionary.footer.moduleVersion}{' '}
         <a
           href="https://www.npmjs.com/package/number-to-words-ru"
           target="_blank"

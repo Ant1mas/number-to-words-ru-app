@@ -4,43 +4,47 @@ import { Select, SelectItem } from '@nextui-org/select'
 import cloneDeep from 'lodash/cloneDeep'
 import set from 'lodash/set'
 
-import { useTranslation } from '@/lib/config/i18n/client'
 import useOptions from '@/lib/hooks/useOptions'
 
-export default function DeclensionSelect() {
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+
+type Props = {
+  dictionary: Dictionary
+}
+
+export default function DeclensionSelect({ dictionary }: Props) {
   const { options, setOptions } = useOptions()
-  const { t } = useTranslation()
   const declensions = [
     {
       value: 'nominative',
-      label: t('options_declension_select_value_nominative', '...'),
+      label: dictionary.sectionOptions.declension.selectValues.nominative,
     },
     {
       value: 'genitive',
-      label: t('options_declension_select_value_genitive', '...'),
+      label: dictionary.sectionOptions.declension.selectValues.genitive,
     },
     {
       value: 'dative',
-      label: t('options_declension_select_value_dative', '...'),
+      label: dictionary.sectionOptions.declension.selectValues.dative,
     },
     {
       value: 'accusative',
-      label: t('options_declension_select_value_accusative', '...'),
+      label: dictionary.sectionOptions.declension.selectValues.accusative,
     },
     {
       value: 'instrumental',
-      label: t('options_declension_select_value_instrumental', '...'),
+      label: dictionary.sectionOptions.declension.selectValues.instrumental,
     },
     {
       value: 'prepositional',
-      label: t('options_declension_select_value_prepositional', '...'),
+      label: dictionary.sectionOptions.declension.selectValues.prepositional,
     },
   ]
 
   return (
     <Select
       name="declension"
-      label={t('options_declension_label')}
+      label={dictionary.sectionOptions.declension.label}
       variant="bordered"
       selectedKeys={[options.declension as string]}
       fullWidth

@@ -1,0 +1,120 @@
+{
+  "sectionTitle": {
+    "name": "number-to-words-ru",
+    "description": "Модуль Node.js для конвертации числа в слова на русском языке."
+  },
+  "sectionNumberInput": {
+    "label": "Ваше число",
+    "description": "Разделителем числа может быть ' . ' или ' , ' или ' / '"
+  },
+  "sectionResult": {
+    "title": "Результат",
+    "buttonCopy": "Скопировать результат",
+    "snackbarCopied": "Результат скопирован"
+  },
+  "sectionExamples": {
+    "title": "Примеры использования",
+    "description": "Выбрать пример использования",
+    "examples": {
+      "justNumber": "Просто число",
+      "fractionalNumber": "Дробное число",
+      "currencyNumber": "«Целые», «Десятые» и т.д."
+    }
+  },
+  "sectionOptions": {
+    "title": "Опции",
+    "currencyLabel": "Валюта",
+    "currencySelect": {
+      "rub": "Рубль",
+      "usd": "Доллар",
+      "eur": "Евро",
+      "number": "Число",
+      "custom": "Настроить валюту"
+    },
+    "customCurrency": {
+      "blocks": {
+        "integerBlockTitle": "Формы целой части числа",
+        "fractionalBlockTitle": "Формы дробной части числа",
+        "generalBlockTitle": "Общие настройки валюты"
+      },
+      "digitGroups": ["Для цифры 1", "Для цифр 2-4", "Для цифр 5-9"],
+      "currencyNameForms": {
+        "label": "Род",
+        "array": [
+          "Мужской род ('Один' / 'Два')",
+          "Женский род ('Одна' / 'Две')",
+          "Средний род ('Одно' / 'Два')"
+        ]
+      },
+      "declensions": {
+        "used": "Используется для выбранного падежа",
+        "useless": "[Нигде не используется]",
+        "singular": {
+          "nominative": "Именительный падеж, ед.ч.",
+          "genitive": "Родительный падеж, ед.ч.",
+          "dative": "Дательный падеж, ед.ч.",
+          "accusative": "Винительный  падеж,ед.ч.",
+          "instrumental": "Творительный падеж, ед.ч.",
+          "prepositional": "Предложный падеж, ед.ч."
+        },
+        "plural": {
+          "nominative": "Именительный падеж, мн.ч.",
+          "genitive": "Родительный падеж, мн.ч.",
+          "dative": "Дательный падеж, мн.ч.",
+          "accusative": "Винительный  падеж,мн.ч.",
+          "instrumental": "Творительный падеж, мн.ч.",
+          "prepositional": "Предложный падеж, мн.ч."
+        }
+      },
+      "fractionalPartMinLength": "Мин. знаков в дробной части"
+    },
+    "declension": {
+      "label": "Падеж",
+      "selectValues": {
+        "nominative": "Именительный",
+        "genitive": "Родительный",
+        "dative": "Дательный",
+        "accusative": "Винительный",
+        "instrumental": "Творительный",
+        "prepositional": "Предложный"
+      }
+    },
+    "roundNumber": {
+      "label": "Округление числа",
+      "disabled": "Округление отключено",
+      "maxValue": "Округление выбранной валюты не может быть больше 2"
+    },
+    "switches": {
+      "convertSignMinus": "Конвертировать знак минус в слово",
+      "showIntegerPart": "Показывать целую часть числа",
+      "showFractionalPart": "Показывать дробную часть числа",
+      "convertIntegerPart": "Конвертировать целую часть числа в слова",
+      "convertFractionalPart": "Конвертировать дробную часть числа в слова",
+      "showCurrencyIntegerPart": "Показывать валюту в целой части числа",
+      "showCurrencyFractionalPart": "Показывать валюту в дробной части числа"
+    }
+  },
+  "sectionCode": {
+    "title": "Код",
+    "buttonCopy": "Скопировать код",
+    "snackbarCopied": "Код скопирован"
+  },
+  "sectionLinks": {
+    "title": "Полезные ссылки",
+    "api": "Полное описание API",
+    "exampleCodesandbox": "Примеры подключения и использования модуля"
+  },
+  "sectionInstallation": {
+    "title": "Установка",
+    "tools": {
+      "npm": "Установить с помощью npm",
+      "yarn": "Установить с помощью yarn",
+      "pnpm": "Установить с помощью pnpm",
+      "bun": "Установить с помощью bun"
+    }
+  },
+  "footer": {
+    "moduleVersion": "Здесь используется",
+    "madeBy": "Создал"
+  }
+}

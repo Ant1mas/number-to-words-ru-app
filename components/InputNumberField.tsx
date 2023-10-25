@@ -3,12 +3,16 @@
 import { Input } from '@nextui-org/input'
 import { useAtom } from 'jotai'
 
-import { useTranslation } from '@/lib/config/i18n/client'
 import { formatNumber, numberAtom } from '@/lib/config/jotai/numberAtom'
 
-export default function InputNumberField() {
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+
+type Props = {
+  dictionary: Dictionary
+}
+
+export default function InputNumberField({ dictionary }: Props) {
   const [number, setNumber] = useAtom(numberAtom)
-  const { t } = useTranslation()
 
   return (
     <Input
@@ -16,8 +20,8 @@ export default function InputNumberField() {
       type="text"
       fullWidth
       placeholder="12345.6789"
-      label={t('module_number_input_label')}
-      description={t('module_number_input_helper_text')}
+      label={dictionary.sectionNumberInput.label}
+      description={dictionary.sectionNumberInput.description}
       value={number}
       onValueChange={(value) => {
         setNumber(formatNumber(value))

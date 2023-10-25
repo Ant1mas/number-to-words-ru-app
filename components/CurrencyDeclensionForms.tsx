@@ -4,16 +4,20 @@ import { Input } from '@nextui-org/input'
 import cloneDeep from 'lodash/cloneDeep'
 import set from 'lodash/set'
 
-import { useTranslation } from '@/lib/config/i18n/client'
 import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
 import useOptions from '@/lib/hooks/useOptions'
 
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+
 type Props = {
+  dictionary: Dictionary
   numberPart: 'integer' | 'fractional'
 }
 
-export default function CurrencyDeclensionForms({ numberPart }: Props) {
-  const { t } = useTranslation()
+export default function CurrencyDeclensionForms({
+  dictionary,
+  numberPart,
+}: Props) {
   const { options, setOptions } = useOptions()
 
   const currencyObjectName =
@@ -32,7 +36,9 @@ export default function CurrencyDeclensionForms({ numberPart }: Props) {
           fullWidth
           variant="bordered"
           placeholder={DEFAULT_CURRENCY_OBJECT[currencyObjectName][listIndex]}
-          label={t(`options_currency_custom_value_form${listIndex + 1}`)}
+          label={
+            dictionary.sectionOptions.customCurrency.digitGroups[listIndex]
+          }
           value={options.customCurrency[currencyObjectName][listIndex]}
           onChange={(event) => {
             const value = event.target.value

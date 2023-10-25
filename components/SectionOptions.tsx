@@ -1,12 +1,12 @@
 import OptionsContent from '@/components/OptionsContent'
 import SectionLayout from '@/components/SectionLayout'
-import { useTranslation } from '@/lib/config/i18n/server'
+import { getDictionary } from '@/lib/config/i18n/functions/getDictionary'
 
 export default async function SectionOptions() {
-  const { t } = await useTranslation()
+  const dictionary = await getDictionary()
 
   return (
-    <SectionLayout title={t('options_block_title')}>
+    <SectionLayout title={dictionary.sectionOptions.title}>
       <div className="w-full">
         <OptionsContent />
       </div>
