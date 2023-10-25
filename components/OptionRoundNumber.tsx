@@ -4,12 +4,16 @@ import { Input } from '@nextui-org/input'
 import cloneDeep from 'lodash/cloneDeep'
 import set from 'lodash/set'
 
-import { useTranslation } from '@/lib/config/i18n/client'
 import inputRoundNumberHelperText from '@/lib/functions/inputRoundNumberHelperText'
 import useOptions from '@/lib/hooks/useOptions'
 
-export default function OptionRoundNumber() {
-  const { t } = useTranslation()
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+
+type Props = {
+  dictionary: Dictionary
+}
+
+export default function OptionRoundNumber({ dictionary }: Props) {
   const { options, setOptions } = useOptions()
 
   return (
@@ -19,8 +23,8 @@ export default function OptionRoundNumber() {
       type="number"
       fullWidth
       placeholder="2"
-      label={t('options_round_number')}
-      description={inputRoundNumberHelperText(options, t)}
+      label={dictionary.sectionOptions.roundNumber.label}
+      description={inputRoundNumberHelperText(options, dictionary)}
       variant="bordered"
       min={-1}
       value={options.roundNumber?.toString()}

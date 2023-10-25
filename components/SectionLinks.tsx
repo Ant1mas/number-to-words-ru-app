@@ -1,13 +1,13 @@
 import { RxExternalLink } from 'react-icons/rx'
 
 import SectionLayout from '@/components/SectionLayout'
-import { useTranslation } from '@/lib/config/i18n/server'
+import { getDictionary } from '@/lib/config/i18n/functions/getDictionary'
 
 export default async function SectionLinks() {
-  const { t } = await useTranslation()
+  const dictionary = await getDictionary()
 
   return (
-    <SectionLayout title={t('links_block_title')}>
+    <SectionLayout title={dictionary.sectionLinks.title}>
       <div className="flex flex-col items-center">
         <a
           href="https://github.com/Ant1mas/number-to-words-ru/blob/master/README.md#api"
@@ -18,7 +18,7 @@ export default async function SectionLinks() {
           <div className="relative top-1 mr-1 inline-block">
             <RxExternalLink className="text-xl" />
           </div>
-          {t('links_block_link_api')}
+          {dictionary.sectionLinks.api}
         </a>
         <a
           href="https://github.com/Ant1mas/number-to-words-ru/blob/master/README.md#api"
@@ -29,7 +29,7 @@ export default async function SectionLinks() {
           <div className="relative top-1 mr-1 inline-block">
             <RxExternalLink className="text-xl" />
           </div>
-          {t('links_block_link_example_codesandbox')}
+          {dictionary.sectionLinks.exampleCodesandbox}
         </a>
       </div>
     </SectionLayout>

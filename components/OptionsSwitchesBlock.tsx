@@ -2,13 +2,17 @@
 
 import { Switch } from '@nextui-org/switch'
 
-import { useTranslation } from '@/lib/config/i18n/client'
 import useOptions from '@/lib/hooks/useOptions'
 import cloneDeep from 'lodash/cloneDeep'
 import set from 'lodash/set'
 
-export default function OptionsSwitchesBlock() {
-  const { t } = useTranslation()
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+
+type Props = {
+  dictionary: Dictionary
+}
+
+export default function OptionsSwitchesBlock({ dictionary }: Props) {
   const { options, setOptions } = useOptions()
 
   return (
@@ -24,7 +28,7 @@ export default function OptionsSwitchesBlock() {
             )
           }}
         >
-          {t('options_convert_minus_sign')}
+          {dictionary.sectionOptions.switches.convertSignMinus}
         </Switch>
       </div>
       <div className="p-1">
@@ -38,7 +42,7 @@ export default function OptionsSwitchesBlock() {
             )
           }}
         >
-          {t('options_show_integer_part')}
+          {dictionary.sectionOptions.switches.showIntegerPart}
         </Switch>
       </div>
       <div className="p-1">
@@ -52,7 +56,7 @@ export default function OptionsSwitchesBlock() {
             )
           }}
         >
-          {t('options_show_fractional_part')}
+          {dictionary.sectionOptions.switches.showFractionalPart}
         </Switch>
       </div>
       <div className="p-1">
@@ -66,7 +70,7 @@ export default function OptionsSwitchesBlock() {
             )
           }}
         >
-          {t('options_convert_integer_part')}
+          {dictionary.sectionOptions.switches.convertIntegerPart}
         </Switch>
       </div>
       <div className="p-1">
@@ -84,7 +88,7 @@ export default function OptionsSwitchesBlock() {
             )
           }}
         >
-          {t('options_convert_fractional_part')}
+          {dictionary.sectionOptions.switches.convertFractionalPart}
         </Switch>
       </div>
       <div className="p-1">
@@ -96,7 +100,7 @@ export default function OptionsSwitchesBlock() {
             setOptions(set(cloneDeep(options), 'showCurrency.integer', checked))
           }}
         >
-          {t('options_show_currency_integer_part')}
+          {dictionary.sectionOptions.switches.showCurrencyIntegerPart}
         </Switch>
       </div>
       <div className="p-1">
@@ -110,7 +114,7 @@ export default function OptionsSwitchesBlock() {
             )
           }}
         >
-          {t('options_show_currency_fractional_part')}
+          {dictionary.sectionOptions.switches.showCurrencyFractionalPart}
         </Switch>
       </div>
     </>

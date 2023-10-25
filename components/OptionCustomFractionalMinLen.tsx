@@ -4,11 +4,15 @@ import { Input } from '@nextui-org/input'
 import cloneDeep from 'lodash/cloneDeep'
 import set from 'lodash/set'
 
-import { useTranslation } from '@/lib/config/i18n/client'
 import useOptions from '@/lib/hooks/useOptions'
 
-export default function OptionCustomFractionalMinLen() {
-  const { t } = useTranslation()
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+
+type Props = {
+  dictionary: Dictionary
+}
+
+export default function OptionCustomFractionalMinLen({ dictionary }: Props) {
   const { options, setOptions } = useOptions()
 
   return (
@@ -18,7 +22,7 @@ export default function OptionCustomFractionalMinLen() {
       fullWidth
       variant="bordered"
       placeholder="2"
-      label={t('options_currency_fractionalPartMinLength')}
+      label={dictionary.sectionOptions.customCurrency.fractionalPartMinLength}
       min={0}
       value={options.customCurrency.fractionalPartMinLength.toString()}
       onChange={(event) => {

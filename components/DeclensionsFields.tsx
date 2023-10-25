@@ -3,28 +3,35 @@
 import { Input } from '@nextui-org/input'
 import clsx from 'clsx'
 
-import { useTranslation } from '@/lib/config/i18n/client'
 import DEFAULT_CURRENCY_OBJECT from '@/lib/constants/defaultCurrencyObject'
 import useOptions from '@/lib/hooks/useOptions'
 import cloneDeep from 'lodash/cloneDeep'
 import set from 'lodash/set'
 
-type numberParts = 'integer' | 'fractional'
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+import type { Declension } from '@/lib/types/Declension'
+
+type NumberParts = 'integer' | 'fractional'
+type FieldObject = {
+  form: 'singular' | 'plural'
+  declension: Declension
+}
 
 type declensionsObjectName =
   | 'currencyNameDeclensions'
   | 'fractionalPartNameDeclensions'
 
 type Props = {
-  numberPart: numberParts
+  dictionary: Dictionary
+  numberPart: NumberParts
   declensionsObjectName: declensionsObjectName
 }
 
 export default function DeclensionsFields({
+  dictionary,
   numberPart = 'integer',
   declensionsObjectName = 'currencyNameDeclensions',
 }: Props) {
-  const { t } = useTranslation()
   const { options, setOptions } = useOptions()
 
   const objectNameCurrencyNameCases =
@@ -45,7 +52,7 @@ export default function DeclensionsFields({
       },
     )
   })
-  const fieldsJSX = fieldsObjects.map((fieldObject) => {
+  const fieldsJSX = fieldsObjects.map((fieldObject: FieldObject) => {
     const disabled =
       (fieldObject.declension === 'nominative' &&
         fieldObject.form === 'plural') ||
@@ -58,7 +65,7 @@ export default function DeclensionsFields({
         fieldObject.form === 'singular' ? 0 : 1
       ]
     if (disabled) {
-      value = t('options_currency_custom_value_declension_disabled', '')
+      value = dictionary.sectionOptions.customCurrency.declensions.useless
     }
     let selected = false
     if (
@@ -112,11 +119,15 @@ export default function DeclensionsFields({
               fieldObject.declension
             ][declensionFormIndex]
           }
-          label={t(
-            `options_currency_custom_value_declension_${fieldObject.declension}_${fieldObject.form}`,
-          )}
+          label={
+            dictionary.sectionOptions.customCurrency.declensions[
+              fieldObject.form
+            ][fieldObject.declension]
+          }
           description={
-            selected ? t('options_currency_custom_value_declension_used') : ''
+            selected
+              ? dictionary.sectionOptions.customCurrency.declensions.used
+              : ''
           }
           value={value}
           onChange={(event) => {

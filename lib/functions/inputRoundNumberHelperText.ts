@@ -1,16 +1,18 @@
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+
 /**
  * Определить текстовое значение для helper
  * у поля ввода округления числа
  * @param options Опции модуля
- * @param translation Переменная "t" из хука "useTranslation"
+ * @param dictionary Словарь перевода
  * @returns Текстовое значение для helper
  */
 const inputRoundNumberHelperText = (
   options: any,
-  translation: any,
+  dictionary: Dictionary,
 ): string | undefined => {
   if (options.roundNumber <= -1) {
-    return translation('options_round_number_helper_disabled')
+    return dictionary.sectionOptions.roundNumber.disabled
   }
   if (
     (options.currency === 'rub' ||
@@ -18,7 +20,7 @@ const inputRoundNumberHelperText = (
       options.currency === 'eur') &&
     Number(options.roundNumber) > 2
   ) {
-    return translation('options_round_number_helper_currency_max')
+    return dictionary.sectionOptions.roundNumber.maxValue
   }
 }
 

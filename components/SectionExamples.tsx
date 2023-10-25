@@ -1,13 +1,13 @@
 import ExampleSelect from '@/components/ExampleSelect'
 import SectionLayout from '@/components/SectionLayout'
-import { useTranslation } from '@/lib/config/i18n/server'
+import { getDictionary } from '@/lib/config/i18n/functions/getDictionary'
 
 export default async function SectionExamples() {
-  const { t } = await useTranslation()
+  const dictionary = await getDictionary()
 
   return (
-    <SectionLayout title={t('usage_example_block_title')}>
-      <ExampleSelect />
+    <SectionLayout title={dictionary.sectionExamples.title}>
+      <ExampleSelect dictionary={dictionary} />
     </SectionLayout>
   )
 }

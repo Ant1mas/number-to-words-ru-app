@@ -3,22 +3,25 @@ import DeclensionSelect from '@/components/DeclensionSelect'
 import OptionRoundNumber from '@/components/OptionRoundNumber'
 import OptionsCustomCurrency from '@/components/OptionsCustomCurrency'
 import OptionsSwitchesBlock from '@/components/OptionsSwitchesBlock'
+import { getDictionary } from '@/lib/config/i18n/functions/getDictionary'
 
-export default function OptionsContent() {
+export default async function OptionsContent() {
+  const dictionary = await getDictionary()
+
   return (
     <div className="flex flex-col">
       <div className="w-full py-2">
-        <CurrencySelect />
+        <CurrencySelect dictionary={dictionary} />
       </div>
-      <OptionsCustomCurrency />
+      <OptionsCustomCurrency dictionary={dictionary} />
       <div className="w-full py-2">
-        <DeclensionSelect />
-      </div>
-      <div className="w-full py-2">
-        <OptionRoundNumber />
+        <DeclensionSelect dictionary={dictionary} />
       </div>
       <div className="w-full py-2">
-        <OptionsSwitchesBlock />
+        <OptionRoundNumber dictionary={dictionary} />
+      </div>
+      <div className="w-full py-2">
+        <OptionsSwitchesBlock dictionary={dictionary} />
       </div>
     </div>
   )

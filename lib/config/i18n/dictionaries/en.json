@@ -1,0 +1,120 @@
+{
+  "sectionTitle": {
+    "name": "number-to-words-ru",
+    "description": "Node.js module for converting numbers to words in Russian."
+  },
+  "sectionNumberInput": {
+    "label": "Your number",
+    "description": "Number delimiter can be ' . ' or ' , ' or ' / '"
+  },
+  "sectionResult": {
+    "title": "Result",
+    "buttonCopy": "Copy result",
+    "snackbarCopied": "Result copied"
+  },
+  "sectionExamples": {
+    "title": "Usage examples",
+    "description": "Select usage example",
+    "examples": {
+      "justNumber": "Just number",
+      "fractionalNumber": "Fractional number",
+      "currencyNumber": "«Целые», «Десятые» и т.д."
+    }
+  },
+  "sectionOptions": {
+    "title": "Options",
+    "currencyLabel": "Currency",
+    "currencySelect": {
+      "rub": "Ruble",
+      "usd": "Dollar",
+      "eur": "Euro",
+      "number": "Number",
+      "custom": "Custom currency"
+    },
+    "customCurrency": {
+      "blocks": {
+        "integerBlockTitle": "Forms of integer",
+        "fractionalBlockTitle": "Forms of fractional",
+        "generalBlockTitle": "General currency settings"
+      },
+      "digitGroups": ["For digit 1", "For digits 2-4", "For digits 5-9"],
+      "currencyNameForms": {
+        "label": "Currency form",
+        "array": [
+          "Currency form 1 ('Один' / 'Два')",
+          "Currency form 2 ('Одна' / 'Две')",
+          "Currency form 3 ('Одно' / 'Два')"
+        ]
+      },
+      "declensions": {
+        "used": "Used for selected declension",
+        "useless": "[Not used anywhere]",
+        "singular": {
+          "nominative": "Nominative, singular",
+          "genitive": "Genitive, singular",
+          "dative": "Dative, singular",
+          "accusative": "Accusative, singular",
+          "instrumental": "Instrumental, singular",
+          "prepositional": "Prepositional, singular"
+        },
+        "plural": {
+          "nominative": "Nominative, plural",
+          "genitive": "Genitive, plural",
+          "dative": "Dative, plural",
+          "accusative": "Accusative, plural",
+          "instrumental": "Instrumental, plural",
+          "prepositional": "Prepositional, plural"
+        }
+      },
+      "fractionalPartMinLength": "Min. digits in fractional part"
+    },
+    "declension": {
+      "label": "Declension",
+      "selectValues": {
+        "nominative": "Nominative",
+        "genitive": "Genitive",
+        "dative": "Dative",
+        "accusative": "Accusative",
+        "instrumental": "Instrumental",
+        "prepositional": "Prepositional"
+      }
+    },
+    "roundNumber": {
+      "label": "Round number",
+      "disabled": "Rounding disabled",
+      "maxValue": "Rounding of selected currency can't be more than 2"
+    },
+    "switches": {
+      "convertSignMinus": "Convert minus sign to word",
+      "showIntegerPart": "Show integer part of number",
+      "showFractionalPart": "Show fractional part of number",
+      "convertIntegerPart": "Convert integer part of number to words",
+      "convertFractionalPart": "Convert fractional part of number to words",
+      "showCurrencyIntegerPart": "Show currency in integer part of number",
+      "showCurrencyFractionalPart": "Show currency in fractional part of number"
+    }
+  },
+  "sectionCode": {
+    "title": "Code",
+    "buttonCopy": "Copy code",
+    "snackbarCopied": "Code copied"
+  },
+  "sectionLinks": {
+    "title": "Useful links",
+    "api": "Full API",
+    "exampleCodesandbox": "Examples of importing and using module"
+  },
+  "sectionInstallation": {
+    "title": "Installation",
+    "tools": {
+      "npm": "Install with npm",
+      "yarn": "Install with yarn",
+      "pnpm": "Install with pnpm",
+      "bun": "Install with bun"
+    }
+  },
+  "footer": {
+    "moduleVersion": "Here is used",
+    "madeBy": "Made by"
+  }
+}

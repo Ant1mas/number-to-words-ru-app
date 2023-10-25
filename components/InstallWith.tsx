@@ -1,6 +1,5 @@
-import { useTranslation } from '@/lib/config/i18n/server'
-
 import CodePreview from '@/components/CodePreview'
+import { getDictionary } from '@/lib/config/i18n/functions/getDictionary'
 
 const SCRIPTS = {
   npm: 'npm install number-to-words-ru',
@@ -10,18 +9,18 @@ const SCRIPTS = {
 }
 
 type Props = {
-  language: 'npm' | 'yarn' | 'pnpm' | 'bun'
+  tool: 'npm' | 'yarn' | 'pnpm' | 'bun'
 }
 
-export default async function InstallWith({ language }: Props) {
-  const { t } = await useTranslation()
+export default async function InstallWith({ tool }: Props) {
+  const dictionary = await getDictionary()
 
   return (
     <div className="w-full p-2 lg:w-1/2">
       <div className="mb-1 text-base">
-        {t(`installation_${language}_title`)}
+        {dictionary.sectionInstallation.tools[tool]}
       </div>
-      <CodePreview code={SCRIPTS[language]} language="bash" />
+      <CodePreview code={SCRIPTS[tool]} language="bash" />
     </div>
   )
 }

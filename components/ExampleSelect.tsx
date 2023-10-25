@@ -1,13 +1,17 @@
 'use client'
 
-import { useTranslation } from '@/lib/config/i18n/client'
 import useUsedExamples from '@/lib/hooks/useUsedExamples'
 import { Select, SelectItem } from '@nextui-org/select'
 import { useEffect } from 'react'
 
-export default function ExampleSelect() {
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+
+type Props = {
+  dictionary: Dictionary
+}
+
+export default function ExampleSelect({ dictionary }: Props) {
   const { selectedExample, applyExample } = useUsedExamples()
-  const { t } = useTranslation()
 
   useEffect(() => {
     applyExample('justNumber')
@@ -17,11 +21,11 @@ export default function ExampleSelect() {
   const examples = [
     {
       value: 'justNumber',
-      label: t('usage_example_select_value_just_number'),
+      label: dictionary.sectionExamples.examples.justNumber,
     },
     {
       value: 'fractionalNumber',
-      label: t('usage_example_select_value_fractional_number'),
+      label: dictionary.sectionExamples.examples.fractionalNumber,
     },
     {
       value: 'users',
@@ -37,14 +41,14 @@ export default function ExampleSelect() {
     },
     {
       value: 'currencyNumber',
-      label: t('usage_example_select_value_currency_number'),
+      label: dictionary.sectionExamples.examples.currencyNumber,
     },
   ]
 
   return (
     <div className="w-full ">
       <Select
-        label={t('usage_example_select_label')}
+        label={dictionary.sectionExamples.description}
         variant="bordered"
         fullWidth
         selectionMode="single"

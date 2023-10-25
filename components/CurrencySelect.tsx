@@ -4,30 +4,34 @@ import { Select, SelectItem } from '@nextui-org/select'
 import { cloneDeep } from 'lodash'
 import set from 'lodash/set'
 
-import { useTranslation } from '@/lib/config/i18n/client'
 import useOptions from '@/lib/hooks/useOptions'
 
-export default function CurrencySelect() {
-  const { t } = useTranslation()
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+
+type Props = {
+  dictionary: Dictionary
+}
+
+export default function CurrencySelect({ dictionary }: Props) {
   const { options, setOptions } = useOptions()
   const currencies = [
-    { value: 'rub', label: t('options_currency_select_value_rub') },
-    { value: 'usd', label: t('options_currency_select_value_usd') },
-    { value: 'eur', label: t('options_currency_select_value_eur') },
+    { value: 'rub', label: dictionary.sectionOptions.currencySelect.rub },
+    { value: 'usd', label: dictionary.sectionOptions.currencySelect.usd },
+    { value: 'eur', label: dictionary.sectionOptions.currencySelect.eur },
     {
       value: 'number',
-      label: t('options_currency_select_value_number'),
+      label: dictionary.sectionOptions.currencySelect.number,
     },
     {
       value: 'custom',
-      label: t('options_currency_select_value_custom'),
+      label: dictionary.sectionOptions.currencySelect.custom,
     },
   ]
 
   return (
     <Select
       name="currency"
-      label={t('options_currency_select_label')}
+      label={dictionary.sectionOptions.currencyLabel}
       variant="bordered"
       selectedKeys={[options.currency as string]}
       fullWidth

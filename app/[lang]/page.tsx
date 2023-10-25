@@ -10,8 +10,11 @@ import SectionLinks from '@/components/SectionLinks'
 import SectionOptions from '@/components/SectionOptions'
 import SectionResult from '@/components/SectionResult'
 import SectionTitle from '@/components/SectionTitle'
+import { getDictionary } from '@/lib/config/i18n/functions/getDictionary'
 
 export default async function Page() {
+  const dictionary = await getDictionary()
+
   return (
     <div id="app" className={'flex justify-center'}>
       <ReactHotToaster />
@@ -22,7 +25,7 @@ export default async function Page() {
             <SectionTitle />
           </div>
           <div className="flex w-full justify-center p-4 sm:w-1/2">
-            <InputNumberField />
+            <InputNumberField dictionary={dictionary} />
           </div>
           <div className="w-full">
             <SectionResult />

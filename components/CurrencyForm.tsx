@@ -4,31 +4,35 @@ import { Select, SelectItem } from '@nextui-org/select'
 import cloneDeep from 'lodash/cloneDeep'
 import set from 'lodash/set'
 
-import { useTranslation } from '@/lib/config/i18n/client'
 import useOptions from '@/lib/hooks/useOptions'
 
+import type { Dictionary } from '@/lib/config/i18n/functions/getDictionary'
+
 type Props = {
+  dictionary: Dictionary
   name: string
   numberPart: 'integer' | 'fractional'
 }
 
-export default function CurrencyForm({ name, numberPart }: Props) {
-  const { t } = useTranslation()
+export default function CurrencyForm({ dictionary, name, numberPart }: Props) {
   const { options, setOptions } = useOptions()
   const numberPartObjectName =
     numberPart === 'integer' ? 'integer' : 'fractionalPart'
   const forms = [
     {
       value: '0',
-      label: t('options_currency_custom_value_word_form1', '...'),
+      label:
+        dictionary.sectionOptions.customCurrency.currencyNameForms.array[0],
     },
     {
       value: '1',
-      label: t('options_currency_custom_value_word_form2', '...'),
+      label:
+        dictionary.sectionOptions.customCurrency.currencyNameForms.array[1],
     },
     {
       value: '2',
-      label: t('options_currency_custom_value_word_form3', '...'),
+      label:
+        dictionary.sectionOptions.customCurrency.currencyNameForms.array[2],
     },
   ]
 
@@ -36,7 +40,7 @@ export default function CurrencyForm({ name, numberPart }: Props) {
     <div className="py-2">
       <Select
         name={name}
-        label={t('options_currency_custom_value_currency_name_form')}
+        label={dictionary.sectionOptions.customCurrency.currencyNameForms.label}
         variant="bordered"
         fullWidth
         selectionMode="single"
