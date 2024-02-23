@@ -1,13 +1,9 @@
 import type { Metadata } from 'next'
 
 import { BASE_PATH } from '@/lib/constants/basePath'
-import pwaManifest from '@/public/manifest.json'
-
-const colorPrimary = pwaManifest.theme_color
 
 export const DEFAULT_METADATA: Metadata = {
   manifest: BASE_PATH + '/manifest.json',
-  themeColor: colorPrimary,
   icons: {
     icon: [
       {
